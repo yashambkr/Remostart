@@ -67,7 +67,7 @@ body {
   font-size: 1.3em;
   color: #393ba1;
 }
-.signup {
+.signup  {
   color: var(--main-color);
   font-weight: 700;
   text-decoration: none;
@@ -109,7 +109,7 @@ input::placeholder {
 }
 
 /*Hidden login*/
-.none {
+.none-forgot {
   display: none;
 }
 
