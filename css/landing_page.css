@@ -8,7 +8,7 @@
 
 html,
 body {
-  /* background-color: #edfafd; */
+  background-color: #edfafd;
   font-size: 62.5%;
   font-family: "League Gothic", sans-serif;
   font-family: "Poppins", sans-serif;
@@ -21,10 +21,11 @@ li {
 a {
   text-decoration: none;
 }
-/*  note add animation to the buttons of navbar */
+
+
 #heading_text {
   margin-top: 150px;
-
+    color: #0b132a;
   font-size: 7rem;
   font-weight: 800;
 }
@@ -33,25 +34,10 @@ a {
 }
 #heading_image {
   width: 70rem;
-  /* background-color:  #00B4D8; */
-  /* background-image:url(../assets/illustrations/automatic-watering-machine.svg); */
   animation: move 3s infinite;
 }
 
-.nav-link-anim{
-  border-radius: 0.5rem;
-  /* box-shadow: 4px 3px; */
-  border: 2px solid #0b132a;
-  transition: all 0.2s ease;
 
-}
-.nav-link-anim:focus{
-    color: #00b4d8;
-}
-.nav-link-anim:hover{
-    border: 2px solid #0b132a;
-    box-shadow: 4px 4px;  
-}
 
 @keyframes move {
   0% {
