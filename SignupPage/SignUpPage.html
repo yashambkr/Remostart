@@ -175,11 +175,11 @@
     const db = getDatabase();
     var Fname, Lname, Email, PhoneNo, Password;
 
-    Fname = document.getElementById('Fname').value;
-    Lname = document.getElementById('Lname').value;
-    Email = document.getElementById('email').value;
-    PhoneNo = document.getElementById('phone').value;
-    Password = document.getElementById('password').value;
+    Fname = document.getElementById('Fname');
+    Lname = document.getElementById('Lname');
+    Email = document.getElementById('email');
+    PhoneNo = document.getElementById('phone');
+    Password = document.getElementById('password');
 
 
 
@@ -188,16 +188,16 @@
 
       const dbref = ref(db);
 
-      get(child(dbref, "UserList/" + Email)).then((snapshot) => {
+      get(child(dbref, "UserList/" + Fname.value)).then((snapshot) => {
         if (snapshot.exists()) {
           alert("account already exist!");
         } else {
-          set(ref(db, "UserList/" + Email),
+          set(ref(db, "UserList/" + Fname.value),
             {
-              fullname: Fname + " " + Lname,
-              Email: Email,
-              PhoneNo: PhoneNo,
-              Password: Password
+              fullname: Fname.value + " " + Lname.value,
+              Email: Email.value,
+              PhoneNo: PhoneNo.value,
+              Password: Password.value
             })
             .then(() => {
               alert("user added successfully");
@@ -209,7 +209,7 @@
       });
     }
 
-    var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click', RegisterUser());
+    var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click', RegisterUser);
 
   
 
