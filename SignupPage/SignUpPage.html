@@ -33,7 +33,7 @@
     <div class="main-box col col-sm-9 col-md-7 col-lg-5 col-xxl-3">
       <!-- SIGN IN BOX -->
 
-      <form action="login" method="POST" class="form registered pt-3 pb-3" id="login-in">
+      <section class="form registered pt-3 pb-3" id="login-in">
         <h3 class="title">Sign In</h3>
 
         <div class="box ms-0 me-0 input-group flex-nowrap">
@@ -62,10 +62,10 @@
           <span class="account">Don't have an Account ?</span>
           <span class="signup" id="sign-up">Sign Up</span>
         </div>
-      </form>
+      </section>
 
       <!-- SIGN UP BOX -->
-      <form action="signup" method="POST" class="form create none pt-3 pb-3" id="login-up">
+      <section class="form create none pt-3 pb-3" id="login-up">
         <h3 class="title">Create Account</h3>
 
         <div class="namebox">
@@ -125,10 +125,10 @@
           <span class="account">Already have an Account ?</span>
           <a class="signup" id="sign-in">Sign In</a>
         </div>
-      </form>
+      </section>
 
       <!-- FORGOT PASSWORD PAGE -->
-      <form action="" class="form create none" id="forget-password">
+      <section action="" class="form create none" id="forget-password">
         <h3 class="title">Forgot Password</h3>
         <div class="box input-group ms-0 me-0">
           <input type="text" id="enter-email" placeholder="Email/Phone number" class="input form-control" id="email"
@@ -137,7 +137,7 @@
         <div class="d-grid gap-2 col-6 mx-auto">
           <button type="submit" class="btn text-white">Reset Password</button>
         </div>
-      </form>
+      </section>
     </div>
   </div>
   <script src="../js/signup_page_js/SignUpPage.js"></script>
@@ -156,7 +156,7 @@
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
-    
+
     const firebaseConfig = {
       apiKey: "AIzaSyCecdzObF4mPIJV4TMa4uoLvrnugByyriQ",
       authDomain: "remestart-11111.firebaseapp.com",
@@ -188,11 +188,11 @@
 
       const dbref = ref(db);
 
-      get(child(dbref, "UserList/" + Email.value)).then((snapshot) => {
+      get(child(dbref, "UserList/" + Email)).then((snapshot) => {
         if (snapshot.exists()) {
           alert("account already exist!");
         } else {
-          set(ref(db, "UserList/" + Email.value),
+          set(ref(db, "UserList/" + Email),
             {
               fullname: Fname + " " + Lname,
               Email: Email,
@@ -209,12 +209,12 @@
       });
     }
 
-    var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click',RegisterUser());
+    var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click', RegisterUser());
 
-
+  
 
   </script>
-  
+
 </body>
 
 </html>

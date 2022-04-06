@@ -75,25 +75,7 @@ const confirmPasswordEl = document.querySelector("#password-signup2");
 
 const SignUpForm = document.querySelector("#login-up");
 
-SignUpForm.addEventListener("submit", function (e) {
-  // prevent the form from submitting
-  e.preventDefault();
 
-  // validate forms
-  let isEmailValid = checkEmail(),
-    isPasswordValid = checkPassword(),
-    isConfirmPasswordValid = checkConfirmPassword(),
-    isPhoneno = isPhonenoCheck();
-
-  let isFormValid =
-    isEmailValid && isPasswordValid && isConfirmPasswordValid && isPhoneno;
-  // submit to the server if the form is valid
-
-  if (isFormValid){
-    document.getElementById("login-up").submit();
-  }
-
-});
 
 const isPhonenoCheck = () => {
   let valid = false;
@@ -137,7 +119,7 @@ const checkConfirmPassword = () => {
   // check confirm password
   const confirmPassword = confirmPasswordEl.value.trim();
   const password = passwordEl.value.trim();
-
+  
   if (password !== confirmPassword) {
     showError(confirmPasswordEl, "Confirm password does not match");
   } else {
@@ -163,18 +145,6 @@ const isEmailOrPhoneCheck = () => {
   }
 
 };
-
-signinform.addEventListener("submit", function (e) {
-  // prevent the form from submitting
-  e.preventDefault();
-
-  let isFormValid = isEmailOrPhoneCheck();
-
-  // submit to the server if the form is valid
-  if (isFormValid){
-    document.getElementById("login-in").submit();
-  }
-});
 
 
 
