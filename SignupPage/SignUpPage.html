@@ -16,7 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
     integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>Kshitij Electronics and Technologies</title>
+  <title>RemoStart Login</title>
 </head>
 
 <body>
@@ -56,7 +56,7 @@
           <a href="#" class="forgot" id="forgot-button">Forgot password?</a>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" class="btn text-white">Sign In</button>
+          <button type="submit" id="signinbtn" class="btn text-white">Sign In</button>
         </div>
         <div class="text-center">
           <span class="account">Don't have an Account ?</span>
@@ -211,7 +211,26 @@
 
     var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click', RegisterUser);
 
-  
+
+    // login page
+
+    function AuthenticateUser() {
+      const dbref = ref(db);
+      get(child(dbref, "UserList/" + email.value)).then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val())
+          let dbpass = Password.value;
+          if (dbpass == Password.value) {
+            window.location = "../ProfilePage/Setting.MyProfile.html"
+          }
+        } else {
+          alert("username or pass is invalid")
+        }
+      });
+    }
+    var sumbitbtn = document.getElementById('signinbtn').addEventListener('click', AuthenticateUser);
+
+
 
   </script>
 
