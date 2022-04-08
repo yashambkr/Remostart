@@ -170,7 +170,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
 
-    import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import { getDatabase, ref, set, child, get, onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
     // ------------------Reading Data------------
     const db = getDatabase();
     var Fname, Lname, Email, PhoneNo, Password;
@@ -181,18 +181,19 @@
     PhoneNo = document.getElementById('phone');
     Password = document.getElementById('password');
 
-
+    
 
     //  register
     function RegisterUser() {
 
       const dbref = ref(db);
+      var newUserName=Email.value.split(".");
 
-      get(child(dbref, "UserList/" + Fname.value)).then((snapshot) => {
+      get(child(dbref, newUserName[0])).then((snapshot) => {
         if (snapshot.exists()) {
           alert("account already exist!");
         } else {
-          set(ref(db, "UserList/" + Fname.value),
+          set(ref(db,  newUserName[0]),
             {
               fullname: Fname.value + " " + Lname.value,
               Email: Email.value,
@@ -211,24 +212,38 @@
 
     var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click', RegisterUser);
 
+    var emailorphone = document.getElementById('emailorphone');
+    var passwordSignin = document.getElementById('password-signin');
 
+
+  
     // login page
 
     function AuthenticateUser() {
       const dbref = ref(db);
-      get(child(dbref, "UserList/" + email.value)).then((snapshot) => {
+      get(child(dbref, emailorphone.value)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val())
-          let dbpass = Password.value;
-          if (dbpass == Password.value) {
-            window.location = "../ProfilePage/Setting.MyProfile.html"
+            var ch;
+            const starCountRef = ref(db, emailorphone.value+'/Password');
+            onValue(starCountRef, (snapshot) => {
+              ch = snapshot.val();
+              console.log(snapshot.val());
+              console.log("own::"+passwordSignin.value);
+              console.log("ch::"+ ch);
+            });
+          if(passwordSignin.value===ch){
+            window.location="../ProfilePage/Setting.MyProfile.html"
           }
+          else{
+            alert("Incorrect Password");
+          }
+          
         } else {
-          alert("username or pass is invalid")
+          alert("account does not exist!");
         }
       });
     }
-    var sumbitbtn = document.getElementById('signinbtn').addEventListener('click', AuthenticateUser);
+    var signinbtn = document.getElementById('signinbtn').addEventListener('click', AuthenticateUser);
 
 
 
