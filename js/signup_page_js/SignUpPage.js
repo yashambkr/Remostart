@@ -71,11 +71,40 @@ const lnameEl = document.querySelector("#Lname");
 const emailEl = document.querySelector("#email");
 const phoneEl = document.querySelector("#phone");
 const passwordEl = document.querySelector("#password");
+const username = document.querySelector("#Username");
 const confirmPasswordEl = document.querySelector("#password-signup2");
 
-const SignUpForm = document.querySelector("#login-up");
 
 
+// for signup check
+const SignUpForm = document.querySelector("#sumbitbtn");
+
+SignUpForm.addEventListener("click", function (e) {
+  // prevent the form from submitting
+  e.preventDefault();
+
+  // validate forms
+  let isEmailValid = checkEmail(),
+    isPasswordValid = checkPassword(),
+    isConfirmPasswordValid = checkConfirmPassword(),
+    isPhoneno = isPhonenoCheck();
+
+  let isFormValid =
+    isEmailValid && isPasswordValid && isConfirmPasswordValid && isPhoneno;
+  // submit to the server if the form is valid
+  if(username.value.trim().includes(".")){
+    alert("remove dot")
+  }else{
+    if (!isFormValid){
+      sessionStorage.setItem("formstatus", "incorrect");
+   
+    }else{
+      sessionStorage.setItem("formstatus", "correct");
+    }
+  }
+ 
+
+});
 
 const isPhonenoCheck = () => {
   let valid = false;

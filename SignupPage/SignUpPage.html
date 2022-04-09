@@ -20,16 +20,7 @@
 </head>
 
 <body>
-  <div class="
-        container-fluid
-        row
-        align-items-center
-        justify-content-center
-        ms-0
-        me-0
-        ps-0
-        pe-0
-      ">
+  <div class="container-fluid row align-items-center justify-content-center ms-0 me-0 ps-0 pe-0">
     <div class="main-box col col-sm-9 col-md-7 col-lg-5 col-xxl-3">
       <!-- SIGN IN BOX -->
 
@@ -39,7 +30,7 @@
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-user icon"></i></span>
-          <input type="text" id="emailorphone" name="emailorphone" placeholder="Email Phone" required
+          <input type="text" id="emailorphone" name="emailorphone" placeholder="Username" required
             class="input form-control" />
         </div>
 
@@ -50,13 +41,15 @@
             class="input form-control mb-0" />
         </div>
         <div>
-          <input type="checkbox" name="rememberMe" value="Y"> Remember me
+          <input type="checkbox" name="rememberMe" value="Y" /> Remember me
         </div>
         <div>
           <a href="#" class="forgot" id="forgot-button">Forgot password?</a>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" id="signinbtn" class="btn text-white">Sign In</button>
+          <button type="submit" id="signinbtn" class="btn text-white">
+            Sign In
+          </button>
         </div>
         <div class="text-center">
           <span class="account">Don't have an Account ?</span>
@@ -75,30 +68,31 @@
             </span>
 
             <input type="text" placeholder="First name" required class="input form-control" id="Fname" name="fname" />
-
           </div>
           <div class="box input-group flex-nowrap ms-0 me-0">
             <span class="input-group-text" id="addon-wrapping">
               <i class="bx bx-user icon"></i>
             </span>
             <input type="text" placeholder="Last name" required class="input form-control" id="Lname" name="lname" />
-
           </div>
         </div>
-
+        <div class="box input-group flex-nowrap ms-0 me-0">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-at icon"></i>
+          </span>
+          <input type="text" placeholder="Username" required class="input form-control" id="Username" name="Username" />
+        </div>
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-at icon"></i>
           </span>
           <input type="text" placeholder="Email" required class="input form-control" id="email" name="email" />
-
         </div>
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-phone-call icon"></i>
           </span>
           <input type="text" placeholder="Phone" required class="input form-control" id="phone" name="phone" />
-
         </div>
 
         <div class="box input-group flex-nowrap ms-0 me-0">
@@ -114,7 +108,6 @@
           </span>
           <input type="password" minlength="6" placeholder="Re - Type Password" required class="input form-control"
             id="password-signup2" name="Password2" />
-
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
           <button type="submit" id="sumbitbtn" class="btn text-white">
@@ -156,7 +149,6 @@
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
-
     const firebaseConfig = {
       apiKey: "AIzaSyCecdzObF4mPIJV4TMa4uoLvrnugByyriQ",
       authDomain: "remestart-11111.firebaseapp.com",
@@ -164,76 +156,91 @@
       projectId: "remestart-11111",
       storageBucket: "remestart-11111.appspot.com",
       messagingSenderId: "197894692203",
-      appId: "1:197894692203:web:62ff61e9b36cdbddfd002e"
+      appId: "1:197894692203:web:62ff61e9b36cdbddfd002e",
     };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
 
-    import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import {
+      getDatabase,
+      ref,
+      set,
+      child,
+      get,
+      onValue,
+    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
     // ------------------Reading Data------------
     const db = getDatabase();
-    var Fname, Lname, Email, PhoneNo, Password;
+    var Fname, Lname, Email, PhoneNo, Password, Username;
 
-    Fname = document.getElementById('Fname');
-    Lname = document.getElementById('Lname');
-    Email = document.getElementById('email');
-    PhoneNo = document.getElementById('phone');
-    Password = document.getElementById('password');
-
-
-
+    Fname = document.getElementById("Fname");
+    Lname = document.getElementById("Lname");
+    Email = document.getElementById("email");
+    PhoneNo = document.getElementById("phone");
+    Password = document.getElementById("password");
+    Username = document.getElementById("Username");
     //  register
     function RegisterUser() {
-
       const dbref = ref(db);
+      var newUserName = Username.value;
 
-      get(child(dbref, "UserList/" + Fname.value)).then((snapshot) => {
-        if (snapshot.exists()) {
-          alert("account already exist!");
-        } else {
-          set(ref(db, "UserList/" + Fname.value),
-            {
+      if (sessionStorage.getItem("formstatus") == "incorrect") {
+        alert("data incorrect");
+      } else {
+        get(child(dbref, newUserName)).then((snapshot) => {
+          if (snapshot.exists()) {
+            alert("account already exist!");
+          } else {
+            set(ref(db, newUserName), {
               fullname: Fname.value + " " + Lname.value,
               Email: Email.value,
               PhoneNo: PhoneNo.value,
-              Password: Password.value
+              Password: Password.value,
+              username: Username.value
             })
-            .then(() => {
-              alert("user added successfully");
-            })
-            .catch((error) => {
-              alert("error" + error);
-            })
-        }
-      });
+              .then(() => {
+                alert("user added successfully");
+              })
+              .catch((error) => {
+                alert("error" + error);
+              });
+          }
+        });
+      }
     }
 
-    var sumbitbtn = document.getElementById('sumbitbtn').addEventListener('click', RegisterUser);
+    var sumbitbtn = document
+      .getElementById("sumbitbtn")
+      .addEventListener("click", RegisterUser);
 
+    var emailorphone = document.getElementById("emailorphone");
+    var passwordSignin = document.getElementById("password-signin");
 
     // login page
 
     function AuthenticateUser() {
       const dbref = ref(db);
-      get(child(dbref, "UserList/" + email.value)).then((snapshot) => {
+      get(child(dbref, emailorphone.value)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val())
-          let dbpass = Password.value;
-          if (dbpass == Password.value) {
-            window.location = "../ProfilePage/Setting.MyProfile.html"
-          }
+          const starCountRef = ref(db, emailorphone.value + "/Password");
+          onValue(starCountRef, (snapshot) => {
+            var ch = snapshot.val();
+            if (passwordSignin.value === ch) {
+              window.location = "../ProfilePage/Setting.MyProfile.html";
+            } else {
+              alert("Incorrect Password");
+            }
+          });
         } else {
-          alert("username or pass is invalid")
+          alert("account does not exist!");
         }
       });
     }
-    var sumbitbtn = document.getElementById('signinbtn').addEventListener('click', AuthenticateUser);
-
-
-
+    var signinbtn = document
+      .getElementById("signinbtn")
+      .addEventListener("click", AuthenticateUser);
   </script>
-
 </body>
 
 </html>

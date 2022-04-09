@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 :root {
-  --main-color: #00B4D8;
-  --secondary-color: #00B4D8;
-  --light-color: #00B4D8;
+  --main-color: #0b132a;
+  --secondary-color: #0b132a;
+  --light-color: #0b132a;
 }
 
 body {
@@ -65,7 +65,7 @@ body {
 /* sign up of toggle button */
 .icon {
   font-size: 1.3em;
-  color: #00B4D8;
+  color: #0b132a;
 }
 .signup {
   color: var(--main-color);
