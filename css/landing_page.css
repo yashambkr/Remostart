@@ -22,10 +22,9 @@ a {
   text-decoration: none;
 }
 
-
 #heading_text {
   margin-top: 150px;
-    color: #0b132a;
+  color: #0b132a;
   font-size: 7rem;
   font-weight: 800;
 }
@@ -36,8 +35,24 @@ a {
   width: 70rem;
   animation: move 3s infinite;
 }
+@media (max-width: 480px) {
+  #heading_image {
+    width: 32rem;
+  }
+  #heading_text {
 
+    margin-top: 50px;
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  
+}
 
+@media (min-width:481px) and (max-width: 768px) {
+  #heading_image {
+    width: 45rem;
+  }
+}
 
 @keyframes move {
   0% {

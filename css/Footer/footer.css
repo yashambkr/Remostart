@@ -167,3 +167,14 @@ hr{
             bottom: unset;
       }
 }
+@media (max-width: 480px) {
+      p,li{
+            
+            font-size: 0.7rem;
+      }
+      p{
+            word-wrap:break-word;
+      }
+   
+      
+    }
