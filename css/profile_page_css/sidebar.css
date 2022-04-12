@@ -70,8 +70,8 @@ i, span {
   background: var(--bs-gray-200);
 }
 
-#sidebar ul li a i {
-  margin-right: 10px;
+#sidebar ul li a  {
+  color: black;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {

@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="../css/profile_page_css/sidebar-1.css" />
 	<link rel="stylesheet" href="../css/profile_page_css/sidebar.css" />
 	<link rel="stylesheet" href="../css/Footer/footer.css">
+	<link rel="shortcut icon" href="../assets/logo/Remo-icon.ico"  type="image/x-icon" >
 </head>
 
 <body>
@@ -39,8 +40,8 @@
 					<li class="nav-item"><a class="nav-link" href="#">PRODUCT</a></li> -->
 					<li class="nav-item"><a class="nav-link" href="#">TRAINING</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">STARTUP</a></li>
-					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-							data-bs-toggle="dropdown" href="#">YOUR ACCOUNT&nbsp;</a>
+					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase" id="name-text" aria-expanded="false"
+							data-bs-toggle="dropdown" href="#">Hi Aniket&nbsp;</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">My
 								Profile</a><a class="dropdown-item" dis>No of Jobs <span
@@ -63,9 +64,9 @@
 			</div>
 
 			<ul class="list-unstyled components">
-				<li class="active"><a href="./Setting.MyProfile.html"
+				<li class="active mb-0"><a href="./Setting.MyProfile.html"
 						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
-						My Profile </a></li>
+						My Profile</a></li>
 
 				<!-- <li><a href="./Setting.Orders.html" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 
@@ -180,115 +181,31 @@
 		<hr>
 		<p class="copyright">RemoStart - Connects The Talent</p>
 	</footer>
-	<script type="module">
-		// Import the functions you need from the SDKs you need
-		// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-		import { getAuth, signOut } from "firebase/auth";
-		// const firebaseConfig = {
-		//   apiKey: "AIzaSyCecdzObF4mPIJV4TMa4uoLvrnugByyriQ",
-		//   authDomain: "remestart-11111.firebaseapp.com",
-		//   databaseURL: "https://remestart-11111-default-rtdb.firebaseio.com",
-		//   projectId: "remestart-11111",
-		//   storageBucket: "remestart-11111.appspot.com",
-		//   messagingSenderId: "197894692203",
-		//   appId: "1:197894692203:web:62ff61e9b36cdbddfd002e",
-		// };
 
-		// // Initialize Firebase
-		// const app = initializeApp(firebaseConfig);
-
-		// import {
-		//   getDatabase,
-		//   ref,
-		//   set,
-		//   child,
-		//   get,
-		//   onValue,
-		// } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-		// // ------------------Reading Data------------
-		// const db = getDatabase();
-		// var Fname, Lname, Email, PhoneNo, Password, Username;
-
-		// Fname = document.getElementById("Fname");
-		// Lname = document.getElementById("Lname");
-		// Email = document.getElementById("email");
-		// PhoneNo = document.getElementById("phone");
-		// Password = document.getElementById("password");
-		// Username = document.getElementById("Username");
-		// //  register
-		// function RegisterUser() {
-		//   const dbref = ref(db);
-		//   var newUserName = Username.value;
-
-		//   if (sessionStorage.getItem("formstatus") == "incorrect") {
-		// 	alert("data incorrect");
-		//   } else {
-		// 	get(child(dbref, newUserName)).then((snapshot) => {
-		// 	  if (snapshot.exists()) {
-		// 		alert("account already exist!");
-		// 	  } else {
-		// 		set(ref(db, newUserName), {
-		// 		  fullname: Fname.value + " " + Lname.value,
-		// 		  Email: Email.value,
-		// 		  PhoneNo: PhoneNo.value,
-		// 		  Password: Password.value,
-		// 		  username: Username.value
-		// 		})
-		// 		  .then(() => {
-		// 			alert("user added successfully");
-		// 		  })
-		// 		  .catch((error) => {
-		// 			alert("error" + error);
-		// 		  });
-		// 	  }
-		// 	});
-		//   }
-		// }
-
-		// var sumbitbtn = document
-		//   .getElementById("sumbitbtn")
-		//   .addEventListener("click", RegisterUser);
-
-		// var emailorphone = document.getElementById("emailorphone");
-		// var passwordSignin = document.getElementById("password-signin");
-
-		// // login page
-
-		// function AuthenticateUser() {
-		//   const dbref = ref(db);
-		//   get(child(dbref, emailorphone.value)).then((snapshot) => {
-		// 	if (snapshot.exists()) {
-		// 	  const starCountRef = ref(db, emailorphone.value + "/Password");
-		// 	  onValue(starCountRef, (snapshot) => {
-		// 		var ch = snapshot.val();
-		// 		if (passwordSignin.value === ch) {
-		// 		  window.location = "../ProfilePage/Setting.MyProfile.html";
-		// 		} else {
-		// 		  alert("Incorrect Password");
-		// 		}
-		// 	  });
-		// 	} else {
-		// 	  alert("account does not exist!");
-		// 	}
-		//   });
-		// }
-		// var signinbtn = document
-		//   .getElementById("signinbtn")
-		//   .addEventListener("click", AuthenticateUser);
-
-		const auth = getAuth();
-		var signoutbtn = document.getElementById("logout-btn").addEventListener("click", signOut(auth).then(() => {
-			window.location = "../index.html";
-			// Sign-out successful.
-		}).catch((error) => {
-			alert(error);
-			// An error happened.
-		}) );
-	</script>
+	
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<!-- Bootstrap Js CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+			document.getElementById('logout-link').addEventListener('click',Signout);
+			document.getElementById('logout-btn').addEventListener('click',Signout);
+			console.log(JSON.parse(sessionStorage.getItem('user')));
+			let username =  JSON.parse(sessionStorage.getItem('user'));
+
+	
+				// let current_user = JSON.parse(sessionStorage.getItem('user'));
+
+			function Signout() {
+				sessionStorage.removeItem('user');
+				window.location="../index.html";
+			}
+
+
+			
+			document.getElementById('name-text').innerText = "HI " + username['First Name'];
+			
+	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function () {
