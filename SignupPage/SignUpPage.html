@@ -193,11 +193,12 @@
             alert("account already exist!");
           } else {
             set(ref(db, newUserName), {
-              fullname: Fname.value + " " + Lname.value,
+              'First Name': Fname.value,
+              'Last Name':Lname.value,
               Email: Email.value,
-              PhoneNo: PhoneNo.value,
+              Phone: PhoneNo.value,
               Password: Password.value,
-              username: Username.value
+              Username: Username.value
             })
               .then(() => {
                 alert("user added successfully");
