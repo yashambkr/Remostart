@@ -1,0 +1,631 @@
+{
+  "Startups": {
+    "startup1": "ani"
+  },
+  "User": {
+    "1David": {
+      "Email": "daviditsanie@gmail.com",
+      "FirstName": "Itsani",
+      "LastName": "David",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "1David"
+    },
+    "Adebolawa Oparinu": {
+      "Email": "olutobiadebola@gmail.com",
+      "FirstName": "Adebola",
+      "LastName": "Oparinu",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Adebolawa Oparinu"
+    },
+    "Afolabi231": {
+      "Email": "Afollyd@yahoo.com",
+      "FirstName": "Mutiu",
+      "LastName": "Akorede",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Afolabi231"
+    },
+    "Amanda": {
+      "Email": "Patricksamanda01@gmail.com",
+      "FirstName": "Amanda",
+      "LastName": "Patricks",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Amanda"
+    },
+    "Archieeszn": {
+      "Email": "Miztherpresh19@gmail.com",
+      "FirstName": "Precious",
+      "LastName": "Ofodili",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Archieeszn"
+    },
+    "Ashigwure": {
+      "Email": "ashigwurejoshua@gmail.com",
+      "FirstName": "Ashigwure",
+      "LastName": "Joshua",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ashigwure"
+    },
+    "Ayoe": {
+      "Email": "wisdomegba@gmail.com",
+      "FirstName": "Wisdom",
+      "LastName": "Egba",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ayoe"
+    },
+    "Book formatting": {
+      "Email": "bookformatter77@gmail.com",
+      "FirstName": "Aniekpeno",
+      "LastName": "Emmanuel",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Book formatting"
+    },
+    "Ceelveer": {
+      "Email": "ceelveer@gmail.com",
+      "FirstName": "sylvia",
+      "LastName": "sylvester",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ceelveer"
+    },
+    "Charlseedem ": {
+      "Email": "charlseedem2017@gmail.com",
+      "First Name": "Charles",
+      "Last Name": "Edem",
+      "Password": "Loveworld1234#",
+      "Phone": "8085776875",
+      "Username": "Charlseedem "
+    },
+    "Christty": {
+      "Email": "udoechristiana273@gmail.com",
+      "First Name": "Christiana ",
+      "Last Name": "Udoe Jacob",
+      "Password": "Peculiar@2022",
+      "Phone": "9718557088",
+      "Username": "Christty"
+    },
+    "Churchilleduce": {
+      "Email": "churchilleduce@gmail.com",
+      "FirstName": "Churchill",
+      "LastName": "Educe",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Churchilleduce"
+    },
+    "Claire MK": {
+      "Email": "clairekangethe@gmail.com",
+      "FirstName": "Claire",
+      "LastName": "Kang'ethe",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Claire MK"
+    },
+    "Cythony": {
+      "Email": "cythonyriches@gmail.com",
+      "FirstName": "Cyrus",
+      "LastName": "Anthony",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Cythony"
+    },
+    "Damilola_J": {
+      "Email": "ibitola.damilola@gmail.com",
+      "FirstName": "Damilola",
+      "LastName": "Ibitola",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Damilola_J"
+    },
+    "Eminent": {
+      "Email": "uteminimoh72@gmail.com",
+      "FirstName": "Utip",
+      "LastName": "Eminimoh",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Eminent"
+    },
+    "Emy": {
+      "Email": "eminencemaro@yahoo.com",
+      "FirstName": "Eminence",
+      "LastName": "Ikpase",
+      "Password": "People01@",
+      "PhoneNoNo": "0554378433",
+      "Username": "Emy"
+    },
+    "Favvy": {
+      "Email": "favourejikeme2513@gmail.com",
+      "FirstName": "Favour",
+      "LastName": "Ejikeme",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Favvy"
+    },
+    "Gifty": {
+      "Email": "ojonogechagift@gmail.com",
+      "FirstName": "John",
+      "LastName": "Gift",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Gifty"
+    },
+    "Goodwille": {
+      "Email": "egoodwille@gmail.com",
+      "FirstName": "Simon",
+      "LastName": "Nwoke",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Goodwille"
+    },
+    "HopeD": {
+      "Email": "hopedagogo24@gmail.com",
+      "FirstName": "Hope",
+      "LastName": "Dagogo",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "HopeD"
+    },
+    "Howarduanzekin": {
+      "Email": "Huanzekin@gmail.com",
+      "FirstName": "Howard",
+      "LastName": "Uanzekin",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Howarduanzekin"
+    },
+    "Iamhidayyah": {
+      "Email": "bamidelehidayatullah59@gmail.com",
+      "FirstName": "Hidayatullah",
+      "LastName": "Bamidele",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Iamhidayyah"
+    },
+    "Israel": {
+      "Email": "israelinnocent12@gmail.com",
+      "FirstName": "Israel",
+      "LastName": "Innocent",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Israel"
+    },
+    "Jadensempaya": {
+      "Email": "jadensempaya@gmail.com",
+      "FirstName": "Joseph",
+      "LastName": "Jaden",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Jadensempaya"
+    },
+    "Jeremiahlat": {
+      "Email": "jeremiahlat@gmail.com",
+      "FirstName": "Jeremiah",
+      "LastName": "Lateef",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Jeremiahlat"
+    },
+    "John": {
+      "Email": "Waihenyajohn68@gmail.cim",
+      "FirstName": "Waihenya",
+      "LastName": "Kibe",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "John"
+    },
+    "Johny": {
+      "Email": "Waihenyajohn68@gmail.com",
+      "FirstName": "Waihenya",
+      "LastName": "Kibe",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Johny"
+    },
+    "Joji": {
+      "Email": "Joyadams8086@gmail.com",
+      "FirstName": "Joy",
+      "LastName": "Adamu",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Joji"
+    },
+    "Jumobi": {
+      "Email": "akinyemitibimi@gmail.com",
+      "FirstName": "Simbi",
+      "LastName": "Akinyemi",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Jumobi"
+    },
+    "Kate": {
+      "Email": "Katenwaze@gmail.com",
+      "FirstName": "Kate",
+      "LastName": "Nwaze",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Kate"
+    },
+    "Kingz": {
+      "Email": "obot.kingsley23@gmail.com",
+      "FirstName": "Ubong",
+      "LastName": "Obot",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Kingz"
+    },
+    "Laurence0822": {
+      "Email": "laurenceangelobatu@gmail.com",
+      "FirstName": "Laurence",
+      "LastName": "Angelo",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Laurence0822"
+    },
+    "Ledapro": {
+      "Email": "kentudosen@gmail.com",
+      "FirstName": "Kent",
+      "LastName": "Udosen",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ledapro"
+    },
+    "Luu": {
+      "Email": "luunjoku@gmail.com",
+      "FirstName": "Oluchi",
+      "LastName": "Njoku",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Luu"
+    },
+    "Maro92": {
+      "Email": "Marouzezi@gmail.com",
+      "FirstName": "Maro",
+      "LastName": "Ochegbe",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Maro92"
+    },
+    "Mede24": {
+      "Email": "Osamedeomobude@gmail.com",
+      "FirstName": "Abraham",
+      "LastName": "Omobude",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Mede24"
+    },
+    "Michael": {
+      "Email": "michaelochegbe@gmail.com",
+      "FirstName": "Ferguson",
+      "LastName": "",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Michael"
+    },
+    "Milemba": {
+      "Email": "khatili_lennox@yahoo.com",
+      "FirstName": "Lennox",
+      "LastName": "Khatili",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Milemba"
+    },
+    "Mr_mike": {
+      "Email": "Ogbonnamichael68@gmail.com",
+      "FirstName": "Michael",
+      "LastName": "Ogbonna",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Mr_mike"
+    },
+    "Ochayi": {
+      "Email": "ujorsimon1@gmail.com",
+      "FirstName": "Simon",
+      "LastName": "Ujor",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ochayi"
+    },
+    "Ozi": {
+      "Email": "ozisadiqkasai@gmail.com",
+      "FirstName": "ozi",
+      "LastName": "Sadiq-Kasai",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ozi"
+    },
+    "Peace": {
+      "Email": "peacefashina@gmail.com",
+      "FirstName": "Peace",
+      "LastName": "Fashina",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Peace"
+    },
+    "Prisca29": {
+      "Email": "chiamakaprisca64@gmail.com",
+      "FirstName": "Chiamaka",
+      "LastName": "Prisca",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Prisca29"
+    },
+    "Progress": {
+      "Email": "Definitefrancis@gmail.com",
+      "FirstName": "Francis",
+      "LastName": "Odiachi",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Progress"
+    },
+    "Ruthie": {
+      "Email": "ruthodii26@gmail.com",
+      "FirstName": "Ruth",
+      "LastName": "Odii",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Ruthie"
+    },
+    "Samdali001": {
+      "Email": "Samdali432@yahoo.com",
+      "FirstName": "Samuel",
+      "LastName": "Ali",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Samdali001"
+    },
+    "Sannie": {
+      "Email": "arogomargaret17@gmail.com",
+      "FirstName": "Margaret",
+      "LastName": "Arogo",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Sannie"
+    },
+    "Sathwik": {
+      "Email": "sathwikadha@gmail.com",
+      "FirstName": "Sathwik",
+      "LastName": "Adha",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Sathwik"
+    },
+    "Simbi": {
+      "Email": "akinyemisimbi@gmail.com",
+      "FirstName": "Simbi",
+      "LastName": "Akinyemi",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Simbi"
+    },
+    "Tobaizon": {
+      "Email": "oluwatobilobasaula@gmail.com",
+      "FirstName": "Tobiloba",
+      "LastName": "Saula",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Tobaizon"
+    },
+    "Tobz": {
+      "Email": "saulatobilobastephen@gmail.com",
+      "FirstName": "Tobiloba",
+      "LastName": "Saula",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Tobz"
+    },
+    "Uduak Bassey": {
+      "Email": "uduakbassey736@gmail.com",
+      "FirstName": "Uduak",
+      "LastName": "Bassey",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Uduak Bassey"
+    },
+    "Yatt": {
+      "Email": "sopqdeolansile@gmail.com",
+      "FirstName": "SHERIFFDEEN",
+      "LastName": "SOPADE",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Yatt"
+    },
+    "Yatt007": {
+      "Email": "sopadeolansile@gmail.com",
+      "FirstName": "SHERIFFDEEN",
+      "LastName": "SOPADE",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "Yatt007"
+    },
+    "aniket1111": {
+      "Email": "aniketsomkuwar1101@gmail.com",
+      "FirstName": "Aniket",
+      "LastName": "somkuwar",
+      "Password": "U2FsdGVkX186BAT10K/pxttPiz2o1ZMIoiPzzQucmFk=",
+      "PhoneNo": "+917350979341",
+      "Username": "aniket1111"
+    },
+    "billabwoy": {
+      "Email": "koakinyemi10@gmail.com",
+      "FirstName": "Segun",
+      "LastName": "Akinyemi",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "billabwoy"
+    },
+    "femidavid": {
+      "Email": "femidavid2021@gmail.com",
+      "FirstName": "Ayomide",
+      "LastName": "Olufemi",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "femidavid"
+    },
+    "focus123": {
+      "Email": "anieksemma2013@gmail.com",
+      "FirstName": "Aniekpeno",
+      "LastName": "Emmanuel",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "focus123"
+    },
+    "j_egbeleke": {
+      "Email": "skyefm01@gmail.com",
+      "FirstName": "John",
+      "LastName": "Egbeleke",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "j_egbeleke"
+    },
+    "janeenyinna": {
+      "Email": "janeenyinna@gmail.com",
+      "FirstName": "Jane",
+      "LastName": "Enyinna",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "janeenyinna"
+    },
+    "joyogah": {
+      "Email": "onotseogah@gmail.com",
+      "FirstName": "Joy",
+      "LastName": "Ogah",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "joyogah"
+    },
+    "kathare": {
+      "Email": "kemukamart@gmail.com",
+      "FirstName": "Kelvin",
+      "LastName": "kathare",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "kathare"
+    },
+    "kingz": {
+      "Email": "obot.kingsley23@gmail.com",
+      "FirstName": "Ubong",
+      "LastName": "Obot",
+      "Password": "Kingsworld@1234",
+      "PhoneNoNo": "8102984363",
+      "Username": "kingz"
+    },
+    "nihal@sakharkar": {
+      "Email": "sakharkar_snihal.et@ghrce.raisoni.net",
+      "FirstName": "Nihal",
+      "LastName": "Sakharkar",
+      "Password": "Nps16@6917",
+      "PhoneNoNo": "7276509606",
+      "Username": "nihal@sakharkar"
+    },
+    "ninja": {
+      "Email": "ninjaoshokhai@gmail.com",
+      "FirstName": "Victory",
+      "LastName": "Okhormhe",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "ninja"
+    },
+    "priscillah": {
+      "Email": "rukungupriscillah@gmail.com",
+      "FirstName": "Priscillah",
+      "LastName": "Njeri",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "priscillah"
+    },
+    "rachel kaari": {
+      "Email": "rachelkaari20@gmail.com",
+      "FirstName": "Rachel",
+      "LastName": "Marete",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "rachel kaari"
+    },
+    "rootan": {
+      "Email": "rootsmundu@gmail.com",
+      "FirstName": "JOSEPH",
+      "LastName": "WARUIRU",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "rootan"
+    },
+    "samdali": {
+      "Email": "Samdali432@yahoo.ckm",
+      "FirstName": "Samuel",
+      "LastName": "Ali",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "samdali"
+    },
+    "ty2050": {
+      "Email": "tayo4lyf@gmail.com",
+      "FirstName": "Olatayo",
+      "LastName": "Omoniyi",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "ty2050"
+    },
+    "ubiodee": {
+      "Email": "ubboyoyo@yahoo.com",
+      "FirstName": "Ubio",
+      "LastName": "Obu",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "ubiodee"
+    },
+    "vickasmit": {
+      "Email": "vickasmith7@gmail.com",
+      "FirstName": "Victor",
+      "LastName": "Etim",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "vickasmit"
+    },
+    "voke": {
+      "Email": "ssparkle21@gmail.com",
+      "FirstName": "Kelvin",
+      "LastName": "kathare",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "voke"
+    },
+    "worrior": {
+      "Email": "rootsmundu@yahoo.com",
+      "FirstName": "JOSEPH",
+      "LastName": "WARUIRU",
+      "Password": "Password@123",
+      "PhoneNo": "",
+      "Username": "worrior"
+    },
+    "xxxx11": {
+      "Email": "xxxx@gmail.com",
+      "FirstName": "xxxx",
+      "LastName": "xxxx",
+      "Password": "U2FsdGVkX19EOYTQsumn1E6vgNRJOp+1UtoRBxwSj68=",
+      "PhoneNo": "+917350979341",
+      "Username": "xxxx11"
+    },
+    "yash123": {
+      "Email": "yash@gmail.com",
+      "FirstName": "yash",
+      "LastName": "ambekar",
+      "Password": "Password@123",
+      "PhoneNo": "7537537537",
+      "Username": "yash123"
+    },
+    "sejaltelang03": {
+      "Email": "telangsejal17@gmail.com",
+      "First Name": "sejal",
+      "Last Name": "telang",
+      "Password": "Sejal@1703",
+      "Phone": "9975381731",
+      "Username": "sejaltelang03"
+    }
+  }
+}

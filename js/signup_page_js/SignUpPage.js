@@ -41,10 +41,6 @@ forgetpassword.addEventListener("click", () => {
 // end of switiching forms
 
 // validation functions with regex
-const isPhonenumber = (phoneno) => {
-  var re = /^\d{10}$/;
-  return re.test(phoneno);
-};
 
 const isBetween = (length, min, max) =>
   length < min || length > max ? false : true;
@@ -74,8 +70,6 @@ const passwordEl = document.querySelector("#password");
 const username = document.querySelector("#Username");
 const confirmPasswordEl = document.querySelector("#password-signup2");
 
-
-
 // for signup check
 const SignUpForm = document.querySelector("#sumbitbtn");
 
@@ -86,36 +80,21 @@ SignUpForm.addEventListener("click", function (e) {
   // validate forms
   let isEmailValid = checkEmail(),
     isPasswordValid = checkPassword(),
-    isConfirmPasswordValid = checkConfirmPassword(),
-    isPhoneno = isPhonenoCheck();
+    isConfirmPasswordValid = checkConfirmPassword();
 
-  let isFormValid =
-    isEmailValid && isPasswordValid && isConfirmPasswordValid && isPhoneno;
+  let isFormValid = isEmailValid && isPasswordValid && isConfirmPasswordValid;
   // submit to the server if the form is valid
-  if(username.value.trim().includes(".")){
-    alert("remove dot")
-  }else{
-    if (!isFormValid){
+  if (username.value.trim().includes(".")) {
+    alert("remove dot");
+  } else {
+    if (!isFormValid) {
       sessionStorage.setItem("formstatus", "incorrect");
-   
-    }else{
+    } else {
       sessionStorage.setItem("formstatus", "correct");
     }
   }
- 
-
 });
 
-const isPhonenoCheck = () => {
-  let valid = false;
-  const phone = phoneEl.value.trim();
-  if (!isPhonenumber(phone)) {
-    showError(phoneEl, "phone number is not valid.");
-  } else {
-    valid = true;
-  }
-  return valid;
-};
 const checkEmail = () => {
   let valid = false;
   const email = emailEl.value.trim();
@@ -148,7 +127,7 @@ const checkConfirmPassword = () => {
   // check confirm password
   const confirmPassword = confirmPasswordEl.value.trim();
   const password = passwordEl.value.trim();
-  
+
   if (password !== confirmPassword) {
     showError(confirmPasswordEl, "Confirm password does not match");
   } else {
@@ -172,8 +151,4 @@ const isEmailOrPhoneCheck = () => {
     showError(valid, "Email or phone is incorrect");
     return (valid = false);
   }
-
 };
-
-
-
