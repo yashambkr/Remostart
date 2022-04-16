@@ -244,7 +244,8 @@
           );
           onValue(starCountRef, (user_snap) => {
             let dbpass = decPass(user_snap.val());
-
+            sessionStorage.setItem("enc", dbpass);
+            sessionStorage.setItem("original pass", user_snap.val());
             if (passwordSignin.value === dbpass) {
 
               transferJSON(snapshot.val());
@@ -273,9 +274,10 @@
           alert("account do not exist!", "warning", 'forget-password');
 
         } else {
-          set(ref(db, "User/" + forgetUsername + "/Password"), "Password@123")
+          set(ref(db, "User/" + forgetUsername + "/Password"), "U2FsdGVkX18+NDEz2LXUhrYaQ7dlmmjDDZ59Qlxa5uE=")
             .then(() => {
               alert(
+                // "Your new password is U2FsdGVkX18+NDEz2LXUhrYaQ7dlmmjDDZ59Qlxa5uE=",
                 "Your new password is Password@123",
                 "success",
                 "forget-password"
@@ -303,7 +305,7 @@
     function decPass(dbpass) {
 
       var pass12 = CryptoJS.AES.decrypt(dbpass, passwordSignin.value).toString(CryptoJS.enc.Utf8);
-      console.log(pass12);
+     
       return pass12.toString(CryptoJS.enc.Utf8);
     }
 
