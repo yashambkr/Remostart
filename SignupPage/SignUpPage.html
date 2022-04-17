@@ -244,8 +244,7 @@
           );
           onValue(starCountRef, (user_snap) => {
             let dbpass = decPass(user_snap.val());
-            sessionStorage.setItem("enc", dbpass);
-            sessionStorage.setItem("original pass", user_snap.val());
+            
             if (passwordSignin.value === dbpass) {
 
               transferJSON(snapshot.val());
