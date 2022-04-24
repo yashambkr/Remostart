@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="../css/profile_page_css/sidebar.css" />
 	<link rel="stylesheet" href="../css/Footer/footer.css">
 	<link rel="shortcut icon" href="../assets/logo/Remo-icon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
@@ -41,7 +43,7 @@
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase" id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">My
+							<a class="dropdown-item" href="../DashboardPage/DashboardPage.html" > My
 								Profile</a><a class="dropdown-item" dis>No of Jobs <span
 									class="badge  rounded-pill bg-dark ">0</span></a><a class="dropdown-item"
 								id="logout-link">Logout</a>
@@ -52,81 +54,17 @@
 			</div>
 		</div>
 	</nav>
-	<div class="input-group"></div>
-	<div class="wrapper">
-		<!-- Sidebar Holder -->
-		<nav id="sidebar">
-			<div class="sidebar-header">
-				<h3 style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 5px;">My
-					Account</h3>
-			</div>
 
-			<ul class="list-unstyled components">
-				<li class="active mb-0"><a href="./Setting.MyProfile.html"
-						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
-						My Profile</a></li>
+<!-- page content -->
 
-				<!-- <li><a href="./Setting.Orders.html" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
+	<div class="container" id="page-container">
+		<form action="" class="search-bar">
+			<input type="search" name="search" placeholder="Search For Opportunity" class="search">
+			<button class="search-button"><img src="../assets/illustrations/search-symbol.png" alt="not found" id="search-image"></button>
+		</form>
 
-						Orders </a></li> -->
-				<!-- <li><a href="./Setting.Address.html" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
-
-						Address </a></li> -->
-				<li><a id="logout-btn" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
-
-						Logout </a></li>
-			</ul>
-		</nav>
-
-		<!-- Page Content Holder -->
-		<div class="col-md-7 " id="content">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button id="sidebarCollapse" class="navbar-btn">
-							<i class="fas fa-angle-double-left"></i> <span></span>
-						</button>
-					</div>
-				</div>
-				<div class="col-md-12  border-right container">
-					<div class="p-3 py-5">
-						<div class="d-flex justify-content-between align-items-center mb-3">
-							<h6 class="text-right "
-								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Stay tuned for
-								opportunities</h6>
-						</div>
-						<div class="row g-3 mt-2">
-							<div class="col-md-5  col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">First Name</label><input id="FirstName" type="text"
-									class="form-control mb-3" placeholder="first name" value>
-							</div>
-							<div class="col-md-5 col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Last Name</label><input id="LastName" type="text"
-									class="form-control mb-3" value="Somkuwar" placeholder="Last Name">
-							</div>
-							<div class="col-md-3  col-auto col-sm-12 ">
-								<label class="labels fw-bold mb-2">PhoneNo</label><input id="PhoneNo" type="text"
-									class="form-control mb-3" placeholder="PhoneNo" value="+917350979341">
-							</div>
-							<div class="col-md-3  col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Email</label><input id="Email" type="text"
-									class="form-control mb-3" placeholder="Email" value="2001saniket@gmail.com">
-							</div>
-							<div class="col-md-3 col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Password</label><input id="Password" type="text"
-									class="form-control mb-3" placeholder="Password" value="">
-							</div>
-						</div>
-
-						<!-- <div class="mt-5 text-center">
-							<button class="btn btn-dark rounded-0" type="button">Save</button>
-						</div> -->
-					</div>
-				</div>
-			</nav>
-		</div>
-	</div>
-
+		<p id="message"> Stay tuned for opportunites</p>
+	  </div>
 
 	<footer>
 		<div class="footer_row">
