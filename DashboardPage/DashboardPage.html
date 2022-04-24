@@ -5,25 +5,31 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 	<title>Remostart | Profile</title>
-	
+	<link rel="shortcut icon" href="../assets/logo/Remo-icon.ico" type="image/x-icon">
+
+	<!-- cdn -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
 		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+		<!-- google font cdn Bigshoulder -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800&display=swap" rel="stylesheet" />
 
-	<link rel="stylesheet" href="../css/profile_page_css/Navigation-Clean.css" />
-	<link rel="stylesheet" href="../css/profile_page_css/sidebar-1.css" />
-	<link rel="stylesheet" href="../css/profile_page_css/sidebar.css" />
-	<link rel="stylesheet" href="../css/Footer/footer.css">
-	<link rel="shortcut icon" href="../assets/logo/Remo-icon.ico" type="image/x-icon">
 
-	<link rel="stylesheet" href="../css/dashboard.css">
+	<!-- css files  -->
+	<link rel="stylesheet" href="../css/profile_page_css/Navigation-Clean.css" />
+
+	<link rel="stylesheet" href="../css/Footer/footer.css">
+	
+
+	<link rel="stylesheet" href="../css/Dashboard_page_css/dashboard.css">
 </head>
 
 <body>
@@ -43,13 +49,13 @@
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase" id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="../DashboardPage/DashboardPage.html" > My
+							<a class="dropdown-item" href="../ProfilePage/Setting.MyProfile.html" > My
 								Profile</a><a class="dropdown-item" dis>No of Jobs <span
 									class="badge  rounded-pill bg-dark ">0</span></a><a class="dropdown-item"
 								id="logout-link">Logout</a>
 						</div>
 					</li>
-					<!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> CART</a></li> -->
+					
 				</ul>
 			</div>
 		</div>
@@ -60,7 +66,7 @@
 	<div class="container" id="page-container">
 		<form action="" class="search-bar">
 			<input type="search" name="search" placeholder="Search For Opportunity" class="search">
-			<button class="search-button"><img src="../assets/illustrations/search-symbol.png" alt="not found" id="search-image"></button>
+			<button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</form>
 
 		<p id="message"> Stay tuned for opportunites</p>
@@ -125,11 +131,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
 		document.getElementById('logout-link').addEventListener('click', Signout);
-		document.getElementById('logout-btn').addEventListener('click', Signout);
+		
 
 		let Username = JSON.parse(sessionStorage.getItem('user'));
 
-
+		document.getElementById('name-text').innerText = "HI " + Username['FirstName'];
 
 
 		function Signout() {
@@ -138,7 +144,7 @@
 			window.location = "../index.html";
 
 		}
-		document.getElementById('name-text').innerText = "HI " + Username['FirstName'];
+		
 
 	</script>
 

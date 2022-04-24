@@ -137,6 +137,8 @@
       </section>
     </div>
   </div>
+
+
   <script src="../js/signup_page_js/SignUpPage.js"></script>
   <!--===== BOOTSTRAP .JS =====-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -151,7 +153,7 @@
 
   <!--Firebase Libraries-->
 
-  <!--===== MAIN JS =====-->
+
 
   <script type="module">
     // Import the functions you need from the SDKs you need
@@ -244,12 +246,12 @@
           );
           onValue(starCountRef, (user_snap) => {
             let dbpass = decPass(user_snap.val());
-            
+
             if (passwordSignin.value === dbpass) {
 
               transferJSON(snapshot.val());
 
-              window.location = "../ProfilePage/Setting.MyProfile.html";
+              window.location = "../DashboardPage/DashboardPage.html";
             } else {
               alert("Incorrect Password", "warning", "login-in");
             }
@@ -304,7 +306,7 @@
     function decPass(dbpass) {
 
       var pass12 = CryptoJS.AES.decrypt(dbpass, passwordSignin.value).toString(CryptoJS.enc.Utf8);
-     
+
       return pass12.toString(CryptoJS.enc.Utf8);
     }
 

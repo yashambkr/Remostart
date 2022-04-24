@@ -34,20 +34,9 @@ a {
 
 #heading_image {
   width: 70rem;
-  /* animation: move 3s infinite; */
+
 }
-/* 
-@keyframes move {
-  0% {
-    padding-top: 30px;
-  }
-  50% {
-    padding-top: 0px;
-  }
-  100% {
-    padding-top: 30px;
-  }
-} */
+
 
 /* media queries */
 @media (max-width: 480px) {

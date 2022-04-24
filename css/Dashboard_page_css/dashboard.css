@@ -1,0 +1,47 @@
+#page-container {
+  background-color: #eff8ff;
+  margin-top: 50px;
+  margin-bottom: 250px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-weight: 500;
+  font-family: "Big Shoulders Text", cursive;
+  box-shadow: 5px 5px 5px #d4cfcf;
+}
+.search-bar {
+  padding-top: 2px;
+}
+.search-bar::placeholder {
+  font-size: 20px;
+  padding-left: 15px;
+  color: black;
+  font-weight: 600;font-weight: 500;
+  font-family: "Big Shoulders Text", cursive;
+}
+
+#message {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Big Shoulders Text", cursive;
+  color: black;
+  font-weight: 500;
+  padding-top: 90px;
+  padding-left: 15px;
+}
+.search {
+  color: black;
+}
+
+@media (max-width: 412px) {
+  .search {
+    font-size: 15px;
+  }
+  #message {
+    padding-top: 10px;
+    padding-left: 15px;
+    font-size: 17px;
+  }
+  ::placeholder {
+    font-size: 17px;
+  }
+}

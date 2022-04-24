@@ -40,6 +40,10 @@ forgetpassword.addEventListener("click", () => {
 });
 // end of switiching forms
 
+
+
+
+
 // validation functions with regex
 
 const isBetween = (length, min, max) =>
@@ -60,6 +64,11 @@ const isPasswordSecure = (password) => {
 const showError = (input, message) => {
   alert(message);
 };
+
+
+
+
+
 
 // calling validation functions for signup
 const fnameEl = document.querySelector("#Fname");
@@ -136,6 +145,13 @@ const checkConfirmPassword = () => {
 
   return valid;
 };
+
+
+
+
+
+
+
 
 // for signin
 const emailorphoneEl = document.querySelector("#emailorphone");
