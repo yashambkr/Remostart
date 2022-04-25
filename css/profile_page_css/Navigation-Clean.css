@@ -26,9 +26,7 @@
   color: #ffffff;
 }
 
-.navigation-clean .navbar-toggler {
-  border-color: rgb(255, 255, 255);
-}
+
 
 .navigation-clean .navbar-toggler:hover,
 .navigation-clean .navbar-toggler:focus {

@@ -1,12 +1,12 @@
 #page-container {
-  background-color: #eff8ff;
+  background-color: #ffffff;
   margin-top: 50px;
   margin-bottom: 250px;
   padding-top: 50px;
   padding-bottom: 50px;
   font-weight: 500;
   font-family: "Big Shoulders Text", cursive;
-  box-shadow: 5px 5px 5px #d4cfcf;
+  box-shadow: 5px 5px 5px #f5f0f0;
 }
 .search-bar {
   padding-top: 2px;
