@@ -31,18 +31,17 @@
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-user icon"></i></span>
-          <input type="text" id="Username-in" name="Username-in" placeholder="Username" required
-            class="input form-control" />
+          <input required type="text" id="Email-in" name="Email-in" placeholder="Email" class="input form-control" />
         </div>
 
         <div class="ms-0 me-0 box input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-lock-alt icon"></i></span>
-          <input id="password-signin" type="password" name="password" placeholder="Password" minlength="4" required
+          <input required id="password-signin" type="password" name="password" placeholder="Password" minlength="4" required
             class="input form-control mb-0" />
         </div>
         <div>
-          <input type="checkbox" name="rememberMe" value="Y" /> Remember me
+          <input required type="checkbox" name="rememberMe" value="Y" /> Remember me
         </div>
         <div>
           <a href="#" class="forgot" id="forgot-button">Forgot password?</a>
@@ -68,47 +67,47 @@
               <i class="bx bx-user icon"></i>
             </span>
 
-            <input type="text" placeholder="First name" required class="input form-control" id="Fname" name="fname" />
+            <input required type="text" placeholder="First name" class="input form-control" id="Fname" name="fname" />
           </div>
           <div class="box input-group flex-nowrap ms-0 me-0">
             <span class="input-group-text" id="addon-wrapping">
               <i class="bx bx-user icon"></i>
             </span>
-            <input type="text" placeholder="Last name" required class="input form-control" id="Lname" name="lname" />
+            <input required type="text" placeholder="Last name" class="input form-control" id="Lname" name="lname" />
           </div>
         </div>
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-at icon"></i>
           </span>
-          <input type="text" placeholder="Username" required class="input form-control" id="Username" name="Username" />
+          <input required type="text" placeholder="Username" class="input form-control" id="Username" name="Username" />
         </div>
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-at icon"></i>
           </span>
-          <input type="text" placeholder="Email" required class="input form-control" id="email" name="email" />
+          <input required type="text" placeholder="Email" class="input form-control" id="email" name="email" />
         </div>
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-phone-call icon"></i>
           </span>
 
-          <input type="text" placeholder="Phone" required class="input form-control" id="phone" name="phone" />
+          <input required type="text" placeholder="Phone"  class="input form-control" id="phone" name="phone" />
         </div>
 
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-lock-alt icon"></i>
           </span>
-          <input type="password" minlength="6" placeholder="Password" required class="input form-control" id="password"
+          <input required type="password" minlength="6" placeholder="Password" class="input form-control" id="password"
             name="password" />
         </div>
         <div class="box input-group flex-nowrap ms-0 me-0">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-lock-alt icon"></i>
           </span>
-          <input type="password" minlength="6" placeholder="Re - Type Password" required class="input form-control"
+          <input required type="password" minlength="6" placeholder="Re - Type Password" class="input form-control"
             id="password-signup2" name="Password2" />
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
@@ -126,8 +125,8 @@
       <section action="" class="form create none" id="forget-password">
         <h3 class="title">Forgot Password</h3>
         <div class="box input-group ms-0 me-0">
-          <input type="text" id="enter-username" placeholder="Enter your username" class="input form-control" id="email"
-            name="email" />
+          <input required type="text" id="reset-email" placeholder="Enter your email" class="input form-control"
+            id="Forgot_email" name="email" />
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
           <button type="submit" id="resetbtn" class="btn text-white">
@@ -137,7 +136,6 @@
       </section>
     </div>
   </div>
-
 
   <script src="../js/signup_page_js/SignUpPage.js"></script>
   <!--===== BOOTSTRAP .JS =====-->
@@ -153,162 +151,142 @@
 
   <!--Firebase Libraries-->
 
-
-
   <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCecdzObF4mPIJV4TMa4uoLvrnugByyriQ",
-      authDomain: "remestart-11111.firebaseapp.com",
-      databaseURL: "https://remestart-11111-default-rtdb.firebaseio.com",
-      projectId: "remestart-11111",
-      storageBucket: "remestart-11111.appspot.com",
-      messagingSenderId: "197894692203",
-      appId: "1:197894692203:web:62ff61e9b36cdbddfd002e",
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
     import {
-      getDatabase,
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,sendPasswordResetEmail,onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import {
       ref,
       set,
       child,
       get,
       onValue,
     } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-    // ------------------Reading Data------------
-    const db = getDatabase();
+    // this is credentials 
+    const firebaseApp = initializeApp({
+      apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
+      authDomain: "remostart-daf09.firebaseapp.com",
+      projectId: "remostart-daf09",
+      storageBucket: "remostart-daf09.appspot.com",
+      messagingSenderId: "1072762916132",
+      appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
+    });
+    const database = getDatabase(firebaseApp);
+    const auth = getAuth(firebaseApp);
 
-    //  register user
-    var Fname, Lname, Email, PhoneNo, Password, Username;
-
-    Fname = document.getElementById("Fname");
-    Lname = document.getElementById("Lname");
-    Email = document.getElementById("email");
-    PhoneNo = document.getElementById("phone");
-    Password = document.getElementById("password");
-    Username = document.getElementById("Username");
+    // signUP function
     var sumbitbtn = document
       .getElementById("sumbitbtn")
-      .addEventListener("click", RegisterUser);
-    function RegisterUser() {
-      const dbref = ref(db);
-      var newUserName = Username.value;
+      .addEventListener("click", (e) => {
+        var Fname, Lname, Email, PhoneNo, password, Username;
 
-      if (sessionStorage.getItem("formstatus") == "incorrect") {
-        alert("data incorrect");
-      } else {
-        get(child(dbref, "User/" + newUserName)).then((snapshot) => {
-          if (snapshot.exists()) {
-            alert("account already exist!", "warning", "login-up");
-          } else {
-            set(ref(db, "User/" + newUserName), {
-              FirstName: Fname.value,
-              LastName: Lname.value,
-              Email: Email.value,
-              PhoneNo: PhoneNo.value,
-              Password: encPass(),
-              Username: Username.value,
-            })
-              .then(() => {
-                alert("Registered Successfully", "success", "login-up");
-                setTimeout(function () {
-                  //your code to be executed after 1 second
-                  window.location = "../SignupPage/SignUpPage.html";
-                }, 2000);
-              })
-              .catch((error) => {
-                alert(error, "warning", "login-up");
-              });
-          }
-        });
-      }
-    }
+        Fname = document.getElementById("Fname").value;
+        Lname = document.getElementById("Lname").value;
+        PhoneNo = document.getElementById("phone").value;
+        Username = document.getElementById("Username").value;
+        Email = document.getElementById("email").value;
+        password = document.getElementById("password").value;
 
-    // login page
-    var Username_in = document.getElementById("Username-in");
-    var passwordSignin = document.getElementById("password-signin");
+        createUserWithEmailAndPassword(auth, Email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            set(ref(database, "User/" + user.uid), {
+              FirstName: Fname,
+              LastName: Lname,
+              Email: Email,
+              PhoneNo: PhoneNo,
+              Username: Username,
+            });
+            alert("Registered Successfully", "success", "login-up");
+            setTimeout(function () {
+              window.location = "../SignupPage/SignUpPage.html";
+            }, 2000);
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorCode, "warning", "login-up");
+          });
+      });
+
+    // signIN function
     var signinbtn = document
       .getElementById("signinbtn")
-      .addEventListener("click", AuthenticateUser);
-    function AuthenticateUser() {
-      const dbref = ref(db);
-      get(child(dbref, "User/" + Username_in.value)).then((snapshot) => {
-        if (snapshot.exists()) {
+      .addEventListener("click", (e) => {
+        var Email = document.getElementById("Email-in").value;
+        var password = document.getElementById("password-signin").value;
 
-          const starCountRef = ref(
-            db,
-            "User/" + Username_in.value + "/Password"
-          );
-          onValue(starCountRef, (user_snap) => {
-            let dbpass = decPass(user_snap.val());
-
-            if (passwordSignin.value === dbpass) {
-
-              transferJSON(snapshot.val());
-
-              window.location = "../ProfilePage/Setting.MyProfile.html";
-            } else {
-              alert("Incorrect Password", "warning", "login-in");
-            }
+        signInWithEmailAndPassword(auth, Email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            window.location = "../ProfilePage/Setting.MyProfile.html";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorCode.slice(5), "warning", "login-in");
+            // using slice because it is returing auth/invalid-username,etc .......so we are slicing {auth} part from string
           });
-        } else {
-          alert("account does not exist!", "danger", "login-in");
-        }
       });
-    }
 
-    // forget password
-    var forgetbtn = document
-      .getElementById("resetbtn")
-      .addEventListener("click", resetPassword);
 
-    function resetPassword() {
-      var forgetUsername = document.getElementById("enter-username").value;
-      const dbref = ref(db);
-      get(child(dbref, "User/" + forgetUsername)).then((snapshot) => {
-        if (!snapshot.exists()) {
-          alert("account do not exist!", "warning", 'forget-password');
 
-        } else {
-          set(ref(db, "User/" + forgetUsername + "/Password"), "U2FsdGVkX18+NDEz2LXUhrYaQ7dlmmjDDZ59Qlxa5uE=")
-            .then(() => {
-              alert(
-                // "Your new password is U2FsdGVkX18+NDEz2LXUhrYaQ7dlmmjDDZ59Qlxa5uE=",
-                "Your new password is Password@123",
-                "success",
-                "forget-password"
-              );
-              setTimeout(function () {
-                window.location = "../SignupPage/SignUpPage.html";
-              }, 3000);
-            })
-            .catch((error) => {
-              alert(error, "warning");
-            });
-        }
+
+    //  forgot password function
+
+    var resetPassword = document.getElementById("resetbtn").addEventListener("click", (e) => {
+
+
+      var email = document.getElementById("reset-email").value;
+     
+
+      if (email != "") {
+
+        sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        alert("Password reset link has been sent to your email", "success", "forget-password");
+
+        
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorCode.slice(5), "danger", "forget-password");
+        // ..
       });
-    }
+      } else {
+
+        alert("please enter your email", "warning", "forget-password");
+      }
+      document.getElementById("reset-email").value = "";
+        // empty the placeholder
 
 
-    // encryption function
+    });
+   
 
-    function encPass() {
-      var pass12 = CryptoJS.AES.encrypt(Password.value, Password.value);
-      return pass12.toString();
-    }
+  //  timelog function {time spend by user}
+  // onAuthStateChanged(auth, (user) => {
+  //   const start_time = new Date();
+  //   if (user) {
 
-    // decryption fucntion
-    function decPass(dbpass) {
+  //   } else {
+  //     const end_time = new Date();
+  //     const Time_spend =  Math.round((((end_time-start_time) % 86400000) % 3600000) / 60000);
 
-      var pass12 = CryptoJS.AES.decrypt(dbpass, passwordSignin.value).toString(CryptoJS.enc.Utf8);
+  //     set(ref(database, "User/"+user.uid+"/timelog/"), {
+  //             start_session: start_time,
+  //             end_session:end_time ,
+  //             Time_spent:Time_spend
+  //           });
 
-      return pass12.toString(CryptoJS.enc.Utf8);
-    }
+  //   }
+  //   });
 
     // alert function
     function alert(message, type, btnlink) {
@@ -322,13 +300,13 @@
         '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
 
       alertPlaceholder.append(wrapper);
-    }
 
-    // JSON transfer function
+      // after 3 sec popup is going to disappear
+      setTimeout(() => {
+        wrapper.style.display="none";
+      }, 3000);
 
-    function transferJSON(user) {
-      user = JSON.stringify(user);
-      sessionStorage.setItem("user", user);
+
     }
   </script>
 </body>
