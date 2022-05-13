@@ -37,11 +37,20 @@
 			<a class="navbar-brand text-wrap"
 				style="letter-spacing: 4px; font-weight: 500; font-family: 'Big Shoulders Text', cursive;"><img
 					width="175" src="../assets/logo/Remo-White.png" alt=""></a>
-			<button data-bs-toggle="collapse" class="navbar-toggler" style="color: transparent;" data-bs-target="#navcol-1">
-				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="30" height="30"
-viewBox="0 0 172 172"
-style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M0,25.8v17.2h172v-17.2zM0,77.4v17.2h172v-17.2zM0,129v17.2h172v-17.2z"></path></g></g></svg>
+			<button data-bs-toggle="collapse" class="navbar-toggler" style="color: transparent;"
+				data-bs-target="#navcol-1">
+				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
+					style=" fill:#000000;">
+					<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+						stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+						font-family="none" font-weight="none" font-size="none" text-anchor="none"
+						style="mix-blend-mode: normal">
+						<path d="M0,172v-172h172v172z" fill="none"></path>
+						<g fill="#ffffff">
+							<path d="M0,25.8v17.2h172v-17.2zM0,77.4v17.2h172v-17.2zM0,129v17.2h172v-17.2z"></path>
+						</g>
+					</g>
+				</svg>
 			</button>
 			<div class="collapse navbar-collapse" id="navcol-1">
 				<ul class="navbar-nav ms-auto mt-3">
@@ -195,22 +204,42 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<!-- Bootstrap Js CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-		document.getElementById('logout-link').addEventListener('click', Signout);
-		document.getElementById('logout-btn').addEventListener('click', Signout);
+	<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+		import {
+			getAuth,
+			signOut
+		} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+		const firebaseApp = initializeApp({
+      apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
+      authDomain: "remostart-daf09.firebaseapp.com",
+      projectId: "remostart-daf09",
+      storageBucket: "remostart-daf09.appspot.com",
+      messagingSenderId: "1072762916132",
+      appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
+    });
+  
+    const auth = getAuth(firebaseApp);
 
-		let Username = JSON.parse(sessionStorage.getItem('user'));
+		document.getElementById('logout-link').addEventListener('click',logout);
+		document.getElementById('logout-btn').addEventListener('click',logout);
 
+		
+		
 
-
-
-		function Signout() {
-			sessionStorage.removeItem('user');
-			sessionStorage.removeItem('formstatus');
-			window.location = "../index.html";
-
+		function logout() {
+			const auth = getAuth(firebaseApp);
+			signOut(auth).then(() => {
+				// Sign-out successful.
+				window.location = "../index.html";
+			}).catch((error) => {
+				// An error happened.
+			});
 		}
-		document.getElementById('name-text').innerText = "HI " + Username['FirstName'];
+
+
+
+
 
 	</script>
 
