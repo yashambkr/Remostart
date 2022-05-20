@@ -152,10 +152,6 @@ a[data-toggle="collapse"] {
   font-size: 0.6em;
 } */
 
-a[aria-expanded="true"]::before {
-  content: "\e260";
-}
-
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;

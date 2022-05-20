@@ -16,7 +16,7 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-		<!-- google font cdn Bigshoulder -->
+	<!-- google font cdn Bigshoulder -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet" />
@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="../css/profile_page_css/Navigation-Clean.css" />
 
 	<link rel="stylesheet" href="../css/Footer/footer.css">
-	
+
 
 	<link rel="stylesheet" href="../css/Dashboard_page_css/dashboard.css">
 </head>
@@ -38,12 +38,21 @@
 			<a class="navbar-brand text-wrap"
 				style="letter-spacing: 4px; font-weight: 500; font-family: 'Big Shoulders Text', cursive;"><img
 					width="175" src="../assets/logo/Remo-White.png" alt=""></a>
-					<button data-bs-toggle="collapse" class="navbar-toggler" style="color: transparent;" data-bs-target="#navcol-1">
-						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-		width="30" height="30"
-		viewBox="0 0 172 172"
-		style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M0,25.8v17.2h172v-17.2zM0,77.4v17.2h172v-17.2zM0,129v17.2h172v-17.2z"></path></g></g></svg>
-					</button>
+			<button data-bs-toggle="collapse" class="navbar-toggler" style="color: transparent;"
+				data-bs-target="#navcol-1">
+				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
+					style=" fill:#000000;">
+					<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+						stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+						font-family="none" font-weight="none" font-size="none" text-anchor="none"
+						style="mix-blend-mode: normal">
+						<path d="M0,172v-172h172v172z" fill="none"></path>
+						<g fill="#ffffff">
+							<path d="M0,25.8v17.2h172v-17.2zM0,77.4v17.2h172v-17.2zM0,129v17.2h172v-17.2z"></path>
+						</g>
+					</g>
+				</svg>
+			</button>
 			<div class="collapse navbar-collapse" id="navcol-1">
 				<ul class="navbar-nav ms-auto mt-3">
 
@@ -52,19 +61,19 @@
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase" id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="../ProfilePage/Setting.MyProfile.html" > My
+							<a class="dropdown-item" href="../ProfilePage/Setting.MyProfile.html"> My
 								Profile</a><a class="dropdown-item" dis>No of Jobs <span
 									class="badge  rounded-pill bg-dark ">0</span></a><a class="dropdown-item"
 								id="logout-link">Logout</a>
 						</div>
 					</li>
-					
+
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-<!-- page content -->
+	<!-- page content -->
 
 	<div class="container" id="page-container">
 		<form action="" class="search-bar">
@@ -73,7 +82,7 @@
 		</form>
 
 		<p id="message"> Stay tuned for opportunites</p>
-	  </div>
+	</div>
 
 	<footer>
 		<div class="footer_row">
@@ -134,24 +143,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
 		document.getElementById('logout-link').addEventListener('click', Signout);
-		
 
-		let Username = JSON.parse(sessionStorage.getItem('user'));
-
-		document.getElementById('name-text').innerText = "HI " + Username['FirstName'];
-
-
-		function Signout() {
-			sessionStorage.removeItem('user');
-			sessionStorage.removeItem('formstatus');
-			window.location = "../index.html";
-
-		}
-		
 
 	</script>
 
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -39,5 +39,3 @@ forgetpassword.addEventListener("click", () => {
   forgot.classList.toggle("none");
 });
 // end of switiching forms
-
-

@@ -182,16 +182,17 @@
     var sumbitbtn = document
       .getElementById("sumbitbtn")
       .addEventListener("click", (e) => {
-        var Fname, Lname, Email, PhoneNo, password, Username;
+        var Fname, Lname, Email, PhoneNo, password1, password2,Username;
 
         Fname = document.getElementById("Fname").value;
         Lname = document.getElementById("Lname").value;
         PhoneNo = document.getElementById("phone").value;
         Username = document.getElementById("Username").value;
         Email = document.getElementById("email").value;
-        password = document.getElementById("password").value;
-
-        createUserWithEmailAndPassword(auth, Email, password)
+        password1 = document.getElementById("password").value;
+        password2 = document.getElementById("password-signup2").value;
+        if(password1===password2){
+          createUserWithEmailAndPassword(auth, Email, password1)
           .then((userCredential) => {
             const user = userCredential.user;
             set(ref(database, "User/" + user.uid), {
@@ -211,6 +212,10 @@
             const errorMessage = error.message;
             alert(errorCode, "warning", "login-up");
           });
+        }else{
+          alert("password not matched", "warning", "login-up");
+        }
+       
       });
 
     // signIN function
@@ -223,7 +228,7 @@
         signInWithEmailAndPassword(auth, Email, password)
           .then((userCredential) => {
             const user = userCredential.user;
-            window.location = "../ProfilePage/Setting.MyProfile.html";
+            window.location = "../DashboardPage/DashboardPage.html";
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -235,7 +240,7 @@
 
 
 
-
+    
     //  forgot password function
 
     var resetPassword = document.getElementById("resetbtn").addEventListener("click", (e) => {

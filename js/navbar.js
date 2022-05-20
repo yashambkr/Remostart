@@ -1,6 +1,4 @@
-
-
-// menu open and close 
+// menu open and close
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 

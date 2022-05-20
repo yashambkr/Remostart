@@ -34,9 +34,7 @@ a {
 
 #heading_image {
   width: 70rem;
-
 }
-
 
 /* media queries */
 @media (max-width: 480px) {

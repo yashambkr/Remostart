@@ -81,17 +81,15 @@
 			</div>
 
 			<ul class="list-unstyled components">
-				<li class="active mb-0"><a href="./Setting.MyProfile.html"
+				<li id="profile-btn" class="active mb-0"><a
 						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 						My Profile</a></li>
 
-				<!-- <li><a href="./Setting.Orders.html" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
+				<li id="change_pass_btn" class="mb-0"><a
+						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
+						Change Password </a></li>
 
-						Orders </a></li> -->
-				<!-- <li><a href="./Setting.Address.html" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
-
-						Address </a></li> -->
-				<li><a id="logout-btn" style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
+				<li id="logout-btn" class="mb-0"><a style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 
 						Logout </a></li>
 			</ul>
@@ -107,39 +105,65 @@
 						</button>
 					</div>
 				</div>
-				<div class="col-md-12  border-right container">
+
+				<div id="section1" class="col-md-12  border-right container">
 					<div class="p-3 py-5">
 						<div class="d-flex justify-content-between align-items-center mb-3">
 							<h6 class="text-right "
-								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Stay tuned for
-								opportunities</h6>
+								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Your profile
+							</h6>
 						</div>
-						<!-- <div class="row g-3 mt-2">
+						<div class="row g-3 mt-2">
 							<div class="col-md-5  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">First Name</label><input id="FirstName" type="text"
-									class="form-control mb-3" placeholder="first name" value>
+									class="form-control mb-3">
 							</div>
 							<div class="col-md-5 col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Last Name</label><input id="LastName" type="text"
-									class="form-control mb-3" value="Somkuwar" placeholder="Last Name">
+									class="form-control mb-3">
 							</div>
 							<div class="col-md-3  col-auto col-sm-12 ">
 								<label class="labels fw-bold mb-2">PhoneNo</label><input id="PhoneNo" type="text"
-									class="form-control mb-3" placeholder="PhoneNo" value="+917350979341">
+									class="form-control mb-3">
 							</div>
-							<div class="col-md-3  col-auto col-sm-12">
+							<div class="col-md-5  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Email</label><input id="Email" type="text"
-									class="form-control mb-3" placeholder="Email" value="2001saniket@gmail.com">
+									class="form-control mb-3">
 							</div>
-							<div class="col-md-3 col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Password</label><input id="Password" type="text"
-									class="form-control mb-3" placeholder="Password" value="">
-							</div>
-						</div> -->
 
-						<!-- <div class="mt-5 text-center">
-							<button class="btn btn-dark rounded-0" type="button">Save</button>
-						</div> -->
+						</div>
+
+						<div class="mt-5 text-center">
+							<button class="btn btn-dark rounded-0" type="button" id="profile-save-btn">Save</button>
+						</div>
+					</div>
+				</div>
+				<div id="section2" class="col-md-12  border-right container">
+					<div class="p-3 py-5">
+						<div class="d-flex justify-content-between align-items-center mb-3">
+							<h6 class="text-right "
+								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Change password
+							</h6>
+						</div>
+						<div class="row g-3 mt-2">
+							<!-- <div class="col-md-5  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Current password</label><input id="Current_pass"
+									type="text" class="form-control mb-3">
+							</div> -->
+							<div class="col-md-5  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">New password</label><input id="New_pass" type="text"
+									class="form-control mb-3">
+							</div>
+							<div class="col-md-5  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Re-enter password</label><input id="New_pass2"
+									type="text" class="form-control mb-3">
+							</div>
+
+						</div>
+
+						<div class="mt-5 text-center">
+							<button class="btn btn-dark rounded-0" id="pass-save-btn" type="button">Save</button>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -205,30 +229,91 @@
 	<!-- Bootstrap Js CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; import { getDatabase, set, ref, child, get, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 		import {
 			getAuth,
-			signOut
+			signOut, updatePassword
 		} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 		const firebaseApp = initializeApp({
-      apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
-      authDomain: "remostart-daf09.firebaseapp.com",
-      projectId: "remostart-daf09",
-      storageBucket: "remostart-daf09.appspot.com",
-      messagingSenderId: "1072762916132",
-      appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
-    });
-  
-    const auth = getAuth(firebaseApp);
+			apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
+			authDomain: "remostart-daf09.firebaseapp.com",
+			projectId: "remostart-daf09",
+			storageBucket: "remostart-daf09.appspot.com",
+			messagingSenderId: "1072762916132",
+			appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
+		});
+		// references
+		const database = getDatabase(firebaseApp);
+		const auth = getAuth(firebaseApp);
+		const dbRef = ref(getDatabase());
 
-		document.getElementById('logout-link').addEventListener('click',logout);
-		document.getElementById('logout-btn').addEventListener('click',logout);
 
-		
-		
 
+		// for getting data of user
+		auth.onAuthStateChanged(user => {
+			if (user) {
+
+
+				get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
+					if (snapshot.exists()) {
+						const FirstName = snapshot.val().FirstName;
+						const LastName = snapshot.val().LastName;
+						const Email = snapshot.val().Email;
+						const PhoneNo = snapshot.val().PhoneNo;
+						//  Username = snapshot.val().Username;
+						document.getElementById('name-text').innerText = "Hi " + FirstName || 'Anonymous';
+						document.getElementById('FirstName').value = FirstName;
+						document.getElementById('LastName').value = LastName;
+						document.getElementById('PhoneNo').value = PhoneNo;
+						document.getElementById('Email').value = Email;
+
+					} else {
+
+					}
+				}
+				)
+
+
+			}
+		});
+
+
+		setTimeout(() => {
+			const usid = auth.currentUser.uid;
+			const uspp = auth.currentUser.password;
+			console.log(uspp);
+		}, 10000);
+
+
+
+		document.getElementById("pass-save-btn").addEventListener('click', (e) => {
+			const pass1 = document.getElementById("New_pass").value;
+			const pass2 = document.getElementById("New_pass2").value;
+			if (pass1 === pass2) {
+				const user = auth.currentUser;
+				updatePassword(user,pass1).then(() => {
+					// Update successful.
+					alert("new pass is"+ pass1);
+				}).catch((error) => {
+					// An error ocurred
+					// ...
+				});
+			} else {
+				alert("password not matched")
+			}
+
+
+
+		});
+
+
+
+
+		// for logout function
+		document.getElementById('logout-link').addEventListener('click', logout);
+		document.getElementById('logout-btn').addEventListener('click', logout);
 		function logout() {
-			const auth = getAuth(firebaseApp);
+
 			signOut(auth).then(() => {
 				// Sign-out successful.
 				window.location = "../index.html";
@@ -242,7 +327,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
 
 
 	</script>
-
+	<script src="../js/SettingPage/Myprofile.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$("#sidebarCollapse").on("click", function () {
