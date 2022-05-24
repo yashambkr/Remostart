@@ -81,7 +81,55 @@
 			<button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</form>
 
-		<p id="message"> Stay tuned for opportunites</p>
+
+		<div class="job-post">
+			<div class="card ms-5 me-5 mb-3 rounded  border border-secondary">
+				<div class="row g-0 ">
+					<div class="col-md-4 p-2  ">
+						<img src="../assets/images/IMG-20220117-WA0026.jpg" class=" rounded img-fluid rounded-start"
+							alt="...">
+					</div>
+					<div class="col-md-8 position-relative">
+						<div class=" card-body ">
+							<h5 class="card-title fw-bold">Web Development Internship</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Virtual Farm, India</h6>
+							<p class="card-text"></p>
+							<div class="position-absolute bottom-0 start-0 pb-2 ps-3">
+								<p class="card-text"><small class="text-muted">29 days left</small></p>
+							</div>
+
+							<div class="position-absolute bottom-0 end-0 pb-2 pe-3">
+								<p class="card-text"><button type="button" class="btn text-white">Apply</button></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card ms-5 me-5 mb-3 rounded  border border-secondary">
+				<div class="row g-0 ">
+					<div class="col-md-4 p-2  ">
+						<img src="../assets/images/IMG-20220117-WA0026.jpg" class=" rounded img-fluid rounded-start"
+							alt="...">
+					</div>
+					<div class="col-md-8 position-relative">
+						<div class=" card-body ">
+							<h5 class="card-title fw-bold">Web Development Internship</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Virtual Farm, India</h6>
+							<p class="card-text"></p>
+							<div class="position-absolute bottom-0 start-0 pb-2 ps-3">
+								<p class="card-text"><small class="text-muted">29 days left</small></p>
+							</div>
+
+							<div class="position-absolute bottom-0 end-0 pb-2 pe-3">
+								<p class="card-text"><button type="button" class="btn text-white">Apply</button></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
 
 	<footer>
@@ -141,11 +189,83 @@
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<!-- Bootstrap Js CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-		document.getElementById('logout-link').addEventListener('click', Signout);
+	<script type="module">
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; 
+		import { getDatabase, set, ref, child, get, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+		import {
+			getAuth,
+			signOut, updatePassword
+		} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+		const firebaseApp = initializeApp({
+			apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
+			authDomain: "remostart-daf09.firebaseapp.com",
+			projectId: "remostart-daf09",
+			storageBucket: "remostart-daf09.appspot.com",
+			messagingSenderId: "1072762916132",
+			appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
+		});
+		// references
+		const database = getDatabase(firebaseApp);
+		const auth = getAuth(firebaseApp);
+		const dbRef = ref(getDatabase());
+
+
+
+		// for getting data of user
+		auth.onAuthStateChanged(user => {
+			if (user) {
+
+
+				get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
+					if (snapshot.exists()) {
+						const FirstName = snapshot.val().FirstName;
+
+						document.getElementById('name-text').innerText = "Hi " + FirstName || 'Anonymous';
+
+
+					} else {
+
+					}
+				}
+				)
+
+
+			}
+		});
+
+
+		setTimeout(() => {
+			const usid = auth.currentUser.uid;
+			const uspp = auth.currentUser.password;
+
+		}, 1000);
+
+
+
+
+
+
+
+
+		// for logout function
+		document.getElementById('logout-link').addEventListener('click', logout);
+
+		function logout() {
+
+			signOut(auth).then(() => {
+				// Sign-out successful.
+				window.location = "../index.html";
+			}).catch((error) => {
+				// An error happened.
+			});
+		}
+
+
+
 
 
 	</script>
+
 
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
