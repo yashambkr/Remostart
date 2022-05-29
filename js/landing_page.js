@@ -19,3 +19,4 @@ typewriter
   .pauseFor(2500)
   .deleteAll()
   .start();
+

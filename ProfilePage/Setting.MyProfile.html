@@ -54,7 +54,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navcol-1">
 				<ul class="navbar-nav ms-auto mt-3">
-
+					<li class="nav-item"><a class="nav-link" href="../DashboardPage/DashboardPage.html">JOBS</a></li>
 					<li class="nav-item"><a class="nav-link">TRAINING</a></li>
 					<li class="nav-item"><a class="nav-link">STARTUP</a></li>
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase " id="name-text"
@@ -62,7 +62,7 @@
 						<div class="dropdown-menu ">
 							<a class="dropdown-item">My
 								Profile</a><a class="dropdown-item" dis>No of Jobs <span
-									class="badge  rounded-pill bg-dark ">0</span></a><a class="dropdown-item"
+									class="badge  rounded-pill bg-dark ">13</span></a><a class="dropdown-item"
 								id="logout-link">Logout</a>
 						</div>
 					</li>
@@ -181,16 +181,27 @@
 				</p>
 			</div>
 			<div class="footer_col">
-				<h2>Office <div class="underline"><span></span></div>
-					</h3>
-
+				<h2>Offices</h3>
+				<div>
 					<p>Digdho Hill, Hingna</p>
-					<p>Maharashtra, PIN 440016, India</p>
-					<p class="email-id">info@remostarts.com</p>
+					<p>Maharashtra, PIN 440016</p>
+                    <p>India</p>
+				
+				</div>
+				<div class="dash"></div>
+				<div>
+					<p>7 Bamidele Majiyagbe Street</p>
+					<p>Southern View Estate, Lagos</p>
+					<p>Nigeria</p>
+                    
+					
+				</div>
+                <div class="dash"></div>
+                <p class="email-id">info@remostarts.com</p>
 
 			</div>
 			<div class="footer_col">
-				<h3>Links <div class="underline"><span></span></div>
+				<h3>Links
 				</h3>
 				<ul class="p-0">
 					<li><a href="">Home</a></li>
@@ -201,9 +212,9 @@
 				</ul>
 			</div>
 			<div class="footer_col">
-				<h3>Newsletter <div class="underline"><span></span></div>
+				<h3>Newsletter
 				</h3>
-				<form action="">
+				<form class="form1" action="">
 					<i class="fa-solid fa-envelope"></i>
 					<input type="email" placeholder="Your Email" required>
 					<button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
@@ -219,10 +230,12 @@
 			</div>
 
 		</div>
-		<hr>
+	
 		<p class="copyright">RemoStart - Connecting Talents</p>
 	</footer>
 
+	<!-- sweet alert cdn -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -252,7 +265,7 @@
 		// for getting data of user
 		auth.onAuthStateChanged(user => {
 			if (user) {
-
+				// document.getElementById('name-text').innerText = "Hi " +  user.displayName.split(" ")[0]  ;
 
 				get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
 					if (snapshot.exists()) {
@@ -291,9 +304,11 @@
 			const pass2 = document.getElementById("New_pass2").value;
 			if (pass1 === pass2) {
 				const user = auth.currentUser;
-				updatePassword(user,pass1).then(() => {
+				updatePassword(user, pass1).then(() => {
 					// Update successful.
-					alert("new pass is"+ pass1);
+					swal("Good job!", "Password Changed", "success");
+					document.getElementById("New_pass").value = "";
+					document.getElementById("New_pass2").value = "";
 				}).catch((error) => {
 					// An error ocurred
 					// ...
@@ -305,6 +320,7 @@
 
 
 		});
+
 
 
 

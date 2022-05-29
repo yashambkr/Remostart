@@ -1,59 +1,63 @@
 #page-container {
   background-color: #ffffff;
-  margin-top: 50px;
-  margin-bottom: 250px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-weight: 500;
   font-family: "Big Shoulders Text", cursive;
   box-shadow: 5px 5px 5px #f5f0f0;
 }
-.search-bar {
-  padding-top: 2px;
-}
-.search-bar::placeholder {
-  font-size: 20px;
-  padding-left: 15px;
-  color: black;
-  font-weight: 600;
-  font-weight: 500;
-  font-family: "Big Shoulders Text", cursive;
+
+
+
+
+.card {
+  border: none;
+  border-radius: 10px
 }
 
-#message {
-  font-size: 20px;
-  font-weight: 500;
-  font-family: "Big Shoulders Text", cursive;
-  color: black;
-  font-weight: 500;
-  padding-top: 90px;
-  padding-left: 15px;
-}
-.search {
-  color: black;
+.c-details span {
+  font-weight: 300;
+  font-size: 13px
 }
 
-@media (max-width: 412px) {
-  .search {
-    font-size: 15px;
-  }
-  #message {
-    padding-top: 10px;
-    padding-left: 15px;
-    font-size: 17px;
-  }
-  ::placeholder {
-    font-size: 17px;
-  }
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px
 }
 
-/* .job-post img{
-  width: 231px;
-  max-width:380px;
-  height:200px !important;
+.badge span {
+  background-color: #fffbec;
+  width: 60px;
+  height: 25px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  display: flex;
+  color: #e6b515;
+  justify-content: center;
+  align-items: center
+}
+
+
+
+
   
- 
-} */
-.card-text .btn{
-  background-color:#0b132b !important ;
+.blue-btn{
+  background-color: #0b132a;
+  border: 0px;
+  color: white;
 }
+.blue-btn:focus+.blue-btn, .blue-btn:focus,.blue-btn:hover{
+  background-color: #0d193d; color: white;
+}
+.list-group li{
+  list-style: circle;
+}
+

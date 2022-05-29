@@ -4,24 +4,25 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-	<title>Remostart | Profile</title>
+	<title>Remostart | Dashboard</title>
 	<link rel="shortcut icon" href="../assets/logo/Remo-icon.ico" type="image/x-icon">
 
 	<!-- cdn -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
+
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
 		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 	<!-- google font cdn Bigshoulder -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800&display=swap" rel="stylesheet" />
-
 
 	<!-- css files  -->
 	<link rel="stylesheet" href="../css/profile_page_css/Navigation-Clean.css" />
@@ -30,6 +31,7 @@
 
 
 	<link rel="stylesheet" href="../css/Dashboard_page_css/dashboard.css">
+
 </head>
 
 <body>
@@ -63,7 +65,7 @@
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="../ProfilePage/Setting.MyProfile.html"> My
 								Profile</a><a class="dropdown-item" dis>No of Jobs <span
-									class="badge  rounded-pill bg-dark ">0</span></a><a class="dropdown-item"
+									class="badge  rounded-pill bg-dark ">13</span></a><a class="dropdown-item"
 								id="logout-link">Logout</a>
 						</div>
 					</li>
@@ -75,58 +77,1642 @@
 
 	<!-- page content -->
 
-	<div class="container" id="page-container">
-		<form action="" class="search-bar">
-			<input type="search" name="search" placeholder="Search For Opportunity" class="search">
-			<button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
-		</form>
 
+	<div class="container" id="page-container">
+		<div class="row justify-content-center">
+			<div class="col">
+				<form>
+					<div class=" row no-gutters align-items-center">
+
+						<!--end of col-->
+						<div class="col pe-0">
+							<input style="border-radius:0px 0px 0px 0px ;"
+								class="form-control form-control-lg rounded-start" type="search"
+								placeholder="Search Jobs">
+						</div>
+						<!--end of col-->
+						<div class="col-auto ps-0 ">
+							<button style=" border-radius:0px 0px 0px 0px ;" id="search-btn"
+								class=" blue-btn  rounded-end btn btn-lg text-white " type="submit">Search</button>
+						</div>
+						<!--end of col-->
+					</div>
+				</form>
+			</div>
+			<!--end of col-->
+		</div>
 
 		<div class="job-post">
-			<div class="card ms-5 me-5 mb-3 rounded  border border-secondary">
-				<div class="row g-0 ">
-					<div class="col-md-4 p-2  ">
-						<img src="../assets/images/IMG-20220117-WA0026.jpg" class=" rounded img-fluid rounded-start"
-							alt="...">
-					</div>
-					<div class="col-md-8 position-relative">
-						<div class=" card-body ">
-							<h5 class="card-title fw-bold">Web Development Internship</h5>
-							<h6 class="card-subtitle mb-2 text-muted">Virtual Farm, India</h6>
-							<p class="card-text"></p>
-							<div class="position-absolute bottom-0 start-0 pb-2 ps-3">
-								<p class="card-text"><small class="text-muted">29 days left</small></p>
+			<div class="container mt-5 mb-3">
+				<div class="row g-3">
+					<div class="col-md-4  border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/gt-school.png"
+											alt=""> </div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">GT-School</h6> <span id="category">Marketing</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Full-stack<br>Marketer</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">$100/hr (Approx) </span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job1">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job1" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Full-stack Marketer</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">GT-School</h3>
+											<h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job1upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job1upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
-							<div class="position-absolute bottom-0 end-0 pb-2 pe-3">
-								<p class="card-text"><button type="button" class="btn text-white">Apply</button></p>
-							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="card ms-5 me-5 mb-3 rounded  border border-secondary">
-				<div class="row g-0 ">
-					<div class="col-md-4 p-2  ">
-						<img src="../assets/images/IMG-20220117-WA0026.jpg" class=" rounded img-fluid rounded-start"
-							alt="...">
-					</div>
-					<div class="col-md-8 position-relative">
-						<div class=" card-body ">
-							<h5 class="card-title fw-bold">Web Development Internship</h5>
-							<h6 class="card-subtitle mb-2 text-muted">Virtual Farm, India</h6>
-							<p class="card-text"></p>
-							<div class="position-absolute bottom-0 start-0 pb-2 ps-3">
-								<p class="card-text"><small class="text-muted">29 days left</small></p>
+					<!-- 1 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/wikimieda.jfif"
+											alt=""> </div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Wikimedia</h6> <span id="category">Database</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Database<br> Administrator III</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">$100,000 per/year (Approx) </span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job2">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job2" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Database Administrator III
+											</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Wikimedia</h3>
+											<h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Operate and improve the RDBMS systems serving Wikimedia projects
+												</li>
+												<li>
+													Respond to common database issues, following documented procedures
+												</li>
+												<li>
+													Collaborate with SRE and other teams across the organization to
+													ensure their specific database needs are met on an ongoing basis
+												</li>
+												<li>
+													Perform day-to-day operational/DevOps tasks on Wikimedia’s public
+													facing infrastructure (deployment, maintenance, configuration,
+													troubleshooting)
+												</li>
+												<li>
+													Implement and utilize configuration management and deployment tools
+												</li>
+												<li>
+													Monitor systems, services and service clusters, optimize performance
+													and resource utilization </li>
+												<li>
+													Participate in incident response, diagnosis and follow-up on system
+													outages or alerts across Wikimedia’s production infrastructure
+												</li>
+
+											</ul>
+
+											<h4 class="pt-4">Skills and Experience:</h4>
+											<ul class="list-group ">
+												<li>
+													2+ years experience in a DBA role as part of a team
+												</li>
+												<li>
+													3+ years experience with Linux in a production environment
+												</li>
+												<li>
+													Knowledge and experience of (Free and Open Source) RDBMS (preferably
+													MariaDB or MySQL) administration (understanding of and experience
+													with replication is essential) and support, debugging query
+													performance and schema design
+												</li>
+												<li>
+													Comfortable with shell and at least one of the scripting languages
+													used in an SRE/Operations engineering context (Python, Go, Bash,
+													Ruby, etc.)
+												</li>
+												<li>
+													Passion for automating tasks and processes
+												</li>
+												<li>
+													Strong English language skills and ability to work independently, as
+													an effective part of a globally distributed team </li>
+												<li>
+													B.S. or M.S. in Computer Science or equivalent work experience
+												</li>
+
+											</ul>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job2upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job2upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
-							<div class="position-absolute bottom-0 end-0 pb-2 pe-3">
-								<p class="card-text"><button type="button" class="btn text-white">Apply</button></p>
-							</div>
 						</div>
 					</div>
+					<!-- 2 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid rounded"
+											src="../assets/company/playerorbit.jpg" alt=""> </div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Player Orbit</h6> <span id="category">Game Development</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Game Development<br> Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">Unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job3">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job3" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Game Development
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Player Orbit</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job3upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job3upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 3 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid rounded"
+											src="../assets/company/playerorbit.jpg" alt=""> </div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Player Orbit</h6> <span id="category">Frontend
+											development</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Front end development<br> Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">Unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job4">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job4" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Front end development
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Player Orbit</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job4upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job4upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 4 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid rounded"
+											src="../assets/company/playerorbit.jpg" alt=""> </div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Player Orbit</h6> <span id="category">Backend
+											Development</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Back end Development<br> Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">Unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job5">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job5" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Back end Development
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Player Orbit</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job5upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job5upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 5 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/VF.png" alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Virtual Farm</h6> <span id="category">Fullstack
+											developement</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Full stack <br> developement Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job6">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job6" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Full stack developement
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">VirtualFarm</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job6upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job6upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 6 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/VF.png" alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Virtual Farm</h6> <span id="category">Android
+											Development</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Android <br> developement Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job7">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job7" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Android Development
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">VirtualFarm</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job7upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job7upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 7 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/VF.png" alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Virtual Farm</h6> <span id="category">IOT</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Internet of things <br>Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job8">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job8" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Internet of things
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">VirtualFarm</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job8upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job8upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 8 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/VF.png" alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Virtual Farm</h6> <span id="category">Frontend
+											developement</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Front end<br> developement Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job9">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job9" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Frontend developement
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">VirtualFarm</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job9upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job9upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 9 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/VF.png" alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Virtual Farm</h6> <span id="category">UIUX
+											Desginer</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">UIUX Desginer <br> Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job10">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job10" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">UIUX Desginer Internship
+											</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">VirtualFarm</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job10upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job10upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 10 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/Remostart.png"
+											alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Remostart</h6> <span id="category">Blockchain
+											developement</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Blockchain <br> developement Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job11">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job11" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Blockchain developement
+												Internship</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Remostart</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job11upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job11upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 11 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/Remostart.png"
+											alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Remostart</h6> <span id="category">SocialMedia
+											developement</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Social Media<br> Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job12">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job12" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Social Media Internship
+											</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Remostart</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job12upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job12upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 12 -->
+					<div class="col-md-4 border rounded border-3">
+						<div class="card p-3 mb-2">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<div class="icon"> <img class="img-fluid" src="../assets/company/Remostart.png"
+											alt="">
+									</div>
+									<div class="ms-2 c-details">
+										<h6 class="mb-0">Remostart</h6> <span id="category">SocialMedia
+											developement</span>
+									</div>
+								</div>
+								<div class="badge"> <span>Remote</span> </div>
+							</div>
+							<div class="mt-5">
+								<h3 class="heading">Content creators <br> Internship</h3>
+								<div class="mt-5">
+									<!-- <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+												capacity</span></span> </div>
+									</div> -->
+									<div class="mt-3"> <span class="text1 fw-bold">Pay rate: </span><span
+											class="text2">unpaid</span> </div>
+								</div>
+
+							</div>
+							<!-- Button trigger modal -->
+							<button type="button" class="blue-btn btn  mt-3" data-bs-toggle="modal"
+								data-bs-target="#job13">
+								See more details
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="job13" data-bs-backdrop="static" data-bs-keyboard="false"
+								tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Content creators Internship
+											</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body ms-1 ps-4 pt-2">
+											<h3 class="text-center fw-bold">Remostart</h3>
+											<!-- <h4 class="pt-4">Responsibilities:</h4>
+											<ul class="list-group ">
+												<li>
+													Developing messaging and landing pages for new course offerings
+												</li>
+												<li>
+													Overseeing our content marketing
+												</li>
+												<li>
+													Building nurture campaigns
+												</li>
+												<li>
+													Interfacing with our paid marketing team
+												</li>
+												<li>
+													Supporting marketing operations
+												</li>
+												<li>
+													You will be both building the marketing roadmap and executing on
+													your plans,
+													while supported by ample resources and a team. Our ideal candidate
+													has a
+													broad range of marketing skillsets, the ability to be both strategic
+													and
+													roll up their sleeves, and a willingness to take ownership. </li>
+											</ul> -->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn blue-btn "
+												data-bs-dismiss="modal">Close</button>
+
+											<!-- Button trigger modal -->
+											<button type="button" class="btn blue-btn" data-bs-toggle="modal"
+												data-bs-target="#job13upload">
+												Send Your Resume
+											</button>
+
+											<!-- Modal -->
+											<div class="modal fade pe-2" id="job13upload" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog  modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Upload Your
+																Resume
+															</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<div class="mb-3">
+																<input class="form-control" type="file" id="formFile">
+															</div>
+															<div class="progress ">
+																<div id="progressbar"
+																	class="progress-bar progress-bar-striped progress-bar-animated"
+																	role="progressbar" aria-valuenow="0"
+																	aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn blue-btn "
+																data-bs-dismiss="modal">Close</button>
+															<button type="button" class="btn blue-btn">Upload
+																Resume</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 13 -->
 				</div>
 			</div>
+
 
 		</div>
 
@@ -142,16 +1728,27 @@
 				</p>
 			</div>
 			<div class="footer_col">
-				<h2>Office <div class="underline"><span></span></div>
-					</h3>
-
+				<h2>Offices</h3>
+				<div>
 					<p>Digdho Hill, Hingna</p>
-					<p>Maharashtra, PIN 440016, India</p>
-					<p class="email-id">info@remostarts.com</p>
+					<p>Maharashtra, PIN 440016</p>
+                    <p>India</p>
+				
+				</div>
+				<div class="dash"></div>
+				<div>
+					<p>7 Bamidele Majiyagbe Street</p>
+					<p>Southern View Estate, Lagos</p>
+					<p>Nigeria</p>
+                    
+					
+				</div>
+                <div class="dash"></div>
+                <p class="email-id">info@remostarts.com</p>
 
 			</div>
 			<div class="footer_col">
-				<h3>Links <div class="underline"><span></span></div>
+				<h3>Links
 				</h3>
 				<ul class="p-0">
 					<li><a href="">Home</a></li>
@@ -162,9 +1759,9 @@
 				</ul>
 			</div>
 			<div class="footer_col">
-				<h3>Newsletter <div class="underline"><span></span></div>
+				<h3>Newsletter
 				</h3>
-				<form action="">
+				<form class="form1" action="">
 					<i class="fa-solid fa-envelope"></i>
 					<input type="email" placeholder="Your Email" required>
 					<button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
@@ -180,17 +1777,16 @@
 			</div>
 
 		</div>
-		<hr>
+	
 		<p class="copyright">RemoStart - Connecting Talents</p>
 	</footer>
-
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<!-- Bootstrap Js CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="module">
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; 
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 		import { getDatabase, set, ref, child, get, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 		import {
 			getAuth,
@@ -214,13 +1810,13 @@
 		// for getting data of user
 		auth.onAuthStateChanged(user => {
 			if (user) {
-
+				// document.getElementById('name-text').innerText = "Hi " +  user.displayName.split(" ")[0]  ;
 
 				get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
 					if (snapshot.exists()) {
 						const FirstName = snapshot.val().FirstName;
 
-						document.getElementById('name-text').innerText = "Hi " + FirstName || 'Anonymous';
+						document.getElementById('name-text').innerText = "Hi " + FirstName;
 
 
 					} else {
@@ -242,11 +1838,6 @@
 
 
 
-
-
-
-
-
 		// for logout function
 		document.getElementById('logout-link').addEventListener('click', logout);
 
@@ -260,15 +1851,21 @@
 			});
 		}
 
-
-
-
-
 	</script>
 
 
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+		integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+		crossorigin="anonymous"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
