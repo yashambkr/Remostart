@@ -184,7 +184,7 @@ a {
 /* internal container styling */
 .internalcontainers {
   flex: 1;
-  background: black;
+  background: #0b132a;
   padding: 30px; 
   padding-bottom: 120px;
   font-size: 20px;

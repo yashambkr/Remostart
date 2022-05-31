@@ -12,6 +12,9 @@ signUp.addEventListener("click", () => {
   loginIn.classList.remove("block");
   loginUp.classList.remove("none");
 
+
+
+  
   // Add classes
   loginIn.classList.toggle("none");
   loginUp.classList.toggle("block");

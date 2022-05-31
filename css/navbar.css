@@ -1,12 +1,16 @@
-.header {
-  padding-top: 30px;
+.header{
+  padding:10px;
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
+}
+@media screen and (max-width: 480px) {
+  .responsive{
+    width: 80px;
+  } 
 }
 .hamburger {
   display: none;
@@ -99,9 +103,4 @@
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-}
-
-
-#dash{
-  
 }
