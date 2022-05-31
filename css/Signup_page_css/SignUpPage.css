@@ -169,3 +169,10 @@ input::placeholder {
     padding-bottom: 10px !important;
   }
 }
+.note{
+  color: #f2f2f2;
+  font-weight: bold;
+  margin:1px;
+  text-align: center;
+}
+
