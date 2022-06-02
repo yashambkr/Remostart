@@ -77,7 +77,7 @@ a {
   font-size: 25px;
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
-  position: relative;
+  /* position: relative; */
   margin: 30px 0 60px;
 }
 .carousel-item {
@@ -121,11 +121,11 @@ a {
   overflow: hidden;
   width: 50%;
   max-width: 100%;
-  height: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
 }
-#Introduction-image img {
-  width: max-content;
-}
+
 #content-section {
   width: 40%;
   font-family: "Poppins", sans-serif;
@@ -137,12 +137,16 @@ a {
     display: none;
   }
   #content-section{
+    text-align: center;
     width:100%;
   }
-  #Introduction-image1{
-    display: block;
-    position: relative;
-    right:50px;
+  #content-container {
+  
+    padding-top: 0px;
+  }
+  #Introduction-image1 img{
+    border-radius: 10px;
+    margin-bottom:80px;
   }
 }
 @media (min-width: 768px){
@@ -152,11 +156,14 @@ a {
 }
 
 
+
+
+
 /*  === section 3 === */
 
 .section3heading {
   font-size: 40px;
-  text-shadow: 10px 7px #d4d5d9;
+  text-shadow: 5px 5px 3px #d4d5d9;
 }
 
 .section3button {
@@ -184,6 +191,8 @@ a {
     display: none;
   }
 }
+
+
 
 
 
@@ -233,6 +242,8 @@ a {
   }
 }
 
+
+
 /* Join us container and create account css */
 .middledash {
   border-left: 3px solid #0b132a;
@@ -253,9 +264,6 @@ a {
 input{
   font-size: 15px !important;
 }
-@media screen and (max-width: 480px) {
-  .text-centers{
-    display: flex;
-    flex-direction: row;
-  }
-}
+
+
+
