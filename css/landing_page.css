@@ -77,7 +77,7 @@ a {
   font-size: 25px;
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
-  position: relative;
+  /* position: relative; */
   margin: 30px 0 60px;
 }
 .carousel-item {
@@ -115,24 +115,47 @@ a {
   margin: auto;
   padding-top: 50px;
 }
-
 #Introduction-image {
   border-radius: 10px;
   padding: 0px;
   overflow: hidden;
   width: 50%;
   max-width: 100%;
-  height: auto;
-}
-#Introduction-image img {
-  width: max-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
 }
 
 #content-section {
   width: 40%;
   font-family: "Poppins", sans-serif;
   text-align: left;
+  
 }
+@media screen and (max-width: 768px) {
+  #Introduction-image{
+    display: none;
+  }
+  #content-section{
+    text-align: center;
+    width:100%;
+  }
+  #content-container {
+  
+    padding-top: 0px;
+  }
+  #Introduction-image1 img{
+    border-radius: 10px;
+    margin-bottom:80px;
+  }
+}
+@media (min-width: 768px){
+  #Introduction-image1{
+    display: none;
+  }
+}
+
+
 
 
 
@@ -140,7 +163,7 @@ a {
 
 .section3heading {
   font-size: 40px;
-  text-shadow: 10px 7px #d4d5d9;
+  text-shadow: 5px 5px 3px #d4d5d9;
 }
 
 .section3button {
@@ -168,6 +191,8 @@ a {
     display: none;
   }
 }
+
+
 
 
 
@@ -203,10 +228,11 @@ a {
   position: relative;
   top: 50px;
 }
+
 .ubio{
   position: relative;
   top: 50px;
-  left:50px;
+  text-align: center;
 }
 
 
@@ -215,6 +241,8 @@ a {
     flex-direction: column-reverse;
   }
 }
+
+
 
 /* Join us container and create account css */
 .middledash {
@@ -236,9 +264,6 @@ a {
 input{
   font-size: 15px !important;
 }
-@media screen and (max-width: 480px) {
-  .text-centers{
-    display: flex;
-    flex-direction: row;
-  }
-}
+
+
+

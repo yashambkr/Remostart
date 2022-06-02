@@ -1,0 +1,24 @@
+
+label{
+    font-size: 15px;
+}
+#acquistionForm{
+    width: 65em;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    background-color: white;
+    padding: 20px 5px 15px 5em;
+    box-shadow: 8px 8px  #f5f0f0;
+    color: black;
+    font-family: "Big Shoulders Text", cursive;
+}
+
+
+ @media (max-width: 480px){
+    #acquistionForm{
+        width: 25em;
+        padding: 20px 10px 15px 10px;
+        margin-left: 5px;
+     }
+
+ }

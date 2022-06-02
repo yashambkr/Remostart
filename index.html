@@ -21,6 +21,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/Footer/footer.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -78,9 +80,9 @@
 
 
         <!-- Carousel  -->
-        <div class="carouselcontainer   ">
-            <h1 class="main-heading mb-5 pb-5 pt-5"> How Remostart works?</h1>
-            <div class="row pb-5 mb-5">
+        <div data-aos="fade-up" class="carouselcontainer   ">
+            <h1 class="main-heading mb-5 pb-5 pt-5" > How Remostart works?</h1>
+            <div data-aos="fade-up" class="row pb-5 mb-5">
                 <div class="col-md-5">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -215,14 +217,19 @@
 
 
         <section class="col container pb-5" id="Introduction">
-            <div class="row pt-5 mt-5">
-                <h3 class="text-center pt-5 pb-5 mb-5 mt-5">
+            <div data-aos="fade-up" class="row pt-5 mt-5">
+                <h3 class="text-center fst-italic pt-5 pb-5 mb-5 mt-5 ">
                     "The future is remote and startups are harnessing this power to scale. Using <b>Blockchain</b> we remove hiring biases giving minorities equal access to remote jobs at startups."
                 </h3>
             </div>
             <div id="content-container" class="row">
-                <div id="content-section">
-                    <div>
+                
+                <div data-aos="fade-right" id="content-section">
+                    <div data-aos="fade-up"  id="Introduction-image1">
+                        <img class="img-fluid"  src="assets/images/the-importance-of-a-website-for-a-business.jpeg" alt="working image" >
+                    </div>
+                    <div > 
+                      
                         <h1>"We Know how hard getting quality talents is for early
                             startups,founders,<br>entreprenuers and small business."</h1>
                     </div>
@@ -230,12 +237,12 @@
                     <div class="betweendash">
                         <hr style="width: 100%; border:solid 2px #0b132a">
                     </div>
-                    <div>
-                        <h1>We know how hard it is for persons from underrespresenting background, communities and
+                    <div >
+                        <h1>We know how hard it is for persons from under respresenting background, communities and
                             entry level carrer persons to get jobs. So we created this remote platform that uses <b>Blockchain</b> to take away the biases, giving equal access to jobs"</h1>
                     </div>
                 </div>
-                <div class="text-center" id="Introduction-image" style="background-color: #0b132a;">
+                <div data-aos="fade-left" class="text-center" id="Introduction-image" style="background-color: #0b132a;">
                     <img class="img-fluid"  src="assets/images/the-importance-of-a-website-for-a-business.jpeg" alt="working image">
                 </div>
             </div>
@@ -247,7 +254,7 @@
 
 
 
-        <section id="section3" class="container text-center pb-5 mb-5 pt-5 mt-5">
+        <section data-aos="fade-up" id="section3" class="container text-center pb-5 mb-5 pt-5 mt-5">
             <div class="row pb-5 mb-5 pt-5 mt-5">
                 <div class="col-md-5 pb-3 mb-3 pt-3 mt-3">
                     <p class="section3heading">Startup</p>
@@ -276,11 +283,11 @@
 
 
 
-        <div class="cardcontainer container pt-5 ">
+        <div  data-aos="fade-up" class="cardcontainer container pt-5 ">
             <div class="internalcontainers"><img class="internalcontainerimages"
                     src=" assets\illustrations\concept-of-data-analysis-and-maintenance.svg" path fill="000000"
                     alt="working image">
-                <h class="paragraph "> Its not just about linking talents its about equal opportunities for all irrespective of gender,age,background,level etc..</h>
+                <h class="paragraph"> Its not just about linking talents its about equal opportunities for all irrespective of gender, age, background, level etc..</h>
             </div>
             <div class="internalcontainers"><img class="internalcontainerimages"
                     src="assets\illustrations\women-web-developer-with-laptop.svg " path fill="000000"
@@ -298,7 +305,7 @@
 
         <!-- JOIN US CONTAINER -->
 
-        <section class="signup container pt-5  mt-5">
+        <section data-aos="fade-up"  class="signup container pt-5  mt-5">
             <div class="row  pt-5 pb-5 mb-5 mt-5">
                 <div class="  pt-5 pb-5 mb-5 mt-5 join-us text-center col-md-5">
                     <div id="joinsection">
@@ -465,6 +472,12 @@
        
         <p class="copyright">RemoStart - Connecting Talents</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+      </script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
