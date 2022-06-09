@@ -88,7 +88,10 @@
 				<li id="change_pass_btn" class="mb-0"><a
 						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 						Change Password </a></li>
+				<li id="referral_btn" class="mb-0"> <a
+						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 
+						Referral Program</a></li>
 				<li id="logout-btn" class="mb-0"><a style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 
 						Logout </a></li>
@@ -166,6 +169,29 @@
 						</div>
 					</div>
 				</div>
+				<div id="section3" class="col-md-12  border-right container">
+					<div class="p-3 py-5">
+						<div class="d-flex justify-content-between align-items-center mb-3">
+							<h6 class="text-right "
+								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Your Referral
+								Link
+							</h6>
+						</div>
+
+						<div class="row g-3 mt-2">
+							<div class="refer-box input-group mb-3">
+								<input type="text" class="form-control" id="copytext" value="1234">
+								<button id="copy-btn" class="btn  rounded input-group-text" data-clipboard-target="#copytext"
+									style="background-color: #0b132a ; color: white;" onclick="copyText()">
+									<i class="fas fa-clipboard"></i>
+								</button>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
 			</nav>
 		</div>
 	</div>
@@ -238,6 +264,7 @@
 		<p class="copyright">RemoStart - Connecting Talents</p>
 	</footer>
 
+
 	<!-- sweet alert cdn -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -288,6 +315,8 @@
 
 					}
 				}
+
+
 				)
 
 
@@ -295,14 +324,10 @@
 		});
 
 
-		setTimeout(() => {
-			const usid = auth.currentUser.uid;
-			const uspp = auth.currentUser.password;
-			console.log(uspp);
-		}, 10000);
 
 
 
+		// pass update function
 		document.getElementById("pass-save-btn").addEventListener('click', (e) => {
 			const pass1 = document.getElementById("New_pass").value;
 			const pass2 = document.getElementById("New_pass2").value;
@@ -341,14 +366,64 @@
 				// An error happened.
 			});
 		}
+		const myUrl = new URL("https://remostarts.com/SignupPage/SignUpPage.html");
 
 
+
+
+
+
+		// refer id maker
+		function makeReferID() {
+
+			get(child(dbRef, `/RefID/RefID`)).then((snapshot) => {
+				if (snapshot.exists()) {
+					var refID = document.getElementById('FirstName').value + "000" + snapshot.val();
+					myUrl.searchParams.set("ReferalID", refID);
+
+					document.getElementById("copytext").value = myUrl.toString();
+
+				} else {
+					console.log("No data available");
+				}
+			}).catch((error) => {
+				console.error(error);
+			});
+
+
+
+
+
+		}
+
+		document.getElementById("referral_btn").addEventListener("click", makeReferID)
 
 
 
 	</script>
 	<script src="../js/SettingPage/Myprofile.js"></script>
+
+
+	<!--  -->
 	<script type="text/javascript">
+
+		function copyText() {
+			/* Get the text field */
+			var copyText = document.getElementById("copytext");
+
+			/* Select the text field */
+			copyText.select();
+
+			/* Copy the text inside the text field */
+			document.execCommand("copy");
+
+			/* Alert the copied text */
+			// 
+			document.getElementById("copy-btn").innerHTML ='<i class="fa fa-check" aria-hidden="true"></i>' ;
+		
+		}
+
+
 		$(document).ready(function () {
 			$("#sidebarCollapse").on("click", function () {
 				$("#sidebar").toggleClass("active");

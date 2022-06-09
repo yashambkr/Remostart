@@ -14,7 +14,7 @@ signUp.addEventListener("click", () => {
 
 
 
-  
+
   // Add classes
   loginIn.classList.toggle("none");
   loginUp.classList.toggle("block");
