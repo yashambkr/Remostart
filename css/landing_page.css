@@ -267,3 +267,7 @@ input{
 
 
 
+body[data-aos-duration='2000'] [data-aos],
+[data-aos][data-aos][data-aos-duration='2000'] {
+  transition-duration: 2000ms;
+}
