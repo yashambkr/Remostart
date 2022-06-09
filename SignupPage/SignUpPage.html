@@ -204,17 +204,21 @@
     });
     const database = getDatabase(firebaseApp);
     const auth = getAuth(firebaseApp);
-
+    const dbRef = ref(getDatabase());
     // signUP function
     var sumbitbtn = document
       .getElementById("sumbitbtn")
       .addEventListener("click", (e) => {
-        var Fname, Lname, Email, PhoneNo, password1, password2, Username;
 
+        var url_string = window.location;
+        var url = new URL(url_string);
+
+
+        var Fname, Lname, Email, PhoneNo, password1, password2, Username, ReferalID;
+        ReferalID = url.searchParams.get("ReferalID");
         Fname = document.getElementById("Fname").value;
         Lname = document.getElementById("Lname").value;
         PhoneNo = document.getElementById("phone").value;
-
         Email = document.getElementById("email").value;
         password1 = document.getElementById("password").value;
         password2 = document.getElementById("password-signup2").value;
@@ -227,6 +231,7 @@
                 LastName: Lname,
                 Email: Email,
                 PhoneNo: PhoneNo,
+                ReferalID: ReferalID || ""
               });
               alert("Registered Successfully", "success", "login-up");
               setTimeout(function () {
@@ -238,9 +243,25 @@
               const errorMessage = error.message;
               alert(errorCode, "warning", "login-up");
             });
+
+          get(child(dbRef, `/RefID/RefID`)).then((snapshot) => {
+            if (snapshot.exists()) {
+              const db = getDatabase();
+              const val = snapshot.val() + 1;
+              set(ref(db, '/RefID'), {
+                RefID: val
+              })
+            } else {
+              console.log("No data available");
+            }
+          }).catch((error) => {
+            console.error(error);
+          });
+
         } else {
           alert("password not matched", "warning", "login-up");
         }
+
 
       });
 
