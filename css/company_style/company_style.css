@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --main-color: #0b132a;
+  --secondary-color: #0b132a;
+  --light-color: #0b132a;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--main-color) !important ;
+}
+
+.container {
+  width: 900px;
+  background-color: var(--main-color) !important;
+}
+
+.main-box {
+  background-color: var(--main-color);
+  padding: 5em;
+}
+
+
+/* or label line css
+ */
+.or-container {
+  align-items: center;
+  color: #0b132a;
+  display: flex;
+  /* margin: 0px 0; */
+}
+
+.line-separator {
+  background-color: #0b132a;
+  flex-grow: 5;
+    height: 1px;
+  /* padding: 0 !important; */
+}
+
+.or-label {
+  flex-grow:1;
+  font-size: larger;
+  font-weight: 500;
+  margin: 0 15px;
+  text-align: center;
+}
+
+
+/* this is main component */
+.title {
+  margin-bottom: 1rem;
+}
+.form {
+  box-shadow: rgba(255, 255, 255, 0.2) 5px 8px 20px 0px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 2%;
+  margin: 10px;
+}
+
+.form h3 {
+  text-align: center;
+  font-weight: 650;
+  font-family: "Open Sans", sans-serif;
+}
+.form div {
+  /* padding: 0px; */
+  padding-bottom: 20px;
+}
+
+.box {
+  border-radius: 6px;
+}
+.namebox {
+  display: flex;
+  flex-direction: row;
+}
+.namebox div {
+  padding-bottom: 0px;
+}
+
+/* sign up and sign in button */
+.btn {
+  background-color: var(--secondary-color) !important;
+  font-weight: 600 !important;
+}
+.btn:hover,
+.btn:active {
+  background-color: var(--main-color) !important;
+}
+
+/* sign up of toggle button */
+.icon {
+  font-size: 1.3em;
+  color: #0b132a;
+}
+.signup {
+  color: var(--main-color);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signup:hover,
+.signup:active {
+  color: var(--secondary-color);
+  font-size: 104%;
+}
+
+/* forget password  */
+.forgot {
+  font-weight: 600;
+  color: var(--light-color);
+  text-decoration: none;
+}
+.forgot:hover,
+.forgot:active {
+  color: var(--secondary-color);
+  font-size: 104%;
+}
+
+/* input textbox editing */
+input {
+  outline: 0px;
+  border: 0px;
+  background-color: #f2f2f2;
+}
+input::placeholder {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  color: var(--light-color);
+}
+
+/*Show login*/
+.block {
+  display: block;
+}
+
+/*Hidden login*/
+.none {
+  display: none;
+}
+
+/* this is for toggle animation of both form */
+.registered,
+.create {
+  animation-duration: 0.4s;
+  animation-name: animate-login;
+}
+
+@keyframes animate-login {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@media (min-width: 200px) and (max-width: 500px) {
+  .namebox {
+    display: flex;
+    flex-direction: column;
+    padding: 0px !important;
+  }
+
+  .form div {
+    padding: 10px;
+    padding-bottom: 10px;
+  }
+  .box1 {
+    padding-bottom: 10px !important;
+  }
+  .intl-tel-input {
+    padding: 0px !important;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1700px) {
+  .namebox {
+    display: flex;
+
+    flex-direction: column;
+    padding: 0px !important;
+  }
+
+  .form div {
+    padding: 10px;
+    padding-bottom: 10px;
+  }
+  .box1 {
+    padding-bottom: 10px !important;
+  }
+}
+.note{
+  color: #f2f2f2;
+  font-weight: bold;
+  margin:1px;
+  text-align: center;
+}

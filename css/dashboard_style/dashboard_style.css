@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Open Sans", sans-serif;
+    
+        background-color: #47adc4ab;
+}
+ul{
+    list-style: none;
+    padding: 0px 40px 0px 40px;
+}
+
+.card {
+  border: none;
+  width: auto;
+
+  border-radius: 10px;
+  box-shadow: 4px 4px rgba(41, 40, 40, 0.612);
+  background-color: #fdfdfdab;
+  }
+  
+  .container {
+    width:auto;
+    background-color: #fdfdfdab;
+  }
+  
+@keyframes cascade{
+    0%{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+.container {
+    padding: 2px 16px;
+    color: #0b132a;
+    margin: 0px 0px 0px 40px;
+    align-items: center;  
+}
+
+.container h2{
+    font-size: 25px;
+    font-weight: 800;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+}
+
+.container h3{
+    font-size: 15px;
+    font-weight: 800;
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+}
+.container p{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 5px 0px 5px 0px;
+    padding: 2px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+    background-color: #0b132a; 
+}
+.dashboard p{
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 80px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px 40px 40px;
+}
+
+.row span{
+    color:#0b132a;
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 80px;
+}
+
+#create-job-btn{
+    background-color: #0b132a;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    padding: 6px 6px;
+    margin-right: 80px;
+    border-radius: 10px;
+}
+
+#create-job-btn:hover{
+    font-size: 102%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
