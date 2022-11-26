@@ -35,20 +35,32 @@ const auth = getAuth(firebaseApp);
 const dbRef = ref(getDatabase());
 
 // for getting data of user
+const loaderContainer = document.querySelector('.loader-container');
+const displayLoading = () => {
+  loaderContainer.style.display = 'block';
+};
+
+const hideLoading = () => {
+  loaderContainer.style.display = 'none';
+};
 
 // for getting data of user
 auth.onAuthStateChanged((user) => {
   if (user) {
     get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
       if (Usnapshot.exists()) {
+        displayLoading();
         // console.log(Usnapshot.val().FirstName);
         document.getElementById('name-text').innerText = "Hi " + Usnapshot.val().FirstName;
         const tempref = ref(database, "Jobs/");
         // console.log(tempref);
+        
         onValue(
           tempref,
           (Csnapshot) => {
+            hideLoading();
             Csnapshot.forEach((snapshot) => {
+            
               // console.log(snapshot.val().Jobtitle);
               const cardList = document.getElementsByClassName("test")[0];
               const newGroup = document.createElement("ul");
@@ -184,3 +196,5 @@ function logout() {
 //     );
 
 // });
+
+
