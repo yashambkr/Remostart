@@ -8,7 +8,7 @@
 
 html,
 body {
-  background-color: #edfafd;
+  background-color: white;
   font-size: 62.5%;
   font-family: "League Gothic", sans-serif;
   font-family: "Poppins", sans-serif;
@@ -201,7 +201,7 @@ a {
 .cardcontainer {
   width: 100%;
   display: flex;
-  background: #edfafd;
+  background: white;
 
   box-sizing: border-box;
   flex-direction: row;
