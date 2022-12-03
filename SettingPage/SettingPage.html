@@ -32,7 +32,6 @@
 </head>
 
 <body>
-	
 	<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="margin: 0px; padding: 15px">
 		<div class="container">
 			<a class="navbar-brand text-wrap"
@@ -62,7 +61,8 @@
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu ">
 							<a class="dropdown-item">My
-								Profile</a><a class="dropdown-item"
+								Profile</a><a class="dropdown-item" dis>No of Jobs <span
+									class="badge  rounded-pill bg-dark ">13</span></a><a class="dropdown-item"
 								id="logout-link">Logout</a>
 						</div>
 					</li>
@@ -100,7 +100,6 @@
 
 		<!-- Page Content Holder -->
 		<div class="col-md-7 " id="content">
-			
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -111,10 +110,6 @@
 				</div>
 
 				<div id="section1" class="col-md-12  border-right container">
-					<!-- loader contain -->
-<div class="loader-container">
-	<div class="spinner"></div>
-</div>
 					<div class="p-3 py-5">
 						<div class="d-flex justify-content-between align-items-center mb-3">
 							<h6 class="text-right "
@@ -200,7 +195,6 @@
 			</nav>
 		</div>
 	</div>
-
 
 
 	<footer>
@@ -298,27 +292,14 @@
 		const dbRef = ref(getDatabase());
 
 
-		// loading bar
-		// for getting data of user
-		const loaderContainer = document.querySelector('.loader-container');
-		const displayLoading = () => {
-  loaderContainer.style.display = 'block';
-};
-
-const hideLoading = () => {
-  loaderContainer.style.display = 'none';
-};
-
 
 		// for getting data of user
 		auth.onAuthStateChanged(user => {
 			if (user) {
 				// document.getElementById('name-text').innerText = "Hi " +  user.displayName.split(" ")[0]  ;
-		
+
 				get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
-					
 					if (snapshot.exists()) {
-						
 						const FirstName = snapshot.val().FirstName;
 						const LastName = snapshot.val().LastName;
 						const Email = snapshot.val().Email;

@@ -35,33 +35,21 @@ const auth = getAuth(firebaseApp);
 const dbRef = ref(getDatabase());
 
 // for getting data of user
-const loaderContainer = document.querySelector('.loader-container');
-const displayLoading = () => {
-  loaderContainer.style.display = 'block';
-};
-
-const hideLoading = () => {
-  loaderContainer.style.display = 'none';
-};
 
 // for getting data of user
 auth.onAuthStateChanged((user) => {
   if (user) {
     get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
       if (Usnapshot.exists()) {
-        displayLoading();
-        // console.log(Usnapshot.val().FirstName);
-        document.getElementById('name-text').innerText = "Hi " + Usnapshot.val().FirstName;
+        console.log(Usnapshot.val().FirstName);
+
         const tempref = ref(database, "Jobs/");
-        // console.log(tempref);
-        
+        console.log(tempref);
         onValue(
           tempref,
           (Csnapshot) => {
-            hideLoading();
             Csnapshot.forEach((snapshot) => {
-            
-              // console.log(snapshot.val().Jobtitle);
+              console.log(snapshot.val().Jobtitle);
               const cardList = document.getElementsByClassName("test")[0];
               const newGroup = document.createElement("ul");
               newGroup.classList.add("card");
@@ -78,9 +66,10 @@ auth.onAuthStateChanged((user) => {
               card.classList.add("h-150");
 
               const CompanyName = document.createElement("h4");
-              CompanyName.innerText =  snapshot.val().CompanyName;
+              CompanyName.innerText =
+                "Company Name : " + snapshot.val().CompanyName;
               ncard.appendChild(CompanyName);
-              CompanyName.className = "fw-bold";
+
               const CompanyWebsite = document.createElement("h6");
               CompanyWebsite.innerText =
                 "Company Website : " + snapshot.val().Qualification;
@@ -196,5 +185,3 @@ function logout() {
 //     );
 
 // });
-
-
