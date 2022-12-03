@@ -175,16 +175,18 @@ var postJobButton = document
             Qualification: Qualification,            
             });
             const tempRef = ref(database, 'Jobs/' );
+                
+            let job="";
             onChildAdded(tempRef, (data) => {
-              push(ref(database, 'Company/' + user.uid + '/CreatedJobs/'),{
-              JobID: data.key,
-              });
+                job=data.key;
             });
-
+            const jobid=job;
             alert("Registered Successfully", "success", "login-up");
-            window.location = "../company/company_dashboard.html";
-            
-            
+           push(ref(database, 'Company/' + user.uid + '/CreatedJobs/'),{
+              JobID: jobid
+              });
+              window.location = "../company/company_dashboard.html";
+
 					} else {
                 console.log("Does not work");
 					}

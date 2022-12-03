@@ -48,6 +48,7 @@ auth.onAuthStateChanged((user) => {
           tempRef,
           (snapshot) => {
             snapshot.forEach((childSnapshot) => {
+              console.log("tempRef = " + user.uid);
               const childData = childSnapshot.val().JobID;
               console.log("JobId= " + childData);
 
