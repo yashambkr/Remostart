@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@100;200;300;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/Footer/footer.css">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
@@ -32,9 +34,6 @@
                     <img src="./assets/logo/Color-REMO.png" class="responsive" alt="" width="175" height="">
                 </a>
                 <ul class="pt-4 nav-menu">
-                    <li class="nav-item">
-                        <a href="https://blog-xi-beryl-28.vercel.app/" class="nav-link nav-link-anim">Blog</a>
-                    </li>
                     <li class="nav-item">
                         <a href="./company/company_register.html" class="nav-link nav-link-anim">Startup</a>
                     </li>
@@ -82,7 +81,7 @@
         <!-- Carousel  -->
         <div data-aos="fade-up"  class="carouselcontainer   ">
             <h1 class="main-heading mb-5 pb-5 pt-5" > How Remostart works?</h1>
-            <div data-aos="fade-up"  class="row pb-5 mb-5 w-100">
+            <div data-aos="fade-up"  class="row pb-5 mb-5">
                 <div class="col-md-5">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -254,7 +253,7 @@
 
 
 
-        <!-- <section data-aos="fade-up"  data-aos-duration="2000" id="section3" class="container text-center pb-5 mb-5 pt-5 mt-5">
+        <section data-aos="fade-up"  data-aos-duration="2000" id="section3" class="container text-center pb-5 mb-5 pt-5 mt-5">
             <div class="row pb-5 mb-5 pt-5 mt-5">
                 <div class="col-md-5 pb-3 mb-3 pt-3 mt-3">
                     <p class="section3heading">Startup</p>
@@ -278,7 +277,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
 
 
@@ -305,7 +304,7 @@
 
         <!-- JOIN US CONTAINER -->
 
-        <!-- <section data-aos="fade-up" data-aos-duration="2000"  class="signup container pt-5  mt-5">
+        <section data-aos="fade-up" data-aos-duration="2000"  class="signup container pt-5  mt-5">
             <div class="row  pt-5 pb-5 mb-5 mt-5">
                 <div class="  pt-5 pb-5 mb-5 mt-5 join-us text-center col-md-5">
                     <div id="joinsection">
@@ -338,10 +337,10 @@
                 <div class="pt-5 pb-5 mb-5 mt-5  col-md-5">
                     <div id="registerationsection">
                         <h1 id="heading1" class="text-center pb-5">Create an account and <br>discover the works</h1>
-                       <h2 id="heading2">Lorem ipsum is simply a dummy text of the printing<br> and typecasting
+                        <!-- <h2 id="heading2">Lorem ipsum is simply a dummy text of the printing<br> and typecasting
                             industry. Loreum has been industry's standard dummy<br> text ever since the 1500s</h2> -->
 
-                        <!-- <form class="form-group">
+                        <form class="form-group">
 
                             <div class="mb-3">
                                 <input type="text" id="Fname" style="border-radius:15px;" placeholder="First Name"
@@ -399,7 +398,7 @@
 
 
 
-        </section>  -->
+        </section>
 
 
 
@@ -524,7 +523,6 @@
         const database = getDatabase(firebaseApp);
         const auth = getAuth(firebaseApp);
         const provider = new GoogleAuthProvider();
-
         provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
         // document.getElementById('google-login').addEventListener('click', GoogleLogin);
