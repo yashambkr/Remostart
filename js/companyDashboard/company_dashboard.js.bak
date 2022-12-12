@@ -1,0 +1,132 @@
+var jobList = new Array("");
+var x = "";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import {
+  getDatabase,
+  set,
+  ref,
+  child,
+  get,
+  onValue,
+  push,
+  update,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+import {
+  getAuth,
+  signOut,
+  updatePassword,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import {
+  getStorage,
+  uploadBytes,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
+
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
+  authDomain: "remostart-daf09.firebaseapp.com",
+  projectId: "remostart-daf09",
+  storageBucket: "remostart-daf09.appspot.com",
+  messagingSenderId: "1072762916132",
+  appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
+});
+// references
+const database = getDatabase(firebaseApp);
+const auth = getAuth(firebaseApp);
+const dbRef = ref(getDatabase());
+
+// for getting data of user
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    get(child(dbRef, "Company/" + user.uid)).then((snapshot) => {
+      if (snapshot.exists()) {
+        const CompanyName = snapshot.val().CompanyName;
+        console.log(CompanyName);
+
+        const tempRef = ref(database, "Company/" + user.uid + "/CreatedJobs/");
+        onValue(
+          tempRef,
+          (snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+              const childData = childSnapshot.val().JobID;
+              console.log("JobId= " + childData);
+
+              const jobRef = ref(database, "Jobs/" + childData + "/");
+
+              onValue(jobRef, (snapshot) => {
+                const data = snapshot.val().Jobtitle;
+
+                jobList.push(data);
+                const cardList = document.getElementsByClassName('test')[0];
+
+                for (var i = 0; i < jobList.length; i++) {
+                  console.log(jobList[i]);
+                  const newGroup = document.createElement('ul');
+                  newGroup.className = 'demo';
+                  const lcard = document.createElement('li');
+                  lcard.className = 'group';
+                  newGroup.append(lcard);
+                  const card = document.createElement('div');
+                  card.className = 'card';
+                  newGroup.append(card);
+                  const ncard = document.createElement('div');
+                  card.className = 'container';
+                  newGroup.append(ncard);
+
+                  const name = document.createElement('h3');
+                  name.innerText = jobList[i];
+
+                  ncard.append(name);
+
+                  cardList.appendChild(newGroup);
+                }
+              });
+            });
+          },
+          {
+            onlyOnce: true,
+          }
+        );
+      } else {
+        console.log("Not possible");
+      }
+    });
+  }
+});
+
+var createJobBtn = document
+  .getElementById("create-job-btn")
+  .addEventListener("click", (e) => {
+    window.location = "../company/create_job.html";
+  });
+
+// btn.addEventListener('click', e => {
+//     const storage = getStorage();
+//     const file = document.querySelector('input').files[0];
+//     const filename = file.name;
+//     const ImagesRef = ref(storage, ('Resume/Web/' + { filename }));
+
+//     // const final = firebaseApp.storage.child(`Resume/Web/${file}`);
+
+//     const uploadTask = uploadBytesResumable(ImagesRef, file);
+//     uploadTask.on('state_changed',
+//         (snapshot) => {
+
+//             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//             document.getElementById("progressbar").style.width = progress + "%";
+//             document.getElementById("progressbar").innerHTML = progress + "%";
+//             console.log('Upload is ' + progress + '% done');
+//         },
+//         (error) => {
+//             // Handle unsuccessful uploads
+//         },
+//         () => {
+
+//             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+//                 console.log('File available at', downloadURL);
+//             });
+//         }
+//     );
+
+// });

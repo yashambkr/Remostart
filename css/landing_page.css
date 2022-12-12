@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --offset: 6px;
+}
+
+html,
+body {
+  background-color: white;
+  font-size: 62.5%;
+  font-family: "League Gothic", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+#heading_text {
+  margin-top: 80px;
+  color: #0b132a;
+  font-size: 7rem;
+  font-weight: 800;
+  
+}
+
+#heading_text #typewriter {
+  color: #00b4d8;
+  
+}
+
+
+#hire-word{
+  /* color: #00b4d8; */
+  /* font-stretch: expanded; */
+  padding-top: 46px;
+  padding-left: 25px;
+ 
+  font-family: 'Anton', sans-serif;
+  -ms-transform: scale(1.5, 2.5); /* IE 9 */
+ -webkit-transform: scale(1.5, 2.5); /* Safari */
+ transform: scale(1.4, 1.9);
+  
+}
+
+#heading_image {
+  width: 70rem;
+}
+
+/* media queries */
+@media (max-width: 480px) {
+  #heading_image {
+    width: 32rem;
+  }
+  #heading_text {
+    margin-top: 50px;
+    font-size: 4rem;
+    font-weight: 800;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #heading_image {
+    width: 45rem;
+  }
+}
+
+
+
+/* how remostart works? */
+
+/* for styling carousel */
+
+.carouselcontainer {
+  padding: 50px 0;
+  background-color: #0b132a;
+  width: 100%;
+  height: 100%;
+}
+.main-heading {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.startup {
+  color: #edfafd;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  /* position: relative; */
+  margin: 30px 0 60px;
+}
+.carousel-item {
+  color: #edfafd;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  min-height: 290px;
+}
+
+#verticalline {
+  border-left: 3px solid #edfafd;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  #verticalline {
+    display: none;
+  }
+}
+.far{
+  padding: 30px;
+}
+
+
+
+/* === intro section === */
+#content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+  margin: auto;
+  padding-top: 50px;
+}
+#Introduction-image {
+  border-radius: 10px;
+  padding: 0px;
+  overflow: hidden;
+  width: 50%;
+  max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+#content-section {
+  width: 40%;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  
+}
+@media screen and (max-width: 768px) {
+  #Introduction-image{
+    display: none;
+  }
+  #content-section{
+    text-align: center;
+    width:100%;
+  }
+  #content-container {
+  
+    padding-top: 0px;
+  }
+  #Introduction-image1 img{
+    border-radius: 10px;
+    margin-bottom:80px;
+  }
+}
+@media (min-width: 768px){
+  #Introduction-image1{
+    display: none;
+  }
+}
+
+
+
+
+
+/*  === section 3 === */
+
+.section3heading {
+  font-size: 40px;
+  text-shadow: 5px 5px 3px #d4d5d9;
+}
+
+.section3button {
+  border-radius: 5px;
+  background-color: #0b132a;
+  padding: 2px 20px;
+  color: #edfafd;
+  font-size: small;
+  text-align: center;
+}
+.middledash {
+  border-left: 3px solid #0b132a;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+}
+
+#section3 img {
+  height: 275px !important;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .middledash {
+    display: none;
+  }
+}
+
+
+
+
+
+
+/* three container styling css */
+.cardcontainer {
+  width: 100%;
+  display: flex;
+  background: white;
+
+  box-sizing: border-box;
+  flex-direction: row;
+}
+/* internal container styling */
+.internalcontainers {
+  flex: 1;
+  background: #0b132a;
+  padding: 30px; 
+  padding-bottom: 120px;
+  font-size: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  color: #edfafd;
+  text-align: center;
+}
+.internalcontainerimages {
+  height: 258px;
+  max-height: 70%;
+  max-width: 100%;
+}
+.paragraph{
+  word-wrap: break-word;
+  position: relative;
+  top: 50px;
+}
+
+.ubio{
+  position: relative;
+  top: 50px;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+  .cardcontainer {
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+/* Join us container and create account css */
+.middledash {
+  border-left: 3px solid #0b132a;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+}
+.auth-btn button:hover{
+  background-color: #0b132a;
+}
+.auth-btn span{
+  font-size: 15px;
+}
+.arrow{
+  padding: 20px 20px;
+  width: 150px;
+}
+input{
+  font-size: 15px !important;
+}
+
+
+
+body[data-aos-duration='2000'] [data-aos],
+[data-aos][data-aos][data-aos-duration='2000'] {
+  transition-duration: 2000ms;
+}
+
+
+.slidingVertical{
+	display: inline;
+	text-indent: 8px;
+}
+.slidingVertical span{
+	animation: topToBottom 8.5s linear infinite 0s;
+	-ms-animation: topToBottom 8.5s linear infinite 0s;
+	-webkit-animation: topToBottom 8.5s linear infinite 0s;
+	color: #00abe9;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.slidingVertical span:nth-child(1){
+	animation-delay: 5.5s;
+	-ms-animation-delay: 5.5s;
+	-webkit-animation-delay: 5.5s;
+}
+.slidingVertical span:nth-child(2){
+	animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+}
+
+/*topToBottom Animation*/
+@-moz-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-50px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(-50px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
