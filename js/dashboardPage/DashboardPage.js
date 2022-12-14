@@ -125,12 +125,18 @@ auth.onAuthStateChanged((user) => {
               button.type = "button";
               button.innerHTML = "View Job";
               button.classList.add("btn-styled");
+           
+              const btnid = 'btn'+snapshot.key;
+              const applybtn = document.getElementsByName('btnbtn');
+         
+              
+           
+
 
 
 
               button.onclick = function () {
                 
-                // data-bs-toggle="modal" data-bs-target="#exampleModal">
                 $("#JobModal").modal("toggle");
                 document.getElementById("ModalLabel").innerText = CName;
                 document.getElementById("jobDesc").innerText = jobDescription;
@@ -138,29 +144,26 @@ auth.onAuthStateChanged((user) => {
                 document.getElementById("jobQualification").innerHTML ='<span class="fw-bold">Qualification : </span>'+qualification;
                 document.getElementById("jobType").innerHTML ='<span class="fw-bold">Job Type : </span>'+ jobType;
                 document.getElementById("JobLocation").innerHTML ='<span class="fw-bold">Location : </span>'+ jobLocation;
- 
-                $("#apply-btn").click(function(){
-                  console.log(snapshot.key +"   ------ "+ CName);
-                  // alert(snapshot.key);
-                  push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
-                  applicantId: user.uid,
-                  FirstName: Usnapshot.val().FirstName,
-                  LastName: Usnapshot.val().LastName,
-                  Email: Usnapshot.val().Email,
-                  PhoneNo: Usnapshot.val().PhoneNo,
-                });
+                const btn_Jquery = '#'+btnid;
+                console.log(btn_Jquery);
 
-                push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
-                  JobId: snapshot.key,
-                  Jobtitle: snapshot.val().Jobtitle,
-                  CompanyName: snapshot.val().CompanyName,
-                });
-                });
-                // document.getElementById('apply-btn').onclick() = function(){
-                //     alert("Applied Successfully", "success", "Okay");
-                
-                // }
-                
+               
+                  
+                //   push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
+                //   applicantId: user.uid,
+                //   FirstName: Usnapshot.val().FirstName,
+                //   LastName: Usnapshot.val().LastName,
+                //   Email: Usnapshot.val().Email,
+                //   PhoneNo: Usnapshot.val().PhoneNo,
+                // });
+
+                // push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
+                //   JobId: snapshot.key,
+                //   Jobtitle: snapshot.val().Jobtitle,
+                //   CompanyName: snapshot.val().CompanyName,
+                // alert("Applied Successfully", "success", "Okay");
+                // });
+          
 
                 
               };

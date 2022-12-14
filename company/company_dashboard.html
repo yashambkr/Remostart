@@ -1,98 +1,157 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Employer Dashboard</title>
-    <link rel="stylesheet" href="../css/dashboard_style/dashboard_style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+<head>
+  <title>Employer Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard_style/dashboard_style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- google font cdn Bigshoulder -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="dashboard">
-      <p id="company-name" style="text-transform: uppercase" class="pt-3">
-        Dashboard
-      </p>
-      <button class="btn btn-close-white text-bg-dark m-2" id="logout-link">
-        Logout
-      </button>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+  <!-- google font cdn Bigshoulder -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800&display=swap" rel="stylesheet" />
+
+  <!-- css files  -->
+  <link rel="stylesheet" href="../css/profile_page_css/Navigation-Clean.css" />
+
+  <link rel="stylesheet" href="../css/Footer/footer.css">
+
+</head>
+
+<body>
+  <div class="loader-container">
+		<div class="spinner"></div>
+	</div>
+  <div class="">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="margin: 0px; padding: 15px">
+      <div class="container">
+        <span class="fs-1">DASHBOARD</span>
+        <button data-bs-toggle="collapse" class="navbar-toggler" style="color: transparent;" data-bs-target="#navcol-1">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
+            style=" fill:#000000;">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+              font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g fill="#ffffff">
+                <path d="M0,25.8v17.2h172v-17.2zM0,77.4v17.2h172v-17.2zM0,129v17.2h172v-17.2z"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ms-auto mt-3">
+
+            <li class="nav-item"><a href="create_job.html" class="nav-link">CREATE JOB POST</a></li>
+            <li  class="nav-item"><a href="" id="logout-link" class="nav-link">LOGOUT</a></li>
+            
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--Job Posting Cards-->
+  <div class="container">
+
+    <h1 class="text-center p-4 fs-2 fw-bold">Posted Jobs</h1>
+    <div class="test row gy-5 gx-3"></div>
+
+
+  </div>
+
+  <footer class="pt-5 mt-5">
+    <div class="footer_row">
+      <div class="footer_col">
+        <img class="footer_logo" src="../assets/logo/Remo-White.png" alt="logo">
+        <p>Linking Talents Remotly to work with Startups. Here we connect both
+          the parts of a loop where Startups meet the other part of loop with
+          Intern, Remote, Part-Time, Full Time.
+        </p>
+      </div>
+      <div class="footer_col">
+        <h2>Offices</h3>
+          <div>
+            <p>Digdho Hill, Hingna</p>
+            <p>Maharashtra, PIN 440016</p>
+            <p>India</p>
+
+          </div>
+          <div class="dash">
+            <hr>
+          </div>
+          <div>
+            <p>7 Bamidele Majiyagbe Street</p>
+            <p>Southern View Estate, Lagos</p>
+            <p>Nigeria</p>
+
+
+          </div>
+          <div class="dash">
+            <hr>
+          </div>
+          <p class="email-id">info@remostarts.com</p>
+
+      </div>
+      <div class="footer_col">
+        <h3>Links
+        </h3>
+        <ul class="p-0">
+          <li><a href="">Home</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Features</a></li>
+          <li><a href="">Contacts</a></li>
+        </ul>
+      </div>
+      <div class="footer_col">
+        <h3>Newsletter
+        </h3>
+        <form class="form1" action="">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <div class="social-icons">
+          <a href="https://twitter.com/Remostart" target="_blank"><i class="fa-brands fa-twitter "></i></a>
+
+
+          <a href="https://www.linkedin.com/company/remo-start" target="_blank"><i
+              class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
     </div>
-    <div class="">
-      <ul class="nav nav-pills">
-        <li class="p-4 m-4 nav-item">
-          <a  href="create_job.html" >
-            <button id="create-job-btn">
-              <i class="bx bx-plus icon bx-xs"></i> Create Job Post
-            </button>
-          </a>
-        </li>
-        <li class="nav-item">
-         
-        </li>
-        
-      </ul>
-    </div>
 
-    <!--Job Posting Cards-->
-    <div class="container">
-      
-        <h1 class="text-center p-4 fs-2 fw-bold">Posted Jobs</h1>
-        <div class="test row gy-5 gx-3"></div>
-       
+    <p class="copyright">RemoStart - Connecting Talents</p>
+  </footer>
+  <script type="module" src="../js/companyDashboard/company_dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <!-- Bootstrap Js CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    </div>
-    <script
-      type="module"
-      src="../js/companyDashboard/company_dashboard.js"
-    ></script>
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Bootstrap Js CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>
