@@ -90,19 +90,7 @@ ul {
 #create-job-btn:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-#logout-link {
-  background-color: #ffffff; /* Green */
-  border: none;
-  color: #0b132a;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+
 .btn-styled {
   background-color: #0b132a;
   border-radius: 4px;
@@ -152,3 +140,31 @@ ul {
   margin-left: 2px;
 }
 
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: white;
+  /* z-index: 1; */
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #0b132a transparent #0b132a transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

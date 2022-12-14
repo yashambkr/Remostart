@@ -35,21 +35,35 @@ const database = getDatabase(firebaseApp);
 const auth = getAuth(firebaseApp);
 const dbRef = ref(getDatabase());
 
+
+// for getting data of user
+const loaderContainer = document.querySelector('.loader-container');
+const displayLoading = () => {
+  loaderContainer.style.display = 'block';
+};
+
+const hideLoading = () => {
+  loaderContainer.style.display = 'none';
+};
+
+
 // for getting data of user
 auth.onAuthStateChanged((user) => {
   if (user) {
     get(child(dbRef, "Company/" + user.uid)).then((snapshot) => {
       if (snapshot.exists()) {
+        displayLoading();
         const CompanyName = snapshot.val().CompanyName;
-        console.log(CompanyName);
+
 
         const tempRef = ref(database, "Company/" + user.uid + "/CreatedJobs/");
         onValue(
           tempRef,
           (snapshot) => {
+            hideLoading();
             snapshot.forEach((childSnapshot) => {
               const childData = childSnapshot.val().JobID;
-              console.log("JobId= " + childData);
+              // console.log("JobId= " + childData);
 
               const jobRef = ref(database, "Jobs/" + childData + "/");
 
@@ -66,63 +80,64 @@ auth.onAuthStateChanged((user) => {
                 const data = snapshot.val().Jobtitle;
                 const cardList = document.getElementsByClassName("test")[0];
 
-                console.log(data);
+
                 const newGroup = document.createElement("div");
-              newGroup.classList.add('col-12', 'col-md-4', 'job-card', 'd-flex', 'flex-column', 'justify-content-between', 'py-3');
+                newGroup.classList.add('col-12', 'col-md-4', 'job-card', 'd-flex', 'flex-column', 'justify-content-between', 'py-3');
 
 
 
 
 
-              //inside card properties
-              const CompanyName = document.createElement("h4");
-              newGroup.appendChild(CompanyName);
-              CompanyName.innerText = CName;
-              CompanyName.classList.add("job-card_company", "text-uppercase");
-
-              // const CompanyWebsite = document.createElement("h6");
-              // CompanyWebsite.innerText =
-              //   "Website : " + CWebsite;
-              // newGroup.appendChild(CompanyWebsite);
-
-              // const CompanyDescripition = document.createElement("p");
-              // CompanyDescripition.innerText =
-              //   "CompanyDescripition : " + CDescription;
-              // newGroup.appendChild(CompanyDescripition);
-
-              const Job_Title = document.createElement("h4");
-              Job_Title.innerText = jobTitle;
-              newGroup.appendChild(Job_Title);
-              Job_Title.classList.add("fw-bold");
-
-              const Job_location = document.createElement("p");
-              Job_location.innerText = jobLocation;
-              newGroup.appendChild(Job_location);
-              Job_location.classList.add("job-label");
+                //inside card properties
+                const CompanyName = document.createElement("h4");
+                newGroup.appendChild(CompanyName);
+                CompanyName.innerText = CName;
+                CompanyName.classList.add("job-card_company", "text-uppercase");
 
 
-              const Job_Type = document.createElement("p");
-              Job_Type.innerText = jobType;
-              newGroup.appendChild(Job_Type);
-              Job_Type.classList.add("job-label");
+                // const CompanyWebsite = document.createElement("h6");
+                // CompanyWebsite.innerText =
+                //   "Website : " + CWebsite;
+                // newGroup.appendChild(CompanyWebsite);
 
-              // const job_Description = document.createElement("p");
-              // job_Description.innerText =
-              //   "Description : " + jobDescription;
-              // newGroup.appendChild(job_Description);
+                // const CompanyDescripition = document.createElement("p");
+                // CompanyDescripition.innerText =
+                //   "CompanyDescripition : " + CDescription;
+                // newGroup.appendChild(CompanyDescripition);
 
-              // const Qualification = document.createElement("p");
-              // Qualification.innerText =qualification.join("");
-              // newGroup.appendChild(Qualification);
-              // Qualification.classList.add("job-label");
+                const Job_Title = document.createElement("h4");
+                Job_Title.innerText = jobTitle;
+                newGroup.appendChild(Job_Title);
+                Job_Title.classList.add("fw-bold");
 
-              var br = document.createElement("br");
-              newGroup.appendChild(br);
-              var button = document.createElement("button");
-              button.type = "button";
-              button.innerHTML = "View Details";
-              button.classList.add("btn-styled");
-              newGroup.appendChild(button);
+                const Job_location = document.createElement("p");
+                Job_location.innerText = jobLocation;
+                newGroup.appendChild(Job_location);
+                Job_location.classList.add("job-label");
+
+
+                const Job_Type = document.createElement("p");
+                Job_Type.innerText = jobType;
+                newGroup.appendChild(Job_Type);
+                Job_Type.classList.add("job-label");
+
+                // const job_Description = document.createElement("p");
+                // job_Description.innerText =
+                //   "Description : " + jobDescription;
+                // newGroup.appendChild(job_Description);
+
+                // const Qualification = document.createElement("p");
+                // Qualification.innerText =qualification.join("");
+                // newGroup.appendChild(Qualification);
+                // Qualification.classList.add("job-label");
+
+                var br = document.createElement("br");
+                newGroup.appendChild(br);
+                var button = document.createElement("button");
+                button.type = "button";
+                button.innerHTML = "View Details";
+                button.classList.add("btn-styled");
+                newGroup.appendChild(button);
                 cardList.appendChild(newGroup);
               });
             });
@@ -137,17 +152,9 @@ auth.onAuthStateChanged((user) => {
     });
   }
 });
-
-var createJobBtn = document
-  .getElementById("create-job-btn")
-  .addEventListener("click", (e) => {
-    window.location = "../company/create_job.html";
-  });
-
 // for logout function
 document.getElementById("logout-link").addEventListener("click", logout);
 
-// function logout
 function logout() {
   signOut(auth)
     .then(() => {
@@ -158,6 +165,14 @@ function logout() {
       // An error happened.
     });
 }
+// var createJobBtn = document
+//   .getElementById("create-job-btn")
+//   .addEventListener("click", (e) => {
+//     window.location = "../company/create_job.html";
+//   });
+
+// for logout function
+
 // btn.addEventListener('click', e => {
 //     const storage = getStorage();
 //     const file = document.querySelector('input').files[0];
@@ -166,7 +181,7 @@ function logout() {
 
 //     // const final = firebaseApp.storage.child(`Resume/Web/${file}`);
 
-//     const uploadTask = uploadBytesResumable(ImagesRef, file);
+//     const uploadTask = uploadBytesResumable(ImagesRef, file);s
 //     uploadTask.on('state_changed',
 //         (snapshot) => {
 
