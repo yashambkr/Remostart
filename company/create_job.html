@@ -153,8 +153,7 @@ var postJobButton = document
    
     auth.onAuthStateChanged(user => {
 			if (user) {
-				// document.getElementById('name-text').innerText = "Hi " +  user.displayName.split(" ")[0]  ;
-
+				
 				get(child(dbRef, 'Company/' + user.uid)).then((snapshot) => {
 					if (snapshot.exists()) {
             var Company_name, Company_website, Company_description;
@@ -189,6 +188,7 @@ var postJobButton = document
             
             
 					} else {
+            
                 console.log("Does not work");
 					}
 				});

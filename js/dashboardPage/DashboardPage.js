@@ -37,7 +37,7 @@ const displayLoading = () => {
 const hideLoading = () => {
   loaderContainer.style.display = "none";
 };
-let jobid;
+
 // for getting data of user
 auth.onAuthStateChanged((user) => {
   if (user) {
@@ -124,31 +124,18 @@ auth.onAuthStateChanged((user) => {
               button.innerHTML = "View Job";
               button.classList.add("btn-styled");
 
-              jobid = snapshot.key;
-              const applybtn = document.getElementsByName("btnbtn");
-              // jobid = String(snapshot.key);
+
+             
+              
 
               button.onclick = function () {
                 const myUrl = new URL("http://127.0.0.1:5501/DashboardPage/ViewJobPage/ViewJobPage.html");
 
-                myUrl.searchParams.set("JobID", jobid);
-
+                myUrl.searchParams.set("JobID", snapshot.key);
+                console.log(snapshot.key);
                 window.location = myUrl;
 
-                //   push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
-                //   applicantId: user.uid,
-                //   FirstName: Usnapshot.val().FirstName,
-                //   LastName: Usnapshot.val().LastName,
-                //   Email: Usnapshot.val().Email,
-                //   PhoneNo: Usnapshot.val().PhoneNo,
-                // });
-
-                // push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
-                //   JobId: snapshot.key,
-                //   Jobtitle: snapshot.val().Jobtitle,
-                //   CompanyName: snapshot.val().CompanyName,
-                // alert("Applied Successfully", "success", "Okay");
-                // });
+           
               };
               newGroup.appendChild(button);
               cardList.appendChild(newGroup);
@@ -188,34 +175,4 @@ function logout() {
 
 
 
-// btn.addEventListener('click', e => {
-//     const storage = getStorage();
-//     const file = document.querySelector('input').files[0];
-//     const filename = file.name;
-//     const ImagesRef = ref(storage, ('Resume/Web/' + { filename }));
 
-//     // const final = firebaseApp.storage.child(`Resume/Web/${file}`);
-
-//     const uploadTask = uploadBytesResumable(ImagesRef, file);
-//     uploadTask.on('state_changed',
-//         (snapshot) => {
-
-//             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-//             document.getElementById("progressbar").style.width = progress + "%";
-//             document.getElementById("progressbar").innerHTML = progress + "%";
-//             console.log('Upload is ' + progress + '% done');
-//         },
-//         (error) => {
-//             // Handle unsuccessful uploads
-//         },
-//         () => {
-
-//             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-//                 console.log('File available at', downloadURL);
-//             });
-//         }
-//     );
-
-// });
-
-export default jobid;
