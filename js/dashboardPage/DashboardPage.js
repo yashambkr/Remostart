@@ -15,7 +15,6 @@ import {
   updatePassword,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
-
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
   authDomain: "remostart-daf09.firebaseapp.com",
@@ -30,13 +29,13 @@ const auth = getAuth(firebaseApp);
 const dbRef = ref(getDatabase());
 
 // for getting data of user
-const loaderContainer = document.querySelector('.loader-container');
+const loaderContainer = document.querySelector(".loader-container");
 const displayLoading = () => {
-  loaderContainer.style.display = 'block';
+  loaderContainer.style.display = "block";
 };
 
 const hideLoading = () => {
-  loaderContainer.style.display = 'none';
+  loaderContainer.style.display = "none";
 };
 
 // for getting data of user
@@ -46,7 +45,8 @@ auth.onAuthStateChanged((user) => {
       if (Usnapshot.exists()) {
         displayLoading();
 
-        document.getElementById('name-text').innerText = "Hi " + Usnapshot.val().FirstName;
+        document.getElementById("name-text").innerText =
+          "Hi " + Usnapshot.val().FirstName;
         const tempref = ref(database, "Jobs/");
         onValue(
           tempref,
@@ -62,20 +62,19 @@ auth.onAuthStateChanged((user) => {
               const jobDescription = snapshot.val().Description;
               const CWebsite = snapshot.val().CompanyWebsite;
 
-
-
-
-
-
               // console.log(snapshot.val().Jobtitle);
               // card properties
               const cardList = document.getElementsByClassName("test")[0];
               const newGroup = document.createElement("div");
-              newGroup.classList.add('col-12', 'col-md-4', 'job-card', 'd-flex', 'flex-column', 'justify-content-between', 'py-3');
-
-
-
-
+              newGroup.classList.add(
+                "col-12",
+                "col-md-4",
+                "job-card",
+                "d-flex",
+                "flex-column",
+                "justify-content-between",
+                "py-3"
+              );
 
               //inside card properties
               const CompanyName = document.createElement("h4");
@@ -103,7 +102,6 @@ auth.onAuthStateChanged((user) => {
               newGroup.appendChild(Job_location);
               Job_location.classList.add("job-label");
 
-
               const Job_Type = document.createElement("p");
               Job_Type.innerText = jobType;
               newGroup.appendChild(Job_Type);
@@ -125,47 +123,19 @@ auth.onAuthStateChanged((user) => {
               button.type = "button";
               button.innerHTML = "View Job";
               button.classList.add("btn-styled");
-           
-              const btnid = 'btn'+snapshot.key;
-              const applybtn = document.getElementsByName('btnbtn');
-         
+
+
+             
               
-           
-
-
-
 
               button.onclick = function () {
-                
-                $("#JobModal").modal("toggle");
-                document.getElementById("ModalLabel").innerText = CName;
-                document.getElementById("jobDesc").innerText = jobDescription;
-                document.getElementById("jobTitle").innerText = jobTitle;
-                document.getElementById("jobQualification").innerHTML ='<span class="fw-bold">Qualification : </span>'+qualification;
-                document.getElementById("jobType").innerHTML ='<span class="fw-bold">Job Type : </span>'+ jobType;
-                document.getElementById("JobLocation").innerHTML ='<span class="fw-bold">Location : </span>'+ jobLocation;
-                const btn_Jquery = '#'+btnid;
-                console.log(btn_Jquery);
+                const myUrl = new URL("http://127.0.0.1:5501/DashboardPage/ViewJobPage/ViewJobPage.html");
 
-               
-                  
-                //   push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
-                //   applicantId: user.uid,
-                //   FirstName: Usnapshot.val().FirstName,
-                //   LastName: Usnapshot.val().LastName,
-                //   Email: Usnapshot.val().Email,
-                //   PhoneNo: Usnapshot.val().PhoneNo,
-                // });
+                myUrl.searchParams.set("JobID", snapshot.key);
+                console.log(snapshot.key);
+                window.location = myUrl;
 
-                // push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
-                //   JobId: snapshot.key,
-                //   Jobtitle: snapshot.val().Jobtitle,
-                //   CompanyName: snapshot.val().CompanyName,
-                // alert("Applied Successfully", "success", "Okay");
-                // });
-          
-
-                
+           
               };
               newGroup.appendChild(button);
               cardList.appendChild(newGroup);
@@ -196,34 +166,13 @@ function logout() {
     });
 }
 
-// btn.addEventListener('click', e => {
-//     const storage = getStorage();
-//     const file = document.querySelector('input').files[0];
-//     const filename = file.name;
-//     const ImagesRef = ref(storage, ('Resume/Web/' + { filename }));
 
-//     // const final = firebaseApp.storage.child(`Resume/Web/${file}`);
 
-//     const uploadTask = uploadBytesResumable(ImagesRef, file);
-//     uploadTask.on('state_changed',
-//         (snapshot) => {
 
-//             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-//             document.getElementById("progressbar").style.width = progress + "%";
-//             document.getElementById("progressbar").innerHTML = progress + "%";
-//             console.log('Upload is ' + progress + '% done');
-//         },
-//         (error) => {
-//             // Handle unsuccessful uploads
-//         },
-//         () => {
 
-//             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-//                 console.log('File available at', downloadURL);
-//             });
-//         }
-//     );
 
-// });
+
+
+
 
 

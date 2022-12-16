@@ -27,7 +27,7 @@ ul {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.container h2 {
+/* .container h2 {
   font-size: 25px;
   font-weight: 800;
   margin: 10px 0px 0px 0px;
@@ -45,37 +45,36 @@ ul {
   font-weight: 500;
   margin: 5px 0px 5px 0px;
   padding: 2px;
-}
+} */
 
-.dashboard {
+/* .dashboard {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0px 40px 0px 40px; */
-  background-color: #0b132a;
-}
-.dashboard p {
+  /* padding: 0px 40px 0px 40px; } */
+
+/* .dashboard p {
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
   padding-left: 80px;
-}
+} */
 
-.row {
+/* .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding: 40px 40px 40px 40px; */
-}
+  padding: 40px 40px 40px 40px;
+} */
 
-.row span {
+/* .row span {
   color: #0b132a;
   font-size: 20px;
   font-weight: 800;
   margin-left: 80px;
-}
+} */
 
 #create-job-btn {
   background-color: #0b132a;

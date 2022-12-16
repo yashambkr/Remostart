@@ -82,8 +82,15 @@ auth.onAuthStateChanged((user) => {
 
 
                 const newGroup = document.createElement("div");
-                newGroup.classList.add('col-12', 'col-md-4', 'job-card', 'd-flex', 'flex-column', 'justify-content-between', 'py-3');
-
+                newGroup.classList.add(
+                  "col-12",
+                  "col-md-4",
+                  "job-card",
+                  "d-flex",
+                  "flex-column",
+                  "justify-content-between",
+                  "py-3"
+                );
 
 
 
