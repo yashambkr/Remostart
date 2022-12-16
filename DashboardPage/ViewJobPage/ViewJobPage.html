@@ -29,15 +29,13 @@
 
 	<link rel="stylesheet" href="../../css/Footer/footer.css">
 
-
+	<link rel="stylesheet" href="../../css/Dashboard_page_css/viewjob.css">
 	
 
 </head>
 
 <body>
-	<!-- <div class="loader-container">
-		<div class="spinner"></div>
-	</div> -->
+	
 	<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="margin: 0px; padding: 15px">
 		<div class="container">
 			<a class="navbar-brand text-wrap"
@@ -61,8 +59,8 @@
 			<div class="collapse navbar-collapse" id="navcol-1">
 				<ul class="navbar-nav ms-auto mt-3">
 
-					<li class="nav-item"><a class="nav-link">TRAINING</a></li>
-					<li class="nav-item"><a class="nav-link">STARTUP</a></li>
+					<li class="nav-item"><a href="http://127.0.0.1:5501/DashboardPage/DashboardPage.html" class="nav-link">VIEW JOBS</a></li>
+					<!-- <li class="nav-item"><a class="nav-link">STARTUP</a></li> -->
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase" id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu">
@@ -78,10 +76,119 @@
 	</nav>
 
 	<!-- page content -->
-	<div class="container  pb-5" >
+	<div  class="container  pb-5" >
 	
-		
-		 
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col p-5 m-5 shadow p-3 mb-5 bg-body rounded">
+                <div class="card-box task-detail">
+                    
+                    <h4 id="job-title" class="m-b-20"></h4>
+                    <p id="company-name" class="text-muted"></p>
+                    <p id="company-desc" class="text-muted"></p>
+					<p id="company-website" class="text-muted"></p>
+                    <ul class="list-inline task-dates m-b-0 mt-5">
+                        <li>
+                            <h5 class="m-b-5">Location</h5>
+                            <p id="job-location"></p>
+                        </li>
+                        <li>
+                            <h5 class="m-b-5">Job type</h5>
+                            <p id="job-type"></p>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="task-tags mt-4">
+                        <h5 class="">Skills required</h5>
+                        <!-- <div class="bootstrap-tagsinput"><span class="tag label label-info">Amsterdam<span data-role="remove"></span></span> <span class="tag label label-info">Washington<span data-role="remove"></span></span> <span class="tag label label-info">Sydney<span data-role="remove"></span></span>
+                            
+                        </div> -->
+						<p id="job-qualification"></p>
+                    </div>
+                 
+                    <div class="attached-files mt-4	">
+                        <h5 class="">Job description</h5>
+                        <div class="files-list">
+                            <p id="job-desc"></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="text-right mt-4">
+                                    <button type="submit" class="btn btn-dark waves-effect waves-light">Apply Here</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+            <!-- <div class="col-lg-4">
+                <div class="card-box">
+                    <h4 class="header-title m-b-30">Comments (5)</h4>
+                    <div>
+                        <div class="media m-b-20">
+                            <div class="d-flex mr-3">
+                                <a href="#"><img class="media-object rounded-circle thumb-sm" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-0">Maxine Kennedy</h5>
+                                <p class="font-13 text-muted mb-0"><a href="" class="text-dark">@Michael</a> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio.</p><a href="" class="text-success font-13">Reply</a></div>
+                        </div>
+                        <div class="media m-b-20">
+                            <div class="d-flex mr-3">
+                                <a href="#"><img class="media-object rounded-circle thumb-sm" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-0">Doyle Bell</h5>
+                                <p class="font-13 text-muted mb-0"><a href="" class="text-dark">@Michael</a> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio.</p><a href="" class="text-success font-13">Reply</a>
+                                <div class="media m-t-20 m-b-20">
+                                    <div class="d-flex mr-3">
+                                        <a href="#"><img class="media-object rounded-circle thumb-sm" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Elena Vancamp</h5>
+                                        <p class="font-13 text-muted mb-0"><a href="" class="text-dark">@Doyle</a> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio.</p><a href="" class="text-success font-13">Reply</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media m-b-20">
+                            <div class="d-flex mr-3">
+                                <a href="#"><img class="media-object rounded-circle thumb-sm" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-0">Maxine Kennedy</h5>
+                                <p class="font-13 text-muted mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio.</p><a href="" class="text-success font-13">Reply</a></div>
+                        </div>
+                        <div class="media m-b-20">
+                            <div class="d-flex mr-3">
+                                <a href="#"><img class="media-object rounded-circle thumb-sm" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar5.png"></a>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-0">Erick Loper</h5>
+                                <p class="font-13 text-muted mb-0"><a href="" class="text-dark">@Maxine</a> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio.</p><a href="" class="text-success font-13">Reply</a></div>
+                        </div>
+                        <div class="media m-b-20">
+                            <div class="d-flex mr-3">
+                                <a href="#"><img class="media-object rounded-circle thumb-sm" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                            </div>
+                            <div class="media-body">
+                                <input type="text" class="form-control input-sm" placeholder="Some text value...">
+                                <div class="mt-2 text-right">
+                                    <button type="submit" class="btn btn-sm btn-custom waves-effect waves-light">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- container -->
+</div>
     
 	
 	</div>

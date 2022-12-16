@@ -124,15 +124,16 @@ auth.onAuthStateChanged((user) => {
               button.innerHTML = "View Job";
               button.classList.add("btn-styled");
 
-              // jobid = snapshot.key;
+              jobid = snapshot.key;
               const applybtn = document.getElementsByName("btnbtn");
-              jobid = String(snapshot.key);
+              // jobid = String(snapshot.key);
 
               button.onclick = function () {
-                window.location =
-                  "../../DashboardPage/ViewJobPage/ViewJobPage.html";
-                const btn_Jquery = "#" + btnid;
-                console.log(btn_Jquery);
+                const myUrl = new URL("http://127.0.0.1:5501/DashboardPage/ViewJobPage/ViewJobPage.html");
+
+                myUrl.searchParams.set("JobID", jobid);
+
+                window.location = myUrl;
 
                 //   push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
                 //   applicantId: user.uid,
@@ -177,6 +178,15 @@ function logout() {
       // An error happened.
     });
 }
+
+
+
+
+
+
+
+
+
 
 // btn.addEventListener('click', e => {
 //     const storage = getStorage();
