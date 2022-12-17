@@ -125,8 +125,8 @@ auth.onAuthStateChanged((user) => {
               button.classList.add("btn-styled");
 
 
-             
-              
+
+
 
               button.onclick = function () {
                 const myUrl = new URL("http://127.0.0.1:5501/DashboardPage/ViewJobPage/ViewJobPage.html");
@@ -135,7 +135,7 @@ auth.onAuthStateChanged((user) => {
                 console.log(snapshot.key);
                 window.location = myUrl;
 
-           
+
               };
               newGroup.appendChild(button);
               cardList.appendChild(newGroup);
