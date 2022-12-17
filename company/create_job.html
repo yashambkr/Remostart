@@ -12,6 +12,8 @@
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
+<!-- tagify css cdn -->
+<link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
 <title>Create Job</title>
 
 <body>
@@ -19,37 +21,13 @@
     <span class="main-box col col-sm-9 col-md-7 col-lg-5 col-xxl-3.2">
       <!-- CREATE JOB BOX -->
       <section class="form registered pt-3 pb-3" id="login-in">
-        <h4 class="title">Create New Job Post</h4>
+        <h4 class="title text-center">Create New Job</h4>
 
         <!--Job Title-->
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-briefcase icon"></i></span>
           <input required type="text" id="jobtitle" name="jobtitle" placeholder="Job Title"
-            class="input form-control" />
-        </div>
-        <!--Job Type-->
-        <label>Choose Job Type</label>
-        <div class="box ms-0 me-0 input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="bx bx-user icon"></i>
-          </span>
-          <select id="select-job-type" required>
-            <option value="Full Time" default>Full Time</option>
-            <option value="Part Time">Part Time</option>
-            <option value="Contract">Contract</option>
-            <option value="Internship">Internship</option>
-          </select>
-        </div>
-
-        <!--Duration of Internship/Contract/Part Time-->
-        <!-- <div class="box ms-0 me-0 input-group flex-nowrap" id="job-duration"></div> -->
-
-        <!--Salary-->
-        <div class="box ms-0 me-0 input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="bx bx-money icon"></i></span>
-          <input required type="number" id="salary" name="salary" placeholder="Salary(per month)"
             class="input form-control" />
         </div>
 
@@ -61,14 +39,42 @@
             class="input form-control" wrap="hard" spellcheck="true"></textarea>
         </div>
 
+        <!--Salary-->
+        <div class="box ms-0 me-0 input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-money icon"></i></span>
+          <input required type="number" id="salary" name="salary" placeholder="Salary(per month)"
+            class="input form-control" />
+        </div>
+
+        
+
         <!--Preferred Qualification-->
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-task icon"></i></span>
-          <textarea required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
-            class="input form-control" wrap="hard" spellcheck="true"></textarea>
+          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
+            class="input form-control" wrap="hard" name='tags' spellcheck="true">
         </div>
 
+        <div class="box ms-0 me-0 input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-task icon"></i></span>
+          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
+            class="input form-control" wrap="hard" name='tags' spellcheck="true">
+        </div>
+        <div class="box ms-0 me-0 input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-task icon"></i></span>
+          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
+            class="input form-control" wrap="hard" name='tags' spellcheck="true">
+        </div>
+        <div class="box ms-0 me-0 input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-task icon"></i></span>
+          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
+            class="input form-control" wrap="hard" name='tags' spellcheck="true">
+        </div>
         <!--Post Job Button-->
         <div class="d-grid gap-2 col-6 mx-auto">
           <button type="submit" id="post-job-button" class="btn text-white">Post Job</button>
@@ -76,6 +82,8 @@
       </section>
     </span>
   </div>
+  <script src="https://unpkg.com/@yaireo/tagify"></script>
+  <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
   <script>
     let jobType = document.getElementById("select-job-type");
     let jobDuration = document.getElementById("job-duration");
@@ -90,7 +98,25 @@
         jobDuration.innerHTML = "";
       }
     });
+
+    var input = document.querySelector('input[name=tags]');
+
+    // initialize Tagify on the above input node reference
+    tagify = new Tagify(input, {
+      whitelist: ["A# .NET", "A# (Axiom)", "A-0 System", "A+", "A++", "ABAP", "ABC", "ABC ALGOL", "ABSET", "ABSYS", "ACC", "Accent", "Ace DASL", "ACL2", "Avicsoft", "ACT-III", "Action!", "ActionScript", "Ada", "Adenine", "Agda", "Agilent VEE", "Agora", "AIMMS", "Alef", "ALF", "ALGOL 58", "ALGOL 60", "ALGOL 68", "ALGOL W", "Alice", "Alma-0", "AmbientTalk", "Amiga E", "AMOS", "AMPL", "Apex (Salesforce.com)", "APL", "AppleScript", "Arc", "ARexx", "Argus", "AspectJ", "Assembly language", "ATS", "Ateji PX", "AutoHotkey", "Autocoder", "AutoIt", "AutoLISP / Visual LISP", "Averest", "AWK", "Axum", "Active Server Pages", "ASP.NET", "B", "Babbage", "Bash", "BASIC", "bc", "BCPL", "BeanShell", "Batch (Windows/Dos)", "Bertrand", "BETA", "Bigwig", "Bistro", "BitC", "BLISS", "Blockly", "BlooP", "Blue", "Boo", "Boomerang", "Bourne shell (including bash and ksh)", "BREW", "BPEL", "B", "C--", "C++ – ISO/IEC 14882", "C# – ISO/IEC 23270", "C/AL", "Caché ObjectScript", "C Shell", "Caml", "Cayenne", "CDuce", "Cecil", "Cesil", "Céu", "Ceylon", "CFEngine", "CFML", "Cg", "Ch", "Chapel", "Charity", "Charm", "Chef", "CHILL", "CHIP-8", "chomski", "ChucK", "CICS", "Cilk", "Citrine (programming language)", "CL (IBM)", "Claire", "Clarion", "Clean", "Clipper", "CLIPS", "CLIST", "Clojure", "CLU", "CMS-2", "COBOL – ISO/IEC 1989", "CobolScript – COBOL Scripting language", "Cobra", "CODE", "CoffeeScript", "ColdFusion", "COMAL", "Combined Programming Language (CPL)", "COMIT", "Common Intermediate Language (CIL)", "Common Lisp (also known as CL)", "COMPASS", "Component Pascal", "Constraint Handling Rules (CHR)", "COMTRAN", "Converge", "Cool", "Coq", "Coral 66", "Corn", "CorVision", "COWSEL", "CPL", "CPL", "Cryptol", "csh", "Csound", "CSP", "CUDA", "Curl", "Curry", "Cybil", "Cyclone", "Cython", "Java", "Javascript", "M2001", "M4", "M#", "Machine code", "MAD (Michigan Algorithm Decoder)", "MAD/I", "Magik", "Magma", "make", "Maple", "MAPPER now part of BIS", "MARK-IV now VISION:BUILDER", "Mary", "MASM Microsoft Assembly x86", "MATH-MATIC", "Mathematica", "MATLAB", "Maxima (see also Macsyma)", "Max (Max Msp – Graphical Programming Environment)", "Maya (MEL)", "MDL", "Mercury", "Mesa", "Metafont", "Microcode", "MicroScript", "MIIS", "Milk (programming language)", "MIMIC", "Mirah", "Miranda", "MIVA Script", "ML", "Model 204", "Modelica", "Modula", "Modula-2", "Modula-3", "Mohol", "MOO", "Mortran", "Mouse", "MPD", "Mathcad", "MSIL – deprecated name for CIL", "MSL", "MUMPS", "Mystic Programming L"],
+      maxTags: 10,
+      dropdown: {
+        maxItems: Infinity,           // <- mixumum allowed rendered suggestions
+        classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
+        enabled: 0,             // <- show suggestions on focus
+        closeOnSelect: true    // <- do not hide the suggestions dropdown once an item has been selected
+      },
+
+    })
   </script>
+
+
+
 </body>
 
 </html>
@@ -140,7 +166,7 @@
       var url = new URL(url_string);
 
 
-      var Jobtitle, Joblocation, SelectJobType, Salary, Description, Qualification
+      var Jobtitle, Joblocation, SelectJobType, Salary, Description, Qualification;
 
       Jobtitle = document.getElementById("jobtitle").value;
       Joblocation = document.getElementById("joblocation").value;
@@ -192,9 +218,6 @@
           });
         }
       });
-
-
-
     });
 
 </script>
