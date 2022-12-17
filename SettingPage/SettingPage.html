@@ -28,11 +28,11 @@
 	<link rel="stylesheet" href="../css/profile_page_css/sidebar-1.css" />
 	<link rel="stylesheet" href="../css/profile_page_css/sidebar.css" />
 	<link rel="stylesheet" href="../css/Footer/footer.css">
-	
+
 </head>
 
 <body>
-	
+
 	<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="margin: 0px; padding: 15px">
 		<div class="container">
 			<a class="navbar-brand text-wrap"
@@ -62,8 +62,7 @@
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu ">
 							<a class="dropdown-item">My
-								Profile</a><a class="dropdown-item"
-								id="logout-link">Logout</a>
+								Profile</a><a class="dropdown-item" id="logout-link">Logout</a>
 						</div>
 					</li>
 				</ul>
@@ -87,7 +86,7 @@
 				<li id="change_pass_btn" class="mb-0"><a
 						style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 						Change Password </a></li>
-				
+
 				<li id="logout-btn" class="mb-0"><a style="font-family: Inter; font-weight: 800; letter-spacing: 1px;">
 
 						Logout </a></li>
@@ -96,7 +95,7 @@
 
 		<!-- Page Content Holder -->
 		<div class="col-md-7 " id="content">
-			
+
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -148,7 +147,7 @@
 							</h6>
 						</div>
 						<div class="row g-3 mt-2">
-							
+
 							<div class="col-md-5  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">New password</label><input id="New_pass" type="text"
 									class="form-control mb-3">
@@ -293,23 +292,23 @@
 		// for getting data of user
 		const loaderContainer = document.querySelector('.loader-container');
 		const displayLoading = () => {
-  loaderContainer.style.display = 'block';
-};
+			loaderContainer.style.display = 'block';
+		};
 
-const hideLoading = () => {
-  loaderContainer.style.display = 'none';
-};
+		const hideLoading = () => {
+			loaderContainer.style.display = 'none';
+		};
 
 
 		// for getting data of user
 		auth.onAuthStateChanged(user => {
 			if (user) {
 				// document.getElementById('name-text').innerText = "Hi " +  user.displayName.split(" ")[0]  ;
-		
+
 				get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
-					
+
 					if (snapshot.exists()) {
-						
+
 						const FirstName = snapshot.val().FirstName;
 						const LastName = snapshot.val().LastName;
 						const Email = snapshot.val().Email;
@@ -424,8 +423,8 @@ const hideLoading = () => {
 
 			/* Alert the copied text */
 			// 
-			document.getElementById("copy-btn").innerHTML ='<i class="fa fa-check" aria-hidden="true"></i>' ;
-		
+			document.getElementById("copy-btn").innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
+
 		}
 
 

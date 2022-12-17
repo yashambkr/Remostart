@@ -28,7 +28,7 @@
       <!-- SIGN IN BOX -->
 
       <section class="form registered pt-3 pb-3" id="login-in">
-        <h3 class="title">Sign In</h3>
+        <h3 class="title py-3">Sign In As RemoForce</h3>
 
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
@@ -75,7 +75,7 @@
 
       <!-- SIGN UP BOX -->
       <section class="form create none pt-3 pb-3" id="login-up">
-        <h3 class="title">Create Account</h3>
+        <h3 class="title py-3">Create Account In RemoForce</h3>
 
         <div class="namebox">
           <div class="box input-group flex-nowrap ms-0 me-2">
@@ -276,18 +276,18 @@
           .then((userCredential) => {
             auth.onAuthStateChanged(user => {
               if (user) {
-                  get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
-                      if (snapshot.exists()) {
-                          window.location = "../DashboardPage/DashboardPage.html";
-                      } else {
-                        alert("Not Registerd as user", "warning", "login-in");
-                        window.location = "../SignupPage/SignUpPage.html";
-                        console.log("Not possible");
-                      }
-                  });
+                get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    window.location = "../DashboardPage/DashboardPage.html";
+                  } else {
+                    alert("Not Registerd as user", "warning", "login-in");
+                    window.location = "../SignupPage/SignUpPage.html";
+                    console.log("Not possible");
+                  }
+                });
               }
-          });
-            
+            });
+
           })
           .catch((error) => {
             const errorCode = error.code;
