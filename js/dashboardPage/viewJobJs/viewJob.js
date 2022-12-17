@@ -15,7 +15,6 @@ import {
   updatePassword,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
-import jobid from "../DashboardPage.js";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
@@ -41,15 +40,90 @@ const hideLoading = () => {
 };
 
 // for getting data of user
-console.log(jobid);
+var url_string = window.location;
+var url = new URL(url_string);
+const jobid = url.searchParams.get("JobID");
+
+
+
+
 auth.onAuthStateChanged((user) => {
+  if (user) {
+    get(child(dbRef, "Jobs/" + jobid)).then((snapshot) => {
+      if (snapshot.exists()) {
+        // displayLoading();
+
+
+        const jobTitle = snapshot.val().Jobtitle;
+        const CName = snapshot.val().CompanyName;
+        const qualification = snapshot.val().Qualification.split(",");
+        const CDescription = snapshot.val().CompanyDescripition;
+        const jobLocation = snapshot.val().Joblocation;
+        const jobType = snapshot.val().JobType;
+        const jobDescription = snapshot.val().Description;
+        const CWebsite = snapshot.val().CompanyWebsite;
+
+
+        document.getElementById("job-title").innerText = jobTitle;
+        document.getElementById("company-name").innerText = CName;
+        document.getElementById("company-desc").innerText = CDescription;
+        document.getElementById("company-website").innerText = CWebsite;
+        document.getElementById("job-location").innerText = jobLocation;
+        document.getElementById("job-type").innerText = jobType;
+        document.getElementById("job-qualification").innerText = qualification;
+        document.getElementById("job-desc").innerText = jobDescription;
+
+
+
+        const applybtn = document.getElementById("apply-btn");
+        applybtn.onclick = function () {
+          console.log("ccc");
+          get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
+            if (Usnapshot.exists()) {
+            
+              push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
+                applicantId: user.uid,
+                FirstName: Usnapshot.val().FirstName,
+                LastName: Usnapshot.val().LastName,
+                Email: Usnapshot.val().Email,
+                PhoneNo: Usnapshot.val().PhoneNo,
+              });
+            }
+          });
+            push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
+              JobId: snapshot.key,
+              Jobtitle: snapshot.val().Jobtitle,
+              CompanyName: snapshot.val().CompanyName,
+
+            });
+          }
+
+      } else {
+
+          console.log("Not possible");
+        }
+      });
+  }
   if (user) {
     get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
       if (Usnapshot.exists()) {
-        console.log("exist" + jobid);
-      } else {
-        console.log("Not possible");
+
+        document.getElementById("name-text").innerText = "Hi " + Usnapshot.val().FirstName
+
       }
     });
   }
 });
+// for logout function
+document.getElementById("logout-link").addEventListener("click", logout);
+
+function logout() {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      window.location = "../../index.html";
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+}
