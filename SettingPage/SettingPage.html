@@ -29,6 +29,11 @@
 	<link rel="stylesheet" href="../css/profile_page_css/sidebar.css" />
 	<link rel="stylesheet" href="../css/Footer/footer.css">
 
+
+	<!-- tagify css cdn -->
+	<link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+    
+
 </head>
 
 <body>
@@ -61,8 +66,8 @@
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase " id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu ">
-							<a class="dropdown-item">My
-								Profile</a><a class="dropdown-item" id="logout-link">Logout</a>
+							<a  href="#"  class="dropdown-item">My
+								Profile</a><a href="#" class="dropdown-item" id="logout-link">Logout</a>
 						</div>
 					</li>
 				</ul>
@@ -96,7 +101,7 @@
 		<!-- Page Content Holder -->
 		<div class="col-md-7 " id="content">
 
-			<nav class="navbar navbar-default">
+			<nav class="shadow navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button id="sidebarCollapse" class="navbar-btn">
@@ -115,6 +120,7 @@
 							</h6>
 						</div>
 						<div class="row g-3 mt-2">
+							<h5>Personal Details</h5>
 							<div class="col-md-5  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">First Name</label><input id="FirstName" type="text"
 									class="form-control mb-3">
@@ -133,7 +139,46 @@
 							</div>
 
 						</div>
+						<div class="row g-3 mt-2">
+							<h5>Professional Details</h5>
+							<div class="col-md-12  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Skills</label>
+								<input name='tags'  
+								 id="skills"  type="text"
+									class="form-control mb-3">
+								
+							</div>
+							<div class="col-md-12 col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">About me</label><textarea rows="4" cols="50"  id="aboutMe" type="text"
+									class="form-control mb-3"></textarea>
 
+							</div>
+							<div class="col-md-3  col-auto col-sm-12 ">
+								<label class="labels fw-bold mb-2">Expected Salary</label><input id="expectedSalary" type="text"
+									class="form-control mb-3">
+							</div>
+						
+
+						</div>
+						<div class="row g-3 mt-2">
+							<h5>Social Links</h5>
+							<div class="col-md-10  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Linkedin</label>
+								<input name='tags'   id="linkedInSocial" data-role="tagsinput" type="text"
+									class="form-control mb-3">
+							</div>
+							
+							<div class="col-md-10   col-auto col-sm-12 ">
+								<label class="labels fw-bold mb-2">Github</label><input id="githubSocial" type="text"
+									class="form-control mb-3">
+							</div>
+							
+							<div class="col-md-10   col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Other Links</label><input id="linkedInSocial" type="text"
+									class="form-control mb-3">
+							</div>
+
+						</div>
 						<div class="mt-5 text-center">
 							<button class="btn btn-dark rounded-0" type="button" id="profile-save-btn">Save</button>
 						</div>
@@ -260,14 +305,12 @@
 		<p class="copyright">RemoStart - Connecting Talents</p>
 	</footer>
 
-
 	<!-- sweet alert cdn -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<!-- Bootstrap Js CDN -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 	<script type="module">
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; import { getDatabase, set, ref, child, get, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 		import {
@@ -290,15 +333,7 @@
 
 		// loading bar
 		// for getting data of user
-		const loaderContainer = document.querySelector('.loader-container');
-		const displayLoading = () => {
-			loaderContainer.style.display = 'block';
-		};
-
-		const hideLoading = () => {
-			loaderContainer.style.display = 'none';
-		};
-
+		
 
 		// for getting data of user
 		auth.onAuthStateChanged(user => {
@@ -377,63 +412,20 @@
 
 
 
-		// refer id maker
-		function makeReferID() {
-
-			get(child(dbRef, `/RefID/RefID`)).then((snapshot) => {
-				if (snapshot.exists()) {
-					var refID = document.getElementById('FirstName').value + "000" + snapshot.val();
-					myUrl.searchParams.set("ReferalID", refID);
-
-					document.getElementById("copytext").value = myUrl.toString();
-
-				} else {
-					console.log("No data available");
-				}
-			}).catch((error) => {
-				console.error(error);
-			});
-
-
-
-
-
-		}
-
-		document.getElementById("referral_btn").addEventListener("click", makeReferID)
 
 
 
 	</script>
+
+		<!-- tagify js cdn -->
+	  <script src="https://unpkg.com/@yaireo/tagify"></script>
+	  <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
 	<script src="../js/SettingPage/Myprofile.js"></script>
 
 
-	<!--  -->
-	<script type="text/javascript">
-
-		function copyText() {
-			/* Get the text field */
-			var copyText = document.getElementById("copytext");
-
-			/* Select the text field */
-			copyText.select();
-
-			/* Copy the text inside the text field */
-			document.execCommand("copy");
-
-			/* Alert the copied text */
-			// 
-			document.getElementById("copy-btn").innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
-
-		}
-
-
-		$(document).ready(function () {
-			$("#sidebarCollapse").on("click", function () {
-				$("#sidebar").toggleClass("active");
-			});
-		});
-	</script>
+	
+	<!-- Bootstrap Js CDN -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

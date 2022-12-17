@@ -210,12 +210,11 @@
       .getElementById("sumbitbtn")
       .addEventListener("click", (e) => {
 
-        var url_string = window.location;
-        var url = new URL(url_string);
+       
 
 
-        var Fname, Lname, Email, PhoneNo, password1, password2, Username, ReferalID;
-        ReferalID = url.searchParams.get("ReferalID");
+        var Fname, Lname, Email, PhoneNo, password1, password2, Username;
+       
         Fname = document.getElementById("Fname").value;
         Lname = document.getElementById("Lname").value;
         PhoneNo = document.getElementById("phone").value;
@@ -231,7 +230,12 @@
                 LastName: Lname,
                 Email: Email,
                 PhoneNo: PhoneNo,
-                ReferalID: ReferalID || ""
+                Skills:"0/",
+                AboutMe:"0/",
+                Expected_salary:"0/",
+                LinkedIn:"0/",
+                Github:"0/",
+                Other:"0/"
               });
               alert("Registered Successfully", "success", "login-up");
               setTimeout(function () {
@@ -244,19 +248,7 @@
               alert(errorCode, "warning", "login-up");
             });
 
-          get(child(dbRef, `/RefID/RefID`)).then((snapshot) => {
-            if (snapshot.exists()) {
-              const db = getDatabase();
-              const val = snapshot.val() + 1;
-              set(ref(db, '/RefID'), {
-                RefID: val
-              })
-            } else {
-              console.log("No data available");
-            }
-          }).catch((error) => {
-            console.error(error);
-          });
+          
 
         } else {
           alert("password not matched", "warning", "login-up");
