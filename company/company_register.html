@@ -28,18 +28,18 @@
           <input required type="text" id="Email-in" name="Email-in" placeholder="Business Email"
             class="input form-control" />
         </div>
-        <!--First Name-->
+        <!--Company Person First Name-->
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-user icon"></i></span>
-          <input required type="text" id="firstname" name="firstname" placeholder="First Name"
+          <input required type="text" id="cp_firstname" name="cp_firstname" placeholder="Company Person First Name"
             class="input form-control" />
         </div>
         <!--Last Name-->
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-user icon"></i></span>
-          <input required type="text" id="lastname" name="lastname" placeholder="Last Name"
+          <input required type="text" id="cp_lastname" name="cp_lastname" placeholder="Company Person Last Name"
             class="input form-control" />
         </div>
         <!--Contact Number-->
@@ -70,6 +70,14 @@
           <textarea required type="text" id="description" name="description" placeholder="Company Description"
             class="input form-control"></textarea>
         </div>
+        <!--Social Media Links-->
+        <div class="box ms-0 me-0 input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-link icon"></i></span>
+          <input required type="url" id="social_media_links" name="social_media_links" placeholder="Social Media Links"
+            class="input form-control" />
+        </div>
+        
         <!--Password-->
         <div class="ms-0 me-0 box input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
@@ -180,12 +188,13 @@
       var Email, Fname, Lname, Contact, Company_name, Company_website, Company_description, Password, ConformPass, Username;
 
       Email = document.getElementById("Email-in").value;
-      Fname = document.getElementById("firstname").value;
-      Lname = document.getElementById("lastname").value;
+      Fname = document.getElementById("cp_firstname").value;
+      Lname = document.getElementById("cp_lastname").value;
       Contact = document.getElementById("contact").value;
       Company_name = document.getElementById("companyname").value;
       Company_website = document.getElementById("website").value;
       Company_description = document.getElementById("description").value;
+      Company_socialmedia_url = document.getElementById("social_media_links").value;
       Password = document.getElementById("password").value;
       ConformPass = document.getElementById("conform_password").value;
       if (Password === ConformPass) {
@@ -200,6 +209,7 @@
               CompanyName: Company_name,
               CompanyWebsite: Company_website,
               CompanyDescripition: Company_description,
+              CompanySocialMediaLinks: Company_socialmedia_url
 
             });
             console.log("Registered Successfully");

@@ -165,6 +165,7 @@ auth.onAuthStateChanged((user) => {
         );
       } else {
         console.log("Not possible");
+        window.location = "../index.html";
       }
     });
   }
