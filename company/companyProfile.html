@@ -55,14 +55,14 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navcol-1">
 				<ul class="navbar-nav ms-auto mt-3">
-					<li class="nav-item"><a class="nav-link" href="../DashboardPage/DashboardPage.html">JOBS</a></li>
+					<li class="nav-item"><a class="nav-link" href="../company/company_dashboard.html">DASHBOARD</a></li>
 					<!-- <li class="nav-item"><a class="nav-link">TRAINING</a></li>
 					<li class="nav-item"><a class="nav-link">STARTUP</a></li> -->
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase " id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu ">
-							<a class="dropdown-item" href="../company/company_dashboard.html">Dashboard</a>
-                            <a class="dropdown-item" id="logout-link">Logout</a>
+							
+							<a class="dropdown-item" id="logout-link">Logout</a>
 						</div>
 					</li>
 				</ul>
@@ -95,7 +95,7 @@
 		<!-- Page Content Holder -->
 		<div class="col-md-7 " id="content">
 
-			<nav class="navbar navbar-default">
+			<nav class="navbar shadow navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button id="sidebarCollapse" class="navbar-btn">
@@ -110,29 +110,52 @@
 					<div class="p-3 py-5">
 						<div class="d-flex justify-content-between align-items-center mb-3">
 							<h6 class="text-right "
-								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Your profile
+								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Profile
 							</h6>
 						</div>
 						<div class="row g-3 mt-2">
+							<h5>Company Details</h5>
 							<div class="col-md-5  col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Company Name</label><input id="CompanyName" type="text"
-									class="form-control mb-3">
+								<label class="labels fw-bold mb-2">Company Name</label><input id="CompanyName"
+									type="text" class="form-control mb-3">
 							</div>
 							<div class="col-md-5 col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Company Website</label><input id="CompanyWebsite" type="text"
-									class="form-control mb-3">
+								<label class="labels fw-bold mb-2">Company Website</label><input id="CompanyWebsite"
+									type="text" class="form-control mb-3">
 							</div>
-							<div class="col-md-3  col-auto col-sm-12 ">
-								<label class="labels fw-bold mb-2">ContactNo</label><input id="ContactNo" type="text"
-									class="form-control mb-3">
+							<div class="col-md-10  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Company Description</label><textarea id="CompanyName"
+									type="text" rows="4" cols="50" class="form-control mb-3"></textarea>
+
 							</div>
-							<div class="col-md-5  col-auto col-sm-12">
-								<label class="labels fw-bold mb-2">Email</label><input id="Email" type="text"
-									class="form-control mb-3">
+							<div class="col-md-10  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Company Linkedin</label><input id="CompanyLinkedin"
+									type="text" class="form-control mb-3">
 							</div>
 
 						</div>
+						<div class="row g-3 mt-2">
+							<h5>Employee Details</h5>
+							<div class="col-md-5  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Name</label><input id="EmployeeName" type="text"
+									class="form-control mb-3">
+							</div>
+							<div class="col-md-5 col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Email</label><input id="EmployeeEmail" type="text"
+									class="form-control mb-3">
+							</div>
+							<div class="col-md-4  col-auto col-sm-12 ">
+								<label class="labels fw-bold mb-2">Contact Number</label><input id="EmployeeContactNo"
+									type="text" class="form-control mb-3">
+							</div>
 
+							<div class="col-md-10  col-auto col-sm-12">
+								<label class="labels fw-bold mb-2">Linkedin</label>
+								<input id="EmployeeLinkedIn" type="text" class="form-control mb-3">
+							</div>
+
+
+						</div>
 						<div class="mt-5 text-center">
 							<button class="btn btn-dark rounded-0" type="button" id="profile-save-btn">Save</button>
 						</div>
