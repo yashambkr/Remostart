@@ -28,7 +28,7 @@
       <!-- SIGN IN BOX -->
 
       <section class="form registered pt-3 pb-3" id="login-in">
-        <h3 class="title">Sign In</h3>
+        <h3 class="title py-3">Sign In As RemoForce</h3>
 
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
@@ -75,7 +75,7 @@
 
       <!-- SIGN UP BOX -->
       <section class="form create none pt-3 pb-3" id="login-up">
-        <h3 class="title">Create Account</h3>
+        <h3 class="title py-3">Create Account In RemoForce</h3>
 
         <div class="namebox">
           <div class="box input-group flex-nowrap ms-0 me-2">
@@ -210,12 +210,11 @@
       .getElementById("sumbitbtn")
       .addEventListener("click", (e) => {
 
-        var url_string = window.location;
-        var url = new URL(url_string);
+       
 
 
-        var Fname, Lname, Email, PhoneNo, password1, password2, Username, ReferalID;
-        ReferalID = url.searchParams.get("ReferalID");
+        var Fname, Lname, Email, PhoneNo, password1, password2, Username;
+       
         Fname = document.getElementById("Fname").value;
         Lname = document.getElementById("Lname").value;
         PhoneNo = document.getElementById("phone").value;
@@ -231,7 +230,12 @@
                 LastName: Lname,
                 Email: Email,
                 PhoneNo: PhoneNo,
-                ReferalID: ReferalID || ""
+                Skills:"0/",
+                AboutMe:"0/",
+                Expected_salary:"0/",
+                LinkedIn:"0/",
+                Github:"0/",
+                Other:"0/"
               });
               alert("Registered Successfully", "success", "login-up");
               setTimeout(function () {
@@ -244,19 +248,7 @@
               alert(errorCode, "warning", "login-up");
             });
 
-          get(child(dbRef, `/RefID/RefID`)).then((snapshot) => {
-            if (snapshot.exists()) {
-              const db = getDatabase();
-              const val = snapshot.val() + 1;
-              set(ref(db, '/RefID'), {
-                RefID: val
-              })
-            } else {
-              console.log("No data available");
-            }
-          }).catch((error) => {
-            console.error(error);
-          });
+          
 
         } else {
           alert("password not matched", "warning", "login-up");
@@ -276,18 +268,18 @@
           .then((userCredential) => {
             auth.onAuthStateChanged(user => {
               if (user) {
-                  get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
-                      if (snapshot.exists()) {
-                          window.location = "../DashboardPage/DashboardPage.html";
-                      } else {
-                        alert("Not Registerd as user", "warning", "login-in");
-                        window.location = "../SignupPage/SignUpPage.html";
-                        console.log("Not possible");
-                      }
-                  });
+                get(child(dbRef, 'User/' + user.uid)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    window.location = "../DashboardPage/DashboardPage.html";
+                  } else {
+                    alert("Not Registerd as user", "warning", "login-in");
+                    window.location = "../SignupPage/SignUpPage.html";
+                    console.log("Not possible");
+                  }
+                });
               }
-          });
-            
+            });
+
           })
           .catch((error) => {
             const errorCode = error.code;
