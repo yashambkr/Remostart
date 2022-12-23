@@ -146,7 +146,7 @@ auth.onAuthStateChanged((user) => {
                 button.classList.add("btn-styled");
 
                 button.onclick = function () {
-                  const myUrl = new URL("http://127.0.0.1:5501/company/jobview/company_jobview.html");
+                  const myUrl = new URL("https://remostarts.com/company/jobview/company_jobview.html");
 
                   myUrl.searchParams.set("JobID", snapshot.key);
                   console.log(snapshot.key);
