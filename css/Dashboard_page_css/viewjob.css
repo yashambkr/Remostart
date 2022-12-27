@@ -115,8 +115,15 @@
     margin: 0 0 50px 75px
 }
 .text-muted {
-    color: #98a6ad!important;
+    color: black!important;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 20px;
 }
+
+
 
 p {
     line-height: 1.6;
@@ -131,3 +138,17 @@ p {
     margin: 3px 1px;
     border-radius: 3px;
 }
+
+#job-qualification{
+    font-size: 15px;
+    font-style: fw-semibold;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#job-desc{
+    font-size: 15px;
+    font-style: fw-semibold;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+/* #0b132b; */
