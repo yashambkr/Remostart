@@ -129,7 +129,7 @@ auth.onAuthStateChanged((user) => {
 
 
               button.onclick = function () {
-                const myUrl = new URL("https://remostarts.com/DashboardPage/ViewJobPage/ViewJobPage.html");
+                const myUrl = new URL("http://127.0.0.1:5501/DashboardPage/ViewJobPage/ViewJobPage.html");
 
                 myUrl.searchParams.set("JobID", snapshot.key);
                 console.log(snapshot.key);
