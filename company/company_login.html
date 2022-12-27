@@ -115,7 +115,7 @@
               get(child(dbRef, 'Company/' + user.uid)).then((snapshot) => {
                 if (snapshot.exists()) {
                   const CompanyName = snapshot.val().CompanyName;
-                  console.log(CompanyName);
+                  //console.log(CompanyName);
                   window.location = "../company/company_dashboard.html";
                 } else {
                   alert("Not Registerd as Company", "warning", "login-in");
