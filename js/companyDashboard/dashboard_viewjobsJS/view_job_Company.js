@@ -53,7 +53,6 @@ auth.onAuthStateChanged((user) => {
       if (snapshot.exists()) {
         // displayLoading();
 
-
         const jobTitle = snapshot.val().Jobtitle;
         const CName = snapshot.val().CompanyName;
         const qualification = snapshot.val().Qualification.split(",");
@@ -62,7 +61,6 @@ auth.onAuthStateChanged((user) => {
         const jobType = snapshot.val().JobType;
         const jobDescription = snapshot.val().Description;
         const CWebsite = snapshot.val().CompanyWebsite;
-
 
         document.getElementById("job-title").innerText = jobTitle;
         document.getElementById("company-name").innerText = CName;
@@ -73,43 +71,53 @@ auth.onAuthStateChanged((user) => {
         document.getElementById("job-qualification").innerText = qualification;
         document.getElementById("job-desc").innerText = jobDescription;
 
+        const ApplicantRef = ref(database, "Jobs/" + jobid + "/Applicant/");
+        onValue(ApplicantRef, (Asnapshot) => {
+          Asnapshot.forEach((childSnapshot) => {
+            const FirstName = childSnapshot.val().FirstName;
+            const LastName = childSnapshot.val().LastName;
+            const Email = childSnapshot.val().Email;
+            const PhoneNo = childSnapshot.val().PhoneNo;
+            const ApplicantId = childSnapshot.val().applicantId;
+            console.log(jobid);
+            // const cardList = document.getElementsByClassName("test")[0];
+            // const newGroup = document.createElement("div");
+            // newGroup.classList.add("card m-b-30");
 
+            // //First Name
+            // const fname = document.createElement("h4");
+            // newGroup.appendChild(fname);
+            // fname.innerText = "ajhsbdhabj";
 
-        const applybtn = document.getElementById("apply-btn");
-        applybtn.onclick = function () {
-          console.log("ccc");
-          get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
-            if (Usnapshot.exists()) {
+            // //Last Name
+            // const lname = document.createElement("h4");
+            // newGroup.appendChild(lname);
+            // lname.innerText = LastName;
 
-              push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
-                applicantId: user.uid,
-                FirstName: Usnapshot.val().FirstName,
-                LastName: Usnapshot.val().LastName,
-                Email: Usnapshot.val().Email,
-                PhoneNo: Usnapshot.val().PhoneNo,
-              });
-            }
+            // //Email
+            // const email = document.createElement("h4");
+            // newGroup.appendChild(email);
+            // email.innerText = Email;
+
+            // //Phone No
+            // const phoneno = document.createElement("h4");
+            // newGroup.appendChild(phoneno);
+            // phoneno.innerText = PhoneNo;
+            // console.log(ApplicantId);
+            // cardList.appendChild(newGroup);
           });
-          push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
-            JobId: snapshot.key,
-            Jobtitle: snapshot.val().Jobtitle,
-            CompanyName: snapshot.val().CompanyName,
-
-          });
-        }
-
+        });
       } else {
-
         console.log("Not possible");
       }
     });
   }
   if (user) {
-    get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
+    get(child(dbRef, "Company/" + user.uid)).then((Usnapshot) => {
       if (Usnapshot.exists()) {
-
-        document.getElementById("name-text").innerText = "Hi " + Usnapshot.val().FirstName
-
+        document.getElementById("company-name-text").innerText =
+          Usnapshot.val().CompanyName;
+        console.log(Usnapshot.val().CompanyName);
       }
     });
   }
