@@ -79,32 +79,94 @@ auth.onAuthStateChanged((user) => {
             const Email = childSnapshot.val().Email;
             const PhoneNo = childSnapshot.val().PhoneNo;
             const ApplicantId = childSnapshot.val().applicantId;
-            console.log(jobid);
-            // const cardList = document.getElementsByClassName("test")[0];
-            // const newGroup = document.createElement("div");
-            // newGroup.classList.add("card m-b-30");
 
-            // //First Name
-            // const fname = document.createElement("h4");
-            // newGroup.appendChild(fname);
-            // fname.innerText = "ajhsbdhabj";
+            console.log(FirstName);
 
-            // //Last Name
-            // const lname = document.createElement("h4");
-            // newGroup.appendChild(lname);
-            // lname.innerText = LastName;
+            const cardList = document.getElementsByClassName("testone")[0];
 
-            // //Email
-            // const email = document.createElement("h4");
-            // newGroup.appendChild(email);
-            // email.innerText = Email;
+            const card = document.createElement("div");
+            card.classList.add("card", "m-b-30");
 
-            // //Phone No
-            // const phoneno = document.createElement("h4");
-            // newGroup.appendChild(phoneno);
-            // phoneno.innerText = PhoneNo;
-            // console.log(ApplicantId);
-            // cardList.appendChild(newGroup);
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+
+            const media = document.createElement("div");
+            media.classList.add("media", "d-flex");
+
+            const mediaBody = document.createElement("div");
+            mediaBody.classList.add("media-body", "ps-3", "pt-2");
+
+            const h5 = document.createElement("h5");
+            h5.classList.add("mt-0", "font-18", "mb-1");
+            h5.textContent = FirstName;
+
+            const p = document.createElement("p");
+            p.classList.add("text-muted", "font-14");
+            p.textContent = Email;
+
+            const div1 = document.createElement("div");
+
+            const socialLinks = document.createElement("ul");
+            socialLinks.classList.add(
+              "social-links",
+              "list-inline",
+              "mb-0",
+              "ps-4",
+              "pt-2"
+            );
+            div1.appendChild(socialLinks);
+            const li1 = document.createElement("li");
+            li1.classList.add("list-inline-item");
+
+            const btn1 = document.createElement("button");
+            btn1.title = "";
+            btn1.setAttribute("data-placement", "top");
+            btn1.setAttribute("data-toggle", "tooltip");
+            btn1.classList.add("tooltips", "border-0");
+            btn1.href = "";
+            btn1.setAttribute("data-original-title", "Facebook");
+
+            const i1 = document.createElement("i");
+            i1.classList.add("fa", "fa-check", "btn", "btn-success");
+
+            const li2 = document.createElement("li");
+            li2.classList.add("list-inline-item", "ps-1");
+
+            const btn2 = document.createElement("button");
+            btn2.title = "";
+            btn2.setAttribute("data-placement", "top");
+            btn2.setAttribute("data-toggle", "tooltip");
+            btn2.classList.add("tooltips", "border-0");
+            btn2.href = "";
+            btn2.setAttribute("data-original-title", "Facebook");
+
+            const i2 = document.createElement("i");
+            i2.classList.add("fa", "fa-close", "btn", "btn-danger");
+
+            // Append elements to each other
+            // card.appendChild(card);
+            mediaBody.appendChild(h5);
+            mediaBody.appendChild(p);
+
+            btn1.appendChild(i1);
+            li1.appendChild(btn1);
+
+            btn2.appendChild(i2);
+            li2.appendChild(btn2);
+
+            socialLinks.appendChild(li1);
+            socialLinks.appendChild(li2);
+
+            div1.appendChild(socialLinks);
+
+            mediaBody.appendChild(mediaBody);
+            mediaBody.appendChild(div1);
+
+            media.appendChild(mediaBody);
+            cardBody.appendChild(media);
+
+            card.appendChild(cardBody);
+            cardList.appendChild(card);
           });
         });
       } else {
@@ -117,7 +179,6 @@ auth.onAuthStateChanged((user) => {
       if (Usnapshot.exists()) {
         document.getElementById("company-name-text").innerText =
           Usnapshot.val().CompanyName;
-        console.log(Usnapshot.val().CompanyName);
       }
     });
   }
