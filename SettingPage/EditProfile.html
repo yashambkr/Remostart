@@ -32,7 +32,7 @@
 
 	<!-- tagify css cdn -->
 	<link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
-    
+
 
 </head>
 
@@ -66,7 +66,7 @@
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-uppercase " id="name-text"
 							aria-expanded="false" data-bs-toggle="dropdown">&nbsp;</a>
 						<div class="dropdown-menu ">
-							<a  href="#"  class="dropdown-item">My
+							<a href="#" class="dropdown-item">My
 								Profile</a><a href="#" class="dropdown-item" id="logout-link">Logout</a>
 						</div>
 					</li>
@@ -112,7 +112,7 @@
 
 				<div id="section1" class="col-md-12  border-right container">
 					<!-- loader contain -->
-                    
+
 
 					<div class="p-3 py-5">
 						<div class="d-flex justify-content-between align-items-center mb-3">
@@ -120,28 +120,24 @@
 								style="font-family: 'Big Shoulders Text', cursive; letter-spacing: 2px;">Your profile
 							</h6>
 						</div>
-		
+
 						<div class="row g-3 mt-2">
 							<h5>Personal Details</h5>
 							<div class="col-md-5  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">First Name</label>
-								<input id="FirstName" type="text" 
-									class="form-control mb-3">
+								<input id="FirstName" type="text" class="form-control mb-3">
 							</div>
 							<div class="col-md-5 col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Last Name</label>
-								<input id="LastName" type="text" 
-									class="form-control mb-3">
+								<input id="LastName" type="text" class="form-control mb-3">
 							</div>
 							<div class="col-md-3  col-auto col-sm-12 ">
 								<label class="labels fw-bold mb-2">PhoneNo</label>
-								<input id="PhoneNo" type="text" 
-									class="form-control mb-3">
+								<input id="PhoneNo" type="text" class="form-control mb-3">
 							</div>
 							<div class="col-md-5  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Email</label>
-								<input id="Email" type="text" 
-									class="form-control mb-3">
+								<input id="Email" type="text" class="form-control mb-3">
 							</div>
 
 						</div>
@@ -149,50 +145,45 @@
 							<h5>Professional Details</h5>
 							<div class="col-md-12  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Skills</label>
-								<input name='tags'  
-								 id="skills" type="text" 
-									class="form-control mb-3">
-								
+								<input name='tags' id="skills" type="text" class="form-control mb-3">
+
 							</div>
 							<div class="col-md-12 col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">About me</label>
-								<textarea rows="4" cols="50"  id="aboutMe" type="text" 
+								<textarea rows="4" cols="50" id="aboutMe" type="text"
 									class="form-control mb-3"></textarea>
 
 							</div>
 							<div class="col-md-3  col-auto col-sm-12 ">
 								<label class="labels fw-bold mb-2">Expected Salary</label>
-								<input id="expectedSalary" type="text" 
-									class="form-control mb-3">
+								<input id="expectedSalary" type="text" class="form-control mb-3">
 							</div>
-                            
-						
+
+
 
 						</div>
 						<div class="row g-3 mt-2">
 							<h5>Social Links</h5>
 							<div class="col-md-10  col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Linkedin</label>
-								<input name='tags'   id="linkedInSocial" data-role="tagsinput" type="text" 
+								<input name='tags' id="linkedInSocial" data-role="tagsinput" type="text"
 									class="form-control mb-3">
 							</div>
-							
+
 							<div class="col-md-10   col-auto col-sm-12 ">
 								<label class="labels fw-bold mb-2">Github</label>
-								<input id="githubSocial" type="text" 
-									class="form-control mb-3">
+								<input id="githubSocial" type="text" class="form-control mb-3">
 							</div>
-							
+
 							<div class="col-md-10   col-auto col-sm-12">
 								<label class="labels fw-bold mb-2">Other Links</label>
-								<input id="otherLinks" type="text" 
-									class="form-control mb-3">
+								<input id="otherLinks" type="text" class="form-control mb-3">
 							</div>
 
 						</div>
 						<div class="mt-5 text-center">
-                            <button class="btn btn-dark rounded-0" type="button" id="profile-save-btn">Save</button>
-                        </div> 
+							<button class="btn btn-dark rounded-0" type="button" id="profile-save-btn">Save</button>
+						</div>
 					</div>
 				</div>
 				<div id="section2" class="col-md-12  border-right container">
@@ -212,9 +203,9 @@
 								<label class="labels fw-bold mb-2">Re-enter password</label><input id="New_pass2"
 									type="text" class="form-control mb-3">
 							</div>
-                            <div class="mt-5 text-center">
+							<div class="mt-5 text-center">
 								<button class="btn btn-dark rounded-0" type="button" id="profile-save-btn">Save</button>
-							</div> 
+							</div>
 
 						</div>
 
@@ -324,7 +315,7 @@
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	
+
 	<script type="module">
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"; import { getDatabase, set, ref, child, get, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 		import {
@@ -347,7 +338,7 @@
 
 		// loading bar
 		// for getting data of user
-		
+
 
 		// for getting data of user
 		auth.onAuthStateChanged(user => {
@@ -358,47 +349,47 @@
 
 					if (snapshot.exists()) {
 
-						
+
 						//  Username = snapshot.val().Username;					
-                        
-                        
-                        document.getElementById('profile-save-btn').onclick=function(){
-                            try{
-                                const FirstName = document.getElementById('FirstName').value;
-                                const LastName = document.getElementById('LastName').value ;
-                                const Email = document.getElementById('Email').value;
-                                const PhoneNo = document.getElementById('PhoneNo').value;
-                                const Skills = document.getElementById('skills').value;
-                                const AboutMe = document.getElementById('aboutMe').value;
-                                const Expected_salary = document.getElementById('expectedSalary').value;
-                                const LinkedIn = document.getElementById('linkedInSocial').value;
-                                const Github = document.getElementById('githubSocial').value;
-                                const Other = document.getElementById('otherLinks').value;
-                                //console.log(FirstName);
-                                update(ref(database, 'User/' + user.uid),{
-                                FirstName: FirstName,
-                                LastName: LastName,
-                                Email: Email,
-                                PhoneNo: PhoneNo,
-                                Skills: Skills,
-                                AboutMe: AboutMe,
-                                Expected_salary: Expected_salary,
-                                LinkedIn: LinkedIn,
-                                Github: Github,
-                                Other: Other
-                                });
-                                
-                                window.location = "../SettingPage/SettingPage.html";
 
-                            }catch{
-                                alert("Error", "Error", "ok");
-                            }
 
-                            
+						document.getElementById('profile-save-btn').onclick = function () {
+							try {
+								const FirstName = document.getElementById('FirstName').value;
+								const LastName = document.getElementById('LastName').value;
+								const Email = document.getElementById('Email').value;
+								const PhoneNo = document.getElementById('PhoneNo').value;
+								const Skills = document.getElementById('skills').value;
+								const AboutMe = document.getElementById('aboutMe').value;
+								const Expected_salary = document.getElementById('expectedSalary').value;
+								const LinkedIn = document.getElementById('linkedInSocial').value;
+								const Github = document.getElementById('githubSocial').value;
+								const Other = document.getElementById('otherLinks').value;
+								//console.log(FirstName);
+								update(ref(database, 'User/' + user.uid), {
+									FirstName: FirstName,
+									LastName: LastName,
+									Email: Email,
+									PhoneNo: PhoneNo,
+									Skills: Skills,
+									AboutMe: AboutMe,
+									Expected_salary: Expected_salary,
+									LinkedIn: LinkedIn,
+									Github: Github,
+									Other: Other
+								});
 
-                        }
+								window.location = "../SettingPage/SettingPage.html";
 
-                        
+							} catch {
+								alert("Error", "Error", "ok");
+							}
+
+
+
+						}
+
+
 
 
 					} else {
@@ -463,13 +454,13 @@
 
 	</script>
 
-		<!-- tagify js cdn -->
-	  <script src="https://unpkg.com/@yaireo/tagify"></script>
-	  <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
+	<!-- tagify js cdn -->
+	<script src="https://unpkg.com/@yaireo/tagify"></script>
+	<script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
 	<script src="../js/SettingPage/Myprofile.js"></script>
 
 
-	
+
 	<!-- Bootstrap Js CDN -->
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
