@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <link rel="stylesheet" href="../css/company_style/company_style.css" />
 <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="../assets/logo/Remo-icon.ico" type="image/x-icon" />
@@ -10,7 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
   integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
 
 <!-- tagify css cdn -->
 <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
@@ -38,7 +38,13 @@
           <textarea required type="text" id="description" name="description" placeholder="Job Description"
             class="input form-control" rows="5" wrap="hard" spellcheck="true"></textarea>
         </div>
-
+        <!--Job Responsibilities  -->
+        <div class="box ms-0 me-0 input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="bx bx-task icon"></i></span>
+          <textarea required type="text" id="responsibilities" name="responsibilities" placeholder="Responsibilities"
+            class="input form-control" rows="5" wrap="hard" spellcheck="true"></textarea>
+        </div>
         <!--Salary-->
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
@@ -47,185 +53,131 @@
             class="input form-control" />
         </div>
 
-        <!--Job Requirement  -->
+        <!--Preferred Skills-->
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-task icon"></i></span>
-          <input required type="text" id="qualification" name="qualification" placeholder="Requirement"
-            class="input form-control" wrap="hard" spellcheck="true">
+          <input required type="text" id="Skills" name="Skills" placeholder="Preferred Skills"
+            class="input form-control" wrap="hard" name='tag' spellcheck="true" />
         </div>
 
-        
-
-        <!--Preferred Qualification-->
-        <div class="box ms-0 me-0 input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="bx bx-task icon"></i></span>
-          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
-            class="input form-control" wrap="hard" name='tags' spellcheck="true">
-        </div>
-
-        <div class="box ms-0 me-0 input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="bx bx-task icon"></i></span>
-          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
-            class="input form-control" wrap="hard" name='tags' spellcheck="true">
-        </div>
-        <div class="box ms-0 me-0 input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="bx bx-task icon"></i></span>
-          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
-            class="input form-control" wrap="hard" name='tags' spellcheck="true">
-        </div>
-        <div class="box ms-0 me-0 input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="bx bx-task icon"></i></span>
-          <input required type="text" id="qualification" name="qualification" placeholder="Preferred Skills"
-            class="input form-control" wrap="hard" name='tags' spellcheck="true">
-        </div>
         <!--Post Job Button-->
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" id="post-job-button" class="btn text-white">Post Job</button>
+          <button type="submit" id="post-job-button" class="btn text-white">
+            Post Job
+          </button>
         </div>
       </section>
     </span>
   </div>
+
+  <!--Firebase Libraries-->
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      sendPasswordResetEmail,
+      onAuthStateChanged,
+    } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+    import {
+      ref,
+      set,
+      update,
+      child,
+      get,
+      onValue,
+      push,
+      onChildAdded,
+    } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+
+    // this is credentials
+    const firebaseApp = initializeApp({
+      apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
+      authDomain: "remostart-daf09.firebaseapp.com",
+      databaseURL: "https://remostart-daf09-default-rtdb.firebaseio.com",
+      projectId: "remostart-daf09",
+      storageBucket: "remostart-daf09.appspot.com",
+      messagingSenderId: "1072762916132",
+      appId: "1:1072762916132:web:99d06258e6ea16ba4437b1",
+    });
+    const database = getDatabase(firebaseApp);
+    const auth = getAuth(firebaseApp);
+    const dbRef = ref(getDatabase());
+    // signUP function
+    var postJobButton = document
+      .getElementById("post-job-button")
+      .addEventListener("click", (e) => {
+        var url_string = window.location;
+        var url = new URL(url_string);
+
+        var Jobtitle,
+          // Joblocation,
+          // SelectJobType,
+          Salary,
+          Description,
+          JobResponsibilites,
+          Skills;
+
+        Jobtitle = document.getElementById("jobtitle").value;
+        JobResponsibilites = document.getElementById("responsibilities").value;
+        // SelectJobType = document.getElementById("select-job-type").value;
+        Salary = document.getElementById("salary").value;
+        Description = document.getElementById("description").value;
+        Skills = document.getElementById("Skills").value;
+
+        auth.onAuthStateChanged((user) => {
+          if (user) {
+            get(child(dbRef, "Company/" + user.uid)).then((snapshot) => {
+              if (snapshot.exists()) {
+                var Company_name, Company_website, Company_description;
+                Company_name = snapshot.val().CompanyName;
+                Company_website = snapshot.val().CompanyWebsite;
+                Company_description = snapshot.val().CompanyDescripition;
+
+                push(ref(database, "Jobs/"), {
+                  CreatedBy: user.uid,
+                  CompanyName: Company_name,
+                  CompanyWebsite: Company_website,
+                  CompanyDescripition: Company_description,
+                  Jobtitle: Jobtitle,
+                  Salary:Salary,
+                  Responsibilities:JobResponsibilites,
+                  // Joblocation: Joblocation,
+                  // JobType: SelectJobType,
+                  Description: Description,
+                  Qualification: Skills,
+                });
+                const tempRef = ref(database, "Jobs/");
+                let job = "";
+                onChildAdded(tempRef, (data) => {
+                  job = data.key;
+                });
+
+                const jobid = job;
+                alert("Registered Successfully", "success", "login-up");
+
+                push(ref(database, "Company/" + user.uid + "/CreatedJobs/"), {
+                  JobID: jobid,
+                });
+                window.location = "../company/company_dashboard.html";
+              } else {
+                console.log("Does not work");
+              }
+            });
+          }
+        });
+      });
+  </script>
+  
   <script src="https://unpkg.com/@yaireo/tagify"></script>
   <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
-  <script>
-    let jobType = document.getElementById("select-job-type");
-    let jobDuration = document.getElementById("job-duration");
-    jobType.addEventListener("change", function () {
-      if (jobType.value == "Internship" || jobType.value == "Contract") {
-        jobDuration.innerHTML = '<span class="input-group-text" id="addon-wrapping"><i class="bx bx-time icon"></i></span><input required type="number" min="1" max="12" id="job-duration-in-months" name="jobduration" placeholder="Duration in months" class="input form-control" />';
-      }
-      else if (jobType.value == "Part Time") {
-        jobDuration.innerHTML = `<span class="input-group-text" id="addon-wrapping"><i class="bx bx-time icon"></i></span><input required type="number" min="1" max="48" id="job-duration-per-week" name="jobduration" placeholder="Hours per Week" class="input form-control" />`;
-      }
-      else {
-        jobDuration.innerHTML = "";
-      }
-    });
-
-    var input = document.querySelector('input[name=tags]');
-
-    // initialize Tagify on the above input node reference
-    tagify = new Tagify(input, {
-      whitelist: ["A# .NET", "A# (Axiom)", "A-0 System", "A+", "A++", "ABAP", "ABC", "ABC ALGOL", "ABSET", "ABSYS", "ACC", "Accent", "Ace DASL", "ACL2", "Avicsoft", "ACT-III", "Action!", "ActionScript", "Ada", "Adenine", "Agda", "Agilent VEE", "Agora", "AIMMS", "Alef", "ALF", "ALGOL 58", "ALGOL 60", "ALGOL 68", "ALGOL W", "Alice", "Alma-0", "AmbientTalk", "Amiga E", "AMOS", "AMPL", "Apex (Salesforce.com)", "APL", "AppleScript", "Arc", "ARexx", "Argus", "AspectJ", "Assembly language", "ATS", "Ateji PX", "AutoHotkey", "Autocoder", "AutoIt", "AutoLISP / Visual LISP", "Averest", "AWK", "Axum", "Active Server Pages", "ASP.NET", "B", "Babbage", "Bash", "BASIC", "bc", "BCPL", "BeanShell", "Batch (Windows/Dos)", "Bertrand", "BETA", "Bigwig", "Bistro", "BitC", "BLISS", "Blockly", "BlooP", "Blue", "Boo", "Boomerang", "Bourne shell (including bash and ksh)", "BREW", "BPEL", "B", "C--", "C++ – ISO/IEC 14882", "C# – ISO/IEC 23270", "C/AL", "Caché ObjectScript", "C Shell", "Caml", "Cayenne", "CDuce", "Cecil", "Cesil", "Céu", "Ceylon", "CFEngine", "CFML", "Cg", "Ch", "Chapel", "Charity", "Charm", "Chef", "CHILL", "CHIP-8", "chomski", "ChucK", "CICS", "Cilk", "Citrine (programming language)", "CL (IBM)", "Claire", "Clarion", "Clean", "Clipper", "CLIPS", "CLIST", "Clojure", "CLU", "CMS-2", "COBOL – ISO/IEC 1989", "CobolScript – COBOL Scripting language", "Cobra", "CODE", "CoffeeScript", "ColdFusion", "COMAL", "Combined Programming Language (CPL)", "COMIT", "Common Intermediate Language (CIL)", "Common Lisp (also known as CL)", "COMPASS", "Component Pascal", "Constraint Handling Rules (CHR)", "COMTRAN", "Converge", "Cool", "Coq", "Coral 66", "Corn", "CorVision", "COWSEL", "CPL", "CPL", "Cryptol", "csh", "Csound", "CSP", "CUDA", "Curl", "Curry", "Cybil", "Cyclone", "Cython", "Java", "Javascript", "M2001", "M4", "M#", "Machine code", "MAD (Michigan Algorithm Decoder)", "MAD/I", "Magik", "Magma", "make", "Maple", "MAPPER now part of BIS", "MARK-IV now VISION:BUILDER", "Mary", "MASM Microsoft Assembly x86", "MATH-MATIC", "Mathematica", "MATLAB", "Maxima (see also Macsyma)", "Max (Max Msp – Graphical Programming Environment)", "Maya (MEL)", "MDL", "Mercury", "Mesa", "Metafont", "Microcode", "MicroScript", "MIIS", "Milk (programming language)", "MIMIC", "Mirah", "Miranda", "MIVA Script", "ML", "Model 204", "Modelica", "Modula", "Modula-2", "Modula-3", "Mohol", "MOO", "Mortran", "Mouse", "MPD", "Mathcad", "MSIL – deprecated name for CIL", "MSL", "MUMPS", "Mystic Programming L"],
-      maxTags: 10,
-      dropdown: {
-        maxItems: Infinity,           // <- mixumum allowed rendered suggestions
-        classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
-        enabled: 0,             // <- show suggestions on focus
-        closeOnSelect: true    // <- do not hide the suggestions dropdown once an item has been selected
-      },
-
-    })
-  </script>
-
-
-
+  <script src="../js/company_postjob/company_postjob.js"></script>
 </body>
 
 </html>
-
-
-<!--Firebase Libraries-->
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-  import { getDatabase } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-  import {
-    getAuth, GoogleAuthProvider, signInWithPopup,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
-  import {
-    ref,
-    set,
-    update,
-    child,
-    get,
-    onValue,
-    push,
-    onChildAdded
-
-  } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-
-  // this is credentials 
-  const firebaseApp = initializeApp({
-    apiKey: "AIzaSyC8G9Wf5tJE-GAiI5dLsmn4lCDGmKjxey8",
-    authDomain: "remostart-daf09.firebaseapp.com",
-    databaseURL: "https://remostart-daf09-default-rtdb.firebaseio.com",
-    projectId: "remostart-daf09",
-    storageBucket: "remostart-daf09.appspot.com",
-    messagingSenderId: "1072762916132",
-    appId: "1:1072762916132:web:99d06258e6ea16ba4437b1"
-  });
-  const database = getDatabase(firebaseApp);
-  const auth = getAuth(firebaseApp);
-  const dbRef = ref(getDatabase());
-  // signUP function
-  var postJobButton = document
-    .getElementById("post-job-button")
-    .addEventListener("click", (e) => {
-
-      var url_string = window.location;
-      var url = new URL(url_string);
-
-
-      var Jobtitle, Joblocation, SelectJobType, Salary, Description, Qualification;
-
-      Jobtitle = document.getElementById("jobtitle").value;
-      Joblocation = document.getElementById("joblocation").value;
-      SelectJobType = document.getElementById("select-job-type").value;
-      Salary = document.getElementById("salary").value;
-      Description = document.getElementById("description").value;
-      Qualification = document.getElementById("qualification").value;
-
-      auth.onAuthStateChanged(user => {
-        if (user) {
-
-          get(child(dbRef, 'Company/' + user.uid)).then((snapshot) => {
-            if (snapshot.exists()) {
-              var Company_name, Company_website, Company_description;
-              Company_name = snapshot.val().CompanyName;
-              Company_website = snapshot.val().CompanyWebsite;
-              Company_description = snapshot.val().CompanyDescripition;
-
-              push(ref(database, 'Jobs/'), {
-                CreatedBy: user.uid,
-                CompanyName: Company_name,
-                CompanyWebsite: Company_website,
-                CompanyDescripition: Company_description,
-                Jobtitle: Jobtitle,
-                Joblocation: Joblocation,
-                JobType: SelectJobType,
-                Description: Description,
-                Qualification: Qualification,
-              });
-              const tempRef = ref(database, 'Jobs/');
-              let job = "";
-              onChildAdded(tempRef, (data) => {
-                job = data.key;
-              });
-
-              const jobid = job;
-              alert("Registered Successfully", "success", "login-up");
-
-              push(ref(database, 'Company/' + user.uid + '/CreatedJobs/'), {
-                JobID: jobid
-              });
-              window.location = "../company/company_dashboard.html";
-
-
-            } else {
-
-              console.log("Does not work");
-            }
-          });
-        }
-      });
-    });
-
-</script>
