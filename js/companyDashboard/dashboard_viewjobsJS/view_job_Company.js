@@ -52,7 +52,7 @@ auth.onAuthStateChanged((user) => {
     get(child(dbRef, "Jobs/" + jobid)).then((snapshot) => {
       if (snapshot.exists()) {
         // displayLoading();
-        console.log(snapshot.val());
+
         const jobTitle = snapshot.val().Jobtitle;
         const CName = snapshot.val().CompanyName;
         const qualification = snapshot.val().Qualification.split(",");
