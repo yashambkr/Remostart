@@ -57,8 +57,6 @@ auth.onAuthStateChanged((user) => {
         const CName = snapshot.val().CompanyName;
         const qualification = snapshot.val().Qualification.split(",");
         const CDescription = snapshot.val().CompanyDescripition;
-        const jobLocation = snapshot.val().Joblocation;
-        const jobType = snapshot.val().JobType;
         const jobDescription = snapshot.val().Description;
         const CWebsite = snapshot.val().CompanyWebsite;
 
@@ -66,23 +64,31 @@ auth.onAuthStateChanged((user) => {
         document.getElementById("company-name").innerText = CName;
         document.getElementById("company-desc").innerText = CDescription;
         document.getElementById("company-website").innerText = CWebsite;
-        document.getElementById("job-location").innerText = jobLocation;
-        document.getElementById("job-type").innerText = jobType;
+
+
+        document.getElementById("company-website").href = CWebsite;
+        document.getElementById("company-website").style.color = 'black';
+        document.getElementById("company-website").style.textDecoration = 'None';
+
+
         document.getElementById("job-qualification").innerText = qualification;
         document.getElementById("job-desc").innerText = jobDescription;
 
         const applybtn = document.getElementById("apply-btn");
         applybtn.onclick = function () {
-          //console.log("ccc");
+
           get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
             if (Usnapshot.exists()) {
+
               push(ref(database, "Jobs/" + snapshot.key + "/Applicant/"), {
+
                 applicantId: user.uid,
                 FirstName: Usnapshot.val().FirstName,
                 LastName: Usnapshot.val().LastName,
                 Email: Usnapshot.val().Email,
                 PhoneNo: Usnapshot.val().PhoneNo,
               });
+
             }
           });
           push(ref(database, "User/" + user.uid + "/AppliedJobs/"), {
@@ -90,6 +96,7 @@ auth.onAuthStateChanged((user) => {
             Jobtitle: snapshot.val().Jobtitle,
             CompanyName: snapshot.val().CompanyName,
           });
+          alert("applied");
         };
       } else {
         console.log("Not possible");
@@ -100,7 +107,7 @@ auth.onAuthStateChanged((user) => {
     get(child(dbRef, "User/" + user.uid)).then((Usnapshot) => {
       if (Usnapshot.exists()) {
         document.getElementById("user-name-text").innerText =
-          "hi" + Usnapshot.val().FirstName;
+          "hi " + Usnapshot.val().FirstName;
       }
     });
   }

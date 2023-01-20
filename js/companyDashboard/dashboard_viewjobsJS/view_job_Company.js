@@ -82,7 +82,7 @@ auth.onAuthStateChanged((user) => {
 
             console.log(FirstName);
 
-            const cardList = document.getElementsByClassName("testone")[0];
+            const cardList = document.getElementsByClassName("ApplicantsSide")[0];
 
             const card = document.createElement("div");
             card.classList.add("card", "m-b-30");
