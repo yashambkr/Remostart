@@ -67,7 +67,7 @@
         <div class="box ms-0 me-0 input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
             <i class="bx bx-detail icon"></i></span>
-            
+
           <textarea required type="text" id="description" name="description" placeholder="Company Description"
             class="input form-control"></textarea>
         </div>
@@ -78,7 +78,7 @@
           <input required type="url" id="social_media_links" name="social_media_links" placeholder="Social Media Links"
             class="input form-control" />
         </div>
-        
+
         <!--Password-->
         <div class="ms-0 me-0 box input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">
@@ -186,7 +186,7 @@
       var url = new URL(url_string);
 
 
-      var Email, Fname, Lname, Contact, Company_name, Company_website, Company_description, Password, ConformPass, Username;
+      var Email, Fname, Lname, Contact, Company_name, Company_website, Company_description, Password, ConformPass, Username, Company_socialmedia_url;
 
       Email = document.getElementById("Email-in").value;
       Fname = document.getElementById("cp_firstname").value;
@@ -222,7 +222,7 @@
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-           // console.log(errorMessage);
+            // console.log(errorMessage);
             alert(errorCode, "warning", "login-up");
           });
 

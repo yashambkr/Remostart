@@ -55,11 +55,10 @@ auth.onAuthStateChanged((user) => {
             Csnapshot.forEach((snapshot) => {
               const jobTitle = snapshot.val().Jobtitle;
               const CName = snapshot.val().CompanyName;
-              const qualification = snapshot.val().Qualification.split(",");
-              const CDescription = snapshot.val().CompanyDescripition;
-              const jobLocation = snapshot.val().Joblocation;
-              const jobType = snapshot.val().JobType;
-              const jobDescription = snapshot.val().Description;
+              // const qualification = snapshot.val().Qualification.split(",");
+              // const CDescription = snapshot.val().CompanyDescripition;
+
+              // const jobDescription = snapshot.val().Description;
               const CWebsite = snapshot.val().CompanyWebsite;
 
               // console.log(snapshot.val().Jobtitle);
@@ -96,16 +95,25 @@ auth.onAuthStateChanged((user) => {
               Job_Title.innerText = jobTitle;
               newGroup.appendChild(Job_Title);
               Job_Title.classList.add("fw-bold");
+              
 
-              const Job_location = document.createElement("p");
-              Job_location.innerText = jobLocation;
-              newGroup.appendChild(Job_location);
-              Job_location.classList.add("job-label");
+              const Company_link = document.createElement('a');
+              Company_link.innerText = CWebsite;
+              Company_link.href = CWebsite;
+              Company_link.style.color = 'black'; 
+              Company_link.style.textDecoration = 'None'; 
+              newGroup.appendChild(Company_link);
 
-              const Job_Type = document.createElement("p");
-              Job_Type.innerText = jobType;
-              newGroup.appendChild(Job_Type);
-              Job_Type.classList.add("job-label");
+
+              // const Job_location = document.createElement("p");
+              // Job_location.innerText = jobLocation;
+              // newGroup.appendChild(Job_location);
+              // Job_location.classList.add("job-label");
+
+              // const Job_Type = document.createElement("p");
+              // Job_Type.innerText = jobType;
+              // newGroup.appendChild(Job_Type);
+              // Job_Type.classList.add("job-label");
 
               // const job_Description = document.createElement("p");
               // job_Description.innerText =
